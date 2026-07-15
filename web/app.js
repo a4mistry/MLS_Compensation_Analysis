@@ -72,7 +72,7 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
 (() => {
   const top = D.topEarners.slice(0, 15).slice().reverse();
   echarts.init(document.getElementById('chart-top')).setOption({
-    grid: { ...baseGrid, left: 4, right: 70 }, tooltip: {
+    grid: { ...baseGrid, left: 24, right: 70 }, tooltip: {
       ...TT, trigger: 'item',
       formatter: p => { const t = top[p.dataIndex];
         return `<b>${t.name}</b><br/>${t.club} · ${t.position}<br/>${usd(t.comp)}`; },
@@ -96,7 +96,7 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
 (() => {
   const pos = D.positions.slice().reverse();
   echarts.init(document.getElementById('chart-pos')).setOption({
-    grid: { ...baseGrid, left: 4, right: 80 }, tooltip: {
+    grid: { ...baseGrid, left: 24, right: 80 }, tooltip: {
       ...TT, trigger: 'item',
       formatter: p => { const x = pos[p.dataIndex];
         return `<b>${x.position}</b><br/>Median ${usd(x.median)}<br/>${x.n} players`; },
@@ -178,7 +178,7 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
 
   const res = D.clubs.slice().sort((a, b) => a.residual - b.residual);
   echarts.init(document.getElementById('chart-residual')).setOption({
-    grid: { ...baseGrid, left: 4, right: 30 },
+    grid: { ...baseGrid, left: 24, right: 30 },
     tooltip: { ...TT, trigger: 'item',
       formatter: p => { const c = res[p.dataIndex];
         return `<b>${c.club}</b><br/>Actual ${c.ppg.toFixed(2)} vs predicted ${c.ppgPred.toFixed(2)} PPG<br/>`
