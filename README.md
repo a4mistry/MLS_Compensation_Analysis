@@ -3,8 +3,7 @@
 An interactive data narrative on Major League Soccer 2026 player pay and how it
 translates into on-field results. Built from the MLSPA Spring 2026 Salary Guide.
 
-**Live site:** https://USERNAME.github.io/REPO/
-<!-- update USERNAME/REPO after you create the repository -->
+**Live site:** https://a4mistry.github.io/MLS_Compensation_Analysis/
 
 ## What's here
 
