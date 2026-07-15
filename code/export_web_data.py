@@ -14,6 +14,8 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 PAY = "guaranteed_comp"
 
+# Fallback conference map, only used if the standings file lacks a 'conf'
+# column (older data). The live fetcher writes conf directly.
 EAST = {
     "Nashville SC", "Inter Miami", "Chicago Fire", "New England Revolution",
     "New York Red Bulls", "Charlotte FC", "FC Cincinnati", "New York City FC",
@@ -85,9 +87,10 @@ slope, intercept, r, p, se = stats.linregress(x, y)
 df["ppg_pred"] = intercept + slope * x
 df["residual"] = df["ppg"] - df["ppg_pred"]
 
+has_conf = "conf" in df.columns
 clubs = [{
     "club": row.club,
-    "conf": "East" if row.club in EAST else "West",
+    "conf": (row.conf if has_conf else ("East" if row.club in EAST else "West")),
     "payroll": float(row.payroll),
     "roster": int(row.roster),
     "medianPay": float(row.medianPay),

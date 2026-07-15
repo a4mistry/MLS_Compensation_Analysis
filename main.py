@@ -8,10 +8,15 @@ matter what directory you launch it from:
 
 Pipeline:
   1. extract_salaries.py  PDF  -> data/mls_salaries_2026.csv
-  2. analysis.py          csv  -> console summary + data/charts/01-04
-  3. efficiency.py        csv + data/standings_2026.csv
+  2. fetch_standings.py   ESPN API (live) -> data/standings_2026.csv
+  3. analysis.py          csv  -> console summary + data/charts/01-04
+  4. efficiency.py        csv + data/standings_2026.csv
                                -> data/efficiency_2026.csv + data/charts/05-07
-  4. export_web_data.py        -> web/site_data.js  (consumed by web/index.html)
+  5. export_web_data.py        -> web/site_data.js  (consumed by web/index.html)
+
+Stage 2 pulls the latest 2026 wins/losses from ESPN each run, so re-running
+this refreshes the season-to-date performance. It falls back to the existing
+standings file if the network is unavailable.
 """
 import subprocess
 import sys
@@ -20,6 +25,7 @@ from pathlib import Path
 CODE = Path(__file__).resolve().parent / "code"
 STAGES = [
     "extract_salaries.py",
+    "fetch_standings.py",
     "analysis.py",
     "efficiency.py",
     "export_web_data.py",

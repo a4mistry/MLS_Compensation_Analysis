@@ -11,6 +11,7 @@ translates into on-field results. Built from the MLSPA Spring 2026 Salary Guide.
 ├── main.py            # runs the full pipeline: python main.py
 ├── code/              # analysis scripts
 │   ├── extract_salaries.py   # PDF  -> data/mls_salaries_2026.csv
+│   ├── fetch_standings.py    # ESPN API (live) -> data/standings_2026.csv
 │   ├── analysis.py           # league-wide pay analysis + charts
 │   ├── efficiency.py         # payroll vs results (cost/point, value residual)
 │   └── export_web_data.py    # -> web/site_data.js (feeds the website)
@@ -28,6 +29,11 @@ translates into on-field results. Built from the MLSPA Spring 2026 Salary Guide.
 python -m pip install pdfplumber pandas numpy scipy matplotlib seaborn
 python main.py          # regenerates CSVs, charts, and web/site_data.js
 ```
+
+`main.py` pulls the latest 2026 wins/losses from ESPN's public API each run
+(no key needed), so re-running refreshes the season-to-date performance. If the
+network is unavailable it keeps the last-known standings. Override the season
+with `MLS_SEASON=2027 python main.py`.
 
 Then open `web/index.html` locally, or push to GitHub to update the live site.
 
