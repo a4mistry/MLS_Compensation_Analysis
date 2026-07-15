@@ -211,6 +211,93 @@
   </div>
 </section>
 
+<!-- ============ 7. MARKETABILITY GAP ============ -->
+<section id="gap">
+  <div class="wrap reveal">
+    <div class="kicker">07 — The Marketability Gap</div>
+    <h2>Who's paid to sell shirts?</h2>
+    <div class="narrow">
+      <p class="lead">Guaranteed comp sits above base salary by a margin of marketing and bonus money — a rough
+        proxy for a player's commercial, off-field value. Leaguewide that premium is <b id="g-mkt"></b>,
+        about <b id="g-mktpct"></b> of all pay.</p>
+    </div>
+    <div class="stats" id="gap-stats"></div>
+    <div class="duo">
+      <div class="panel">
+        <h3>Biggest marketability gaps</h3>
+        <p class="hint">Base salary (green) plus the marketing/bonus premium (gold) = guaranteed comp.</p>
+        <div id="ch-gap" class="chart tall"></div>
+      </div>
+      <div class="panel">
+        <h3>Where the premium goes, by position</h3>
+        <p class="hint">Total marketing money attached to each position group.</p>
+        <div id="ch-gappos" class="chart tall"></div>
+      </div>
+    </div>
+    <p class="verdict"><b>The twist:</b> a club's marketing-money share is <em>negatively</em> related to results
+      (<span id="g-mktr"></span>) — paying big for star commercial value doesn't buy points.</p>
+  </div>
+</section>
+
+<!-- ============ 8. SPENDING → GOALS ============ -->
+<section id="goals" class="alt">
+  <div class="wrap reveal">
+    <div class="kicker">08 — Does Spending Buy Goals?</div>
+    <h2>Money for goals, at both ends</h2>
+    <div class="narrow">
+      <p class="lead">Points are noisy mid-season; goals are the cleaner signal. Does spending on attack produce
+        goals — and does spending on defence and goalkeeping prevent them?</p>
+    </div>
+    <div class="stack">
+      <div class="panel">
+        <h3>Attack pay vs goals scored</h3>
+        <p class="hint">Only the biggest outliers are labelled. <span id="g-atkr"></span></p>
+        <div id="ch-atk" class="chart tall"></div>
+      </div>
+      <div class="panel">
+        <h3>Defence + GK pay vs goals conceded</h3>
+        <p class="hint">A downward slope would mean money buys a tighter defence. <span id="g-defr"></span></p>
+        <div id="ch-def" class="chart tall"></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Attack efficiency: goals per $10M of attack pay</h3>
+      <p class="hint">Green = most goals per dollar, red = least. The same money buys wildly different output.</p>
+      <div id="ch-goalval" class="chart tall"></div>
+    </div>
+    <p class="verdict">Attack spend really does buy goals (<span id="g-atkr2"></span>) — but efficiency swings hugely:
+      <b id="g-bestval"></b> gets the most per dollar; <b id="g-worstval"></b> the least.</p>
+  </div>
+</section>
+
+<!-- ============ 9. STARS vs MIDDLE CLASS ============ -->
+<section id="middle">
+  <div class="wrap reveal">
+    <div class="kicker">09 — Stars vs the Middle Class</div>
+    <h2>Do you win with stars or with depth?</h2>
+    <div class="narrow">
+      <p class="lead">Split each squad into its three highest earners (the Designated-Player tier) and everyone
+        else. Which better predicts results — the stars, or the pay of the "middle class" filling out the roster?</p>
+    </div>
+    <div class="stack">
+      <div class="panel">
+        <h3>Middle-class pay vs performance</h3>
+        <p class="hint">Rest-of-roster median pay vs points-per-game. <span id="g-midr"></span></p>
+        <div id="ch-mid" class="chart tall"></div>
+      </div>
+      <div class="panel">
+        <h3>What predicts results better?</h3>
+        <p class="hint">Each pay tier's correlation with results (PPG), goals scored, and goals conceded.
+          For goals conceded, a <em>negative</em> bar is good (spending → fewer conceded).</p>
+        <div id="ch-midbar" class="chart tall"></div>
+      </div>
+    </div>
+    <p class="verdict"><b>Verdict:</b> the stars edge it — top-3 pay tracks results (and especially goals scored) a
+      bit better than middle-class pay, and the roster floor tracks nothing. Real Salt Lake and Nashville win with a
+      bargain supporting cast, so depth spending is <em>not</em> the deciding factor.</p>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">

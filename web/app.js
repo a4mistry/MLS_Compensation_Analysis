@@ -288,6 +288,151 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
   });
 })();
 
+/* ==================== deeper analyses (7-9) ==================== */
+const BUCKET_COL = { Attack: COL.hot, Midfield: COL.gold, Defense: COL.blue, Goalkeeper: COL.accent };
+const putText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+const corrTxt = (r, p) => `r = ${r >= 0 ? '+' : ''}${r.toFixed(2)}` +
+  (p != null ? ` (p = ${p}${p < 0.05 ? ', significant' : ''})` : '');
+const mkGrid = e => ({ left: 56, right: 24, top: 40, bottom: 46, containLabel: true, ...e });
+function linfit(xs, ys) {
+  const n = xs.length, mx = xs.reduce((a, b) => a + b) / n, my = ys.reduce((a, b) => a + b) / n;
+  let num = 0, den = 0;
+  for (let i = 0; i < n; i++) { num += (xs[i] - mx) * (ys[i] - my); den += (xs[i] - mx) ** 2; }
+  const m = num / den; return { m, b: my - m * mx };
+}
+function scatterChart(elId, pts, xLabel, yLabel, xf, labelTopN) {
+  const xs = pts.map(p => p.x), ys = pts.map(p => p.y);
+  const fit = linfit(xs, ys), xmin = Math.min(...xs), xmax = Math.max(...xs);
+  let labelSet = null;
+  if (labelTopN && labelTopN < pts.length) {   // label only the N biggest outliers (any direction)
+    const mean = a => a.reduce((s, v) => s + v, 0) / a.length;
+    const std = (a, m) => Math.sqrt(a.reduce((s, v) => s + (v - m) ** 2, 0) / a.length) || 1;
+    const mx = mean(xs), my = mean(ys), sx = std(xs, mx), sy = std(ys, my);
+    labelSet = new Set(pts.map((p, i) => ({ i, d: Math.hypot((p.x - mx) / sx, (p.y - my) / sy) }))
+      .sort((a, b) => b.d - a.d).slice(0, labelTopN).map(o => o.i));
+  }
+  echarts.init(document.getElementById(elId)).setOption({
+    grid: mkGrid({}), tooltip: { ...TT, trigger: 'item', formatter: p => p.data.tip || '' },
+    xAxis: { type: 'value', name: xLabel, nameLocation: 'middle', nameGap: 32, ...AXIS,
+      axisLabel: { color: COL.muted, formatter: xf || '{value}' } },
+    yAxis: { type: 'value', name: yLabel, nameLocation: 'middle', nameGap: 40, nameRotate: 90, ...AXIS },
+    series: [
+      { type: 'line', silent: true, showSymbol: false, z: 1, tooltip: { show: false },
+        lineStyle: { color: COL.hot, type: 'dashed', width: 2 },
+        data: [[xmin, fit.m * xmin + fit.b], [xmax, fit.m * xmax + fit.b]] },
+      { type: 'scatter', z: 3, symbolSize: 14,
+        itemStyle: { color: COL.blue, borderColor: '#fff', borderWidth: 1.3, opacity: .9 },
+        label: { show: true, position: 'right', color: COL.muted, fontSize: 9,
+          formatter: p => (labelSet && !labelSet.has(p.dataIndex)) ? '' : p.data.label },
+        data: pts.map(p => ({ value: [p.x, p.y], label: p.label, tip: p.tip })) },
+    ],
+  });
+}
+
+/* 7. marketability gap */
+(() => {
+  const G = D.gap;
+  putText('g-mkt', usd(G.marketingTotal));
+  putText('g-mktpct', (G.marketingPct * 100).toFixed(0) + '%');
+  putText('g-mktr', corrTxt(G.marketingPpgR, G.marketingPpgP));
+  document.getElementById('gap-stats').innerHTML = [
+    { n: '$' + (G.marketingTotal / 1e6).toFixed(0) + 'M', c: 'gold', cap: 'Total marketing/bonus money' },
+    { n: (G.marketingPct * 100).toFixed(0) + '%', c: 'accent', cap: 'of guaranteed pay is marketing money' },
+    { n: Math.round(G.nWithGap / G.nPlayers * 100) + '%', c: 'blue', cap: 'of players earn above base salary' },
+    { n: '$' + (G.byPosition.find(p => p.bucket === 'Attack').marketing / 1e6).toFixed(0) + 'M', c: '',
+      cap: 'of it goes to attackers' },
+  ].map(c => `<div class="stat"><div class="num ${c.c}">${c.n}</div><div class="cap">${c.cap}</div></div>`).join('');
+
+  const top = G.topGap.slice(0, 15).slice().reverse();
+  echarts.init(document.getElementById('ch-gap')).setOption({
+    grid: mkGrid({ left: 4, right: 60 }),
+    legend: { data: ['Base salary', 'Marketing premium'], top: 0, textStyle: { color: COL.muted } },
+    tooltip: { ...TT, trigger: 'axis', axisPointer: { type: 'shadow' }, formatter: ps => {
+      const t = top[ps[0].dataIndex];
+      return `<b>${t.name}</b> · ${t.club}<br/>Base ${usdShort(t.base)} → Guar ${usdShort(t.guar)}`
+        + `<br/>Marketing premium ${usdShort(t.gap)}`; } },
+    xAxis: { type: 'value', name: 'Guaranteed compensation', nameLocation: 'middle', nameGap: 30, ...AXIS,
+      axisLabel: { color: COL.muted, formatter: usdShort } },
+    yAxis: { type: 'category', data: top.map(t => t.name), ...AXIS, axisLabel: { color: COL.ink, fontSize: 11 } },
+    series: [
+      { name: 'Base salary', type: 'bar', stack: 'p', data: top.map(t => t.base), itemStyle: { color: COL.grassDk } },
+      { name: 'Marketing premium', type: 'bar', stack: 'p', data: top.map(t => t.gap), itemStyle: { color: COL.gold } },
+    ],
+  });
+
+  const bp = G.byPosition;
+  echarts.init(document.getElementById('ch-gappos')).setOption({
+    grid: mkGrid({ bottom: 40 }),
+    tooltip: { ...TT, trigger: 'item', formatter: p => { const d = bp[p.dataIndex];
+      return `<b>${d.bucket}</b><br/>${usd(d.marketing)} marketing money<br/>`
+        + `${(d.shareWithGap * 100).toFixed(0)}% of players have a premium`; } },
+    xAxis: { type: 'category', data: bp.map(d => d.bucket), name: 'Position', nameLocation: 'middle',
+      nameGap: 30, ...AXIS, axisLabel: { color: COL.ink } },
+    yAxis: { type: 'value', name: 'Marketing money', nameLocation: 'middle', nameGap: 46, nameRotate: 90,
+      ...AXIS, axisLabel: { color: COL.muted, formatter: v => '$' + (v / 1e6).toFixed(0) + 'M' } },
+    series: [{ type: 'bar', data: bp.map(d => ({ value: d.marketing,
+      itemStyle: { color: BUCKET_COL[d.bucket], borderRadius: [3, 3, 0, 0] } })) }],
+  });
+})();
+
+/* 8. does spending buy goals */
+(() => {
+  const GO = D.goals;
+  putText('g-atkr', corrTxt(GO.attackGfR, GO.attackGfP));
+  putText('g-atkr2', corrTxt(GO.attackGfR, GO.attackGfP));
+  putText('g-defr', corrTxt(GO.defGaR, GO.defGaP));
+  scatterChart('ch-atk',
+    GO.clubs.map(c => ({ x: c.attackPay / 1e6, y: c.gf, label: c.club,
+      tip: `<b>${c.club}</b><br/>Attack pay ${usd(c.attackPay)}<br/>${c.gf} goals scored` })),
+    'Attack payroll ($M)', 'Goals scored', v => '$' + v + 'M', 7);
+  scatterChart('ch-def',
+    GO.clubs.map(c => ({ x: c.defPay / 1e6, y: c.ga, label: c.club,
+      tip: `<b>${c.club}</b><br/>Defence+GK pay ${usd(c.defPay)}<br/>${c.ga} goals conceded` })),
+    'Defence + GK payroll ($M)', 'Goals conceded', v => '$' + v + 'M', 7);
+
+  const gv = GO.clubs.slice().sort((a, b) => a.goalsPer10mAtk - b.goalsPer10mAtk);
+  const mid = gv[Math.floor(gv.length / 2)].goalsPer10mAtk;
+  putText('g-bestval', gv[gv.length - 1].club);
+  putText('g-worstval', gv[0].club);
+  echarts.init(document.getElementById('ch-goalval')).setOption({
+    grid: mkGrid({ left: 4, right: 60, bottom: 40 }),
+    tooltip: { ...TT, trigger: 'item', formatter: p => { const c = gv[p.dataIndex];
+      return `<b>${c.club}</b><br/>${c.goalsPer10mAtk.toFixed(1)} goals per $10M attack<br/>`
+        + `${c.gf} goals on ${usd(c.attackPay)}`; } },
+    xAxis: { type: 'value', name: 'Goals per $10M of attack pay', nameLocation: 'middle', nameGap: 30, ...AXIS },
+    yAxis: { type: 'category', data: gv.map(c => c.club), ...AXIS, axisLabel: { color: COL.ink, fontSize: 11 } },
+    series: [{ type: 'bar', data: gv.map(c => ({ value: +c.goalsPer10mAtk.toFixed(1),
+      itemStyle: { color: c.goalsPer10mAtk >= mid ? COL.accent : COL.hot, borderRadius: [0, 3, 3, 0] } })),
+      label: { show: true, position: 'right', color: COL.muted, formatter: '{c}' } }],
+  });
+})();
+
+/* 9. stars vs the middle class */
+(() => {
+  const M = D.middle;
+  putText('g-midr', corrTxt(M.restMedianPpgR, M.restMedianPpgP));
+  scatterChart('ch-mid',
+    M.clubs.map(c => ({ x: c.restMedian / 1e3, y: c.ppg, label: c.club,
+      tip: `<b>${c.club}</b><br/>Middle-class median ${usdShort(c.restMedian)}<br/>${c.ppg.toFixed(2)} PPG` })),
+    'Rest-of-roster median pay ($K)', 'Points per game', v => '$' + v + 'K');
+
+  const C = M.corr, metricColor = { ppg: COL.accent, gf: COL.hot, ga: COL.blue };
+  echarts.init(document.getElementById('ch-midbar')).setOption({
+    grid: mkGrid({ left: 8, top: 42, bottom: 40 }),
+    legend: { data: C.metrics.map(m => m.label), top: 0, textStyle: { color: COL.muted } },
+    tooltip: { ...TT, trigger: 'axis', axisPointer: { type: 'shadow' },
+      formatter: ps => ps[0].axisValue + '<br/>' +
+        ps.map(p => `${p.seriesName}: r = ${p.value >= 0 ? '+' : ''}${p.value}`).join('<br/>') },
+    xAxis: { type: 'category', data: C.tiers, name: 'Pay tier', nameLocation: 'middle',
+      nameGap: 30, ...AXIS, axisLabel: { color: COL.ink } },
+    yAxis: { type: 'value', name: 'Correlation (r)', nameLocation: 'middle', nameGap: 40, nameRotate: 90, ...AXIS },
+    series: C.metrics.map(m => ({ name: m.label, type: 'bar', data: m.values.map(v => +v.toFixed(2)),
+      itemStyle: { color: metricColor[m.key], borderRadius: [2, 2, 0, 0] },
+      label: { show: true, position: 'top', color: COL.muted, fontSize: 9,
+        formatter: p => (p.value >= 0 ? '+' : '') + p.value } })),
+  });
+})();
+
 /* -------------------- scroll polish -------------------- */
 const bar = document.getElementById('progress');
 const onScroll = () => {

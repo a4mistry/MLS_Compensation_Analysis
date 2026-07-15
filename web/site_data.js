@@ -1453,5 +1453,875 @@ window.MLS_DATA = {
    "Goalkeeper": 0.06862745098039216
   },
   "spotlight": "Atlanta United"
+ },
+ "gap": {
+  "baseTotal": 548670490.9200001,
+  "guarTotal": 624722690.0,
+  "marketingTotal": 76052199.07999992,
+  "marketingPct": 0.12173753298443495,
+  "nWithGap": 720,
+  "nPlayers": 911,
+  "topGap": [
+   {
+    "name": "Lionel Messi",
+    "club": "Inter Miami",
+    "bucket": "Attack",
+    "base": 25000000.0,
+    "guar": 28333333.0,
+    "gap": 3333333.0
+   },
+   {
+    "name": "Hirving Lozano",
+    "club": "San Diego FC",
+    "bucket": "Attack",
+    "base": 6000000.0,
+    "guar": 9333333.0,
+    "gap": 3333333.0
+   },
+   {
+    "name": "Rodrigo De Paul",
+    "club": "Inter Miami",
+    "bucket": "Midfield",
+    "base": 7569000.0,
+    "guar": 9688320.0,
+    "gap": 2119320.0
+   },
+   {
+    "name": "Josh Sargent",
+    "club": "Toronto FC",
+    "bucket": "Attack",
+    "base": 3210000.0,
+    "guar": 5265667.0,
+    "gap": 2055667.0
+   },
+   {
+    "name": "Miguel Almir\u00f3n",
+    "club": "Atlanta United",
+    "bucket": "Attack",
+    "base": 6056000.0,
+    "guar": 7871000.0,
+    "gap": 1815000.0
+   },
+   {
+    "name": "Evander da Silva Ferreira",
+    "club": "FC Cincinnati",
+    "bucket": "Attack",
+    "base": 3200000.0,
+    "guar": 4736411.0,
+    "gap": 1536411.0
+   },
+   {
+    "name": "Hany Mukhtar",
+    "club": "Nashville SC",
+    "bucket": "Attack",
+    "base": 4000000.0,
+    "guar": 5411667.0,
+    "gap": 1411667.0
+   },
+   {
+    "name": "Aleksey Miranchuk",
+    "club": "Atlanta United",
+    "bucket": "Attack",
+    "base": 3800000.0,
+    "guar": 5085441.0,
+    "gap": 1285441.0
+   },
+   {
+    "name": "Joseph Paintsil",
+    "club": "LA Galaxy",
+    "bucket": "Attack",
+    "base": 3456000.0,
+    "guar": 4502000.0,
+    "gap": 1046000.0
+   },
+   {
+    "name": "Facundo Torres",
+    "club": "Austin FC",
+    "bucket": "Attack",
+    "base": 3360000.0,
+    "guar": 4405000.0,
+    "gap": 1045000.0
+   },
+   {
+    "name": "Germ\u00e1n Berterame",
+    "club": "Inter Miami",
+    "bucket": "Attack",
+    "base": 2800000.0,
+    "guar": 3824200.0,
+    "gap": 1024200.0
+   },
+   {
+    "name": "Denis Bouanga",
+    "club": "LAFC",
+    "bucket": "Attack",
+    "base": 4000000.0,
+    "guar": 4939217.0,
+    "gap": 939217.0
+   },
+   {
+    "name": "Wessam Abou Ali",
+    "club": "Columbus Crew",
+    "bucket": "Attack",
+    "base": 2775000.0,
+    "guar": 3611750.0,
+    "gap": 836750.0
+   },
+   {
+    "name": "Heung-min Son",
+    "club": "LAFC",
+    "bucket": "Attack",
+    "base": 10368750.0,
+    "guar": 11152852.0,
+    "gap": 784102.0
+   },
+   {
+    "name": "Gabriel Fortes Chaves",
+    "club": "LA Galaxy",
+    "bucket": "Attack",
+    "base": 1680000.0,
+    "guar": 2459000.0,
+    "gap": 779000.0
+   }
+  ],
+  "byPosition": [
+   {
+    "bucket": "Attack",
+    "marketing": 47301058.08,
+    "shareWithGap": 0.8262295081967214
+   },
+   {
+    "bucket": "Midfield",
+    "marketing": 11938356.04,
+    "shareWithGap": 0.7722772277227723
+   },
+   {
+    "bucket": "Defense",
+    "marketing": 14149049.0,
+    "shareWithGap": 0.7980132450331126
+   },
+   {
+    "bucket": "Goalkeeper",
+    "marketing": 2663735.96,
+    "shareWithGap": 0.696078431372549
+   }
+  ],
+  "marketingPpgR": -0.318,
+  "marketingPpgP": 0.087
+ },
+ "goals": {
+  "clubs": [
+   {
+    "club": "Atlanta United",
+    "conf": "East",
+    "attackPay": 18293891.0,
+    "defPay": 5996968.64,
+    "payroll": 27884034.64,
+    "gf": 14,
+    "ga": 23,
+    "gd": -9,
+    "ppg": 0.7857142857142857,
+    "goalsPer10mAtk": 7.652827930373041
+   },
+   {
+    "club": "Austin FC",
+    "conf": "West",
+    "attackPay": 12432611.0,
+    "defPay": 4589567.0,
+    "payroll": 19893439.0,
+    "gf": 19,
+    "ga": 31,
+    "gd": -12,
+    "ppg": 0.9333333333333333,
+    "goalsPer10mAtk": 15.282389194031728
+   },
+   {
+    "club": "CF Montreal",
+    "conf": "East",
+    "attackPay": 7051495.0,
+    "defPay": 4824254.0,
+    "payroll": 13418254.0,
+    "gf": 22,
+    "ga": 31,
+    "gd": -9,
+    "ppg": 1.0,
+    "goalsPer10mAtk": 31.19905778845479
+   },
+   {
+    "club": "Charlotte FC",
+    "conf": "East",
+    "attackPay": 11013001.0,
+    "defPay": 6733385.0,
+    "payroll": 21460657.0,
+    "gf": 24,
+    "ga": 23,
+    "gd": 1,
+    "ppg": 1.4,
+    "goalsPer10mAtk": 21.79242515278079
+   },
+   {
+    "club": "Chicago Fire",
+    "conf": "East",
+    "attackPay": 13078373.0,
+    "defPay": 5250171.0,
+    "payroll": 21733136.0,
+    "gf": 27,
+    "ga": 16,
+    "gd": 11,
+    "ppg": 1.8571428571428572,
+    "goalsPer10mAtk": 20.644769804317402
+   },
+   {
+    "club": "Colorado Rapids",
+    "conf": "West",
+    "attackPay": 6554776.0,
+    "defPay": 5351445.04,
+    "payroll": 14127613.04,
+    "gf": 25,
+    "ga": 24,
+    "gd": 1,
+    "ppg": 1.0666666666666667,
+    "goalsPer10mAtk": 38.14012866343564
+   },
+   {
+    "club": "Columbus Crew",
+    "conf": "East",
+    "attackPay": 11908904.0,
+    "defPay": 5327360.0,
+    "payroll": 22338020.0,
+    "gf": 21,
+    "ga": 23,
+    "gd": -2,
+    "ppg": 1.0666666666666667,
+    "goalsPer10mAtk": 17.63386454370612
+   },
+   {
+    "club": "DC United",
+    "conf": "East",
+    "attackPay": 7067495.0,
+    "defPay": 6096525.0,
+    "payroll": 14546167.0,
+    "gf": 21,
+    "ga": 25,
+    "gd": -4,
+    "ppg": 1.2,
+    "goalsPer10mAtk": 29.713498205516945
+   },
+   {
+    "club": "FC Cincinnati",
+    "conf": "East",
+    "attackPay": 10872944.0,
+    "defPay": 9154231.0,
+    "payroll": 23472623.0,
+    "gf": 36,
+    "ga": 37,
+    "gd": -1,
+    "ppg": 1.3333333333333333,
+    "goalsPer10mAtk": 33.1097079135145
+   },
+   {
+    "club": "FC Dallas",
+    "conf": "West",
+    "attackPay": 7375956.0,
+    "defPay": 4466164.0,
+    "payroll": 14539074.0,
+    "gf": 30,
+    "ga": 22,
+    "gd": 8,
+    "ppg": 1.6666666666666667,
+    "goalsPer10mAtk": 40.67269381758785
+   },
+   {
+    "club": "Houston Dynamo",
+    "conf": "West",
+    "attackPay": 10319188.0,
+    "defPay": 5851997.0,
+    "payroll": 20912912.0,
+    "gf": 19,
+    "ga": 23,
+    "gd": -4,
+    "ppg": 1.5714285714285714,
+    "goalsPer10mAtk": 18.41230143301973
+   },
+   {
+    "club": "Inter Miami",
+    "conf": "East",
+    "attackPay": 34655761.0,
+    "defPay": 7649523.0,
+    "payroll": 54574541.0,
+    "gf": 39,
+    "ga": 28,
+    "gd": 11,
+    "ppg": 2.066666666666667,
+    "goalsPer10mAtk": 11.253540212260813
+   },
+   {
+    "club": "LA Galaxy",
+    "conf": "West",
+    "attackPay": 12418831.0,
+    "defPay": 6234637.0,
+    "payroll": 26431650.0,
+    "gf": 22,
+    "ga": 22,
+    "gd": 0,
+    "ppg": 1.3333333333333333,
+    "goalsPer10mAtk": 17.715032920570383
+   },
+   {
+    "club": "LAFC",
+    "conf": "West",
+    "attackPay": 20807994.0,
+    "defPay": 6317665.0,
+    "payroll": 32648541.0,
+    "gf": 24,
+    "ga": 17,
+    "gd": 7,
+    "ppg": 1.6,
+    "goalsPer10mAtk": 11.534028700700317
+   },
+   {
+    "club": "Minnesota United",
+    "conf": "West",
+    "attackPay": 6318211.0,
+    "defPay": 4448189.0,
+    "payroll": 15552855.0,
+    "gf": 18,
+    "ga": 22,
+    "gd": -4,
+    "ppg": 1.4666666666666666,
+    "goalsPer10mAtk": 28.489077050449882
+   },
+   {
+    "club": "Nashville SC",
+    "conf": "East",
+    "attackPay": 15742052.0,
+    "defPay": 5352761.0,
+    "payroll": 22989086.0,
+    "gf": 31,
+    "ga": 11,
+    "gd": 20,
+    "ppg": 2.357142857142857,
+    "goalsPer10mAtk": 19.692477194205686
+   },
+   {
+    "club": "New England Revolution",
+    "conf": "East",
+    "attackPay": 9778460.0,
+    "defPay": 6178173.32,
+    "payroll": 19411614.32,
+    "gf": 22,
+    "ga": 18,
+    "gd": 4,
+    "ppg": 1.7857142857142858,
+    "goalsPer10mAtk": 22.498430223163975
+   },
+   {
+    "club": "New York City FC",
+    "conf": "East",
+    "attackPay": 10426798.0,
+    "defPay": 5954183.0,
+    "payroll": 21539612.0,
+    "gf": 25,
+    "ga": 21,
+    "gd": 4,
+    "ppg": 1.2666666666666666,
+    "goalsPer10mAtk": 23.97668008913187
+   },
+   {
+    "club": "New York Red Bulls",
+    "conf": "East",
+    "attackPay": 14216527.0,
+    "defPay": 5268374.0,
+    "payroll": 21651691.0,
+    "gf": 25,
+    "ga": 32,
+    "gd": -7,
+    "ppg": 1.4666666666666666,
+    "goalsPer10mAtk": 17.585166897653693
+   },
+   {
+    "club": "Orlando City SC",
+    "conf": "East",
+    "attackPay": 6483397.0,
+    "defPay": 4201944.0,
+    "payroll": 13732571.0,
+    "gf": 23,
+    "ga": 44,
+    "gd": -21,
+    "ppg": 0.9333333333333333,
+    "goalsPer10mAtk": 35.475230037586776
+   },
+   {
+    "club": "Philadelphia Union",
+    "conf": "East",
+    "attackPay": 4609410.0,
+    "defPay": 4512887.0,
+    "payroll": 11696829.0,
+    "gf": 18,
+    "ga": 30,
+    "gd": -12,
+    "ppg": 0.4666666666666667,
+    "goalsPer10mAtk": 39.05055093818949
+   },
+   {
+    "club": "Portland Timbers",
+    "conf": "West",
+    "attackPay": 12327806.0,
+    "defPay": 4059395.0,
+    "payroll": 18450879.0,
+    "gf": 22,
+    "ga": 28,
+    "gd": -6,
+    "ppg": 1.0,
+    "goalsPer10mAtk": 17.845835666135564
+   },
+   {
+    "club": "Real Salt Lake",
+    "conf": "West",
+    "attackPay": 5336006.0,
+    "defPay": 6522888.0,
+    "payroll": 15288195.0,
+    "gf": 26,
+    "ga": 19,
+    "gd": 7,
+    "ppg": 1.8571428571428572,
+    "goalsPer10mAtk": 48.72558239252355
+   },
+   {
+    "club": "San Diego FC",
+    "conf": "West",
+    "attackPay": 18848624.0,
+    "defPay": 3325501.0,
+    "payroll": 24391009.0,
+    "gf": 30,
+    "ga": 27,
+    "gd": 3,
+    "ppg": 1.1333333333333333,
+    "goalsPer10mAtk": 15.91628120970528
+   },
+   {
+    "club": "San Jose Earthquakes",
+    "conf": "West",
+    "attackPay": 7333399.0,
+    "defPay": 4881631.0,
+    "payroll": 15825282.0,
+    "gf": 34,
+    "ga": 15,
+    "gd": 19,
+    "ppg": 2.1333333333333333,
+    "goalsPer10mAtk": 46.363221202064686
+   },
+   {
+    "club": "Seattle Sounders FC",
+    "conf": "West",
+    "attackPay": 11223001.0,
+    "defPay": 4547392.0,
+    "payroll": 19092219.0,
+    "gf": 17,
+    "ga": 11,
+    "gd": 6,
+    "ppg": 1.8461538461538463,
+    "goalsPer10mAtk": 15.147463677495887
+   },
+   {
+    "club": "Sporting Kansas City",
+    "conf": "West",
+    "attackPay": 8044535.0,
+    "defPay": 2314870.0,
+    "payroll": 12359396.0,
+    "gf": 14,
+    "ga": 36,
+    "gd": -22,
+    "ppg": 0.7857142857142857,
+    "goalsPer10mAtk": 17.4031190118509
+   },
+   {
+    "club": "St. Louis City SC",
+    "conf": "West",
+    "attackPay": 5345239.0,
+    "defPay": 6929702.0,
+    "payroll": 18809928.0,
+    "gf": 16,
+    "ga": 20,
+    "gd": -4,
+    "ppg": 1.1428571428571428,
+    "goalsPer10mAtk": 29.933179788593172
+   },
+   {
+    "club": "Toronto FC",
+    "conf": "East",
+    "attackPay": 11341814.0,
+    "defPay": 6871180.0,
+    "payroll": 21391233.0,
+    "gf": 22,
+    "ga": 29,
+    "gd": -7,
+    "ppg": 1.0,
+    "goalsPer10mAtk": 19.397249857915146
+   },
+   {
+    "club": "Vancouver Whitecaps",
+    "conf": "West",
+    "attackPay": 14095101.0,
+    "defPay": 7831961.0,
+    "payroll": 24559629.0,
+    "gf": 34,
+    "ga": 12,
+    "gd": 22,
+    "ppg": 2.2857142857142856,
+    "goalsPer10mAtk": 24.12185623927065
+   }
+  ],
+  "attackGfR": 0.431,
+  "attackGfP": 0.017,
+  "defGaR": -0.187,
+  "defGaP": 0.322,
+  "payrollGdR": 0.416,
+  "payrollGdP": 0.022
+ },
+ "middle": {
+  "clubs": [
+   {
+    "club": "Atlanta United",
+    "payroll": 27884034.64,
+    "top3": 16692441.0,
+    "top3Share": 0.5986379379996352,
+    "restMedian": 150625.0,
+    "floor": 88025.0,
+    "ppg": 0.7857142857142857,
+    "gd": -9
+   },
+   {
+    "club": "Austin FC",
+    "payroll": 19893439.0,
+    "top3": 10411778.0,
+    "top3Share": 0.5233774813897185,
+    "restMedian": 375000.0,
+    "floor": 88025.0,
+    "ppg": 0.9333333333333333,
+    "gd": -12
+   },
+   {
+    "club": "CF Montreal",
+    "payroll": 13418254.0,
+    "top3": 4197450.0,
+    "top3Share": 0.31281640666512944,
+    "restMedian": 294200.0,
+    "floor": 91120.0,
+    "ppg": 1.0,
+    "gd": -9
+   },
+   {
+    "club": "Charlotte FC",
+    "payroll": 21460657.0,
+    "top3": 8415730.0,
+    "top3Share": 0.3921468946640357,
+    "restMedian": 305450.0,
+    "floor": 88025.0,
+    "ppg": 1.4,
+    "gd": 1
+   },
+   {
+    "club": "Chicago Fire",
+    "payroll": 21733136.0,
+    "top3": 10745515.0,
+    "top3Share": 0.49443002611312054,
+    "restMedian": 301704.5,
+    "floor": 88025.0,
+    "ppg": 1.8571428571428572,
+    "gd": 11
+   },
+   {
+    "club": "Colorado Rapids",
+    "payroll": 14127613.04,
+    "top3": 4877663.0,
+    "top3Share": 0.3452574037942365,
+    "restMedian": 160000.0,
+    "floor": 88025.0,
+    "ppg": 1.0666666666666667,
+    "gd": 1
+   },
+   {
+    "club": "Columbus Crew",
+    "payroll": 22338020.0,
+    "top3": 9736212.0,
+    "top3Share": 0.43585832584982914,
+    "restMedian": 472500.0,
+    "floor": 88025.0,
+    "ppg": 1.0666666666666667,
+    "gd": -2
+   },
+   {
+    "club": "DC United",
+    "payroll": 14546167.0,
+    "top3": 4928320.0,
+    "top3Share": 0.33880540488776184,
+    "restMedian": 262500.0,
+    "floor": 88025.0,
+    "ppg": 1.2,
+    "gd": -4
+   },
+   {
+    "club": "FC Cincinnati",
+    "payroll": 23472623.0,
+    "top3": 12496411.0,
+    "top3Share": 0.5323823843632643,
+    "restMedian": 205267.5,
+    "floor": 88025.0,
+    "ppg": 1.3333333333333333,
+    "gd": -1
+   },
+   {
+    "club": "FC Dallas",
+    "payroll": 14539074.0,
+    "top3": 4688387.0,
+    "top3Share": 0.3224680608957627,
+    "restMedian": 257000.0,
+    "floor": 88025.0,
+    "ppg": 1.6666666666666667,
+    "gd": 8
+   },
+   {
+    "club": "Houston Dynamo",
+    "payroll": 20912912.0,
+    "top3": 7446490.0,
+    "top3Share": 0.35607140698531126,
+    "restMedian": 571500.0,
+    "floor": 88025.0,
+    "ppg": 1.5714285714285714,
+    "gd": -4
+   },
+   {
+    "club": "Inter Miami",
+    "payroll": 54574541.0,
+    "top3": 41845853.0,
+    "top3Share": 0.7667650929029344,
+    "restMedian": 449422.5,
+    "floor": 88025.0,
+    "ppg": 2.066666666666667,
+    "gd": 11
+   },
+   {
+    "club": "LA Galaxy",
+    "payroll": 26431650.0,
+    "top3": 13209188.0,
+    "top3Share": 0.49974889952008295,
+    "restMedian": 351104.0,
+    "floor": 88025.0,
+    "ppg": 1.3333333333333333,
+    "gd": 0
+   },
+   {
+    "club": "LAFC",
+    "payroll": 32648541.0,
+    "top3": 17892069.0,
+    "top3Share": 0.5480204766271178,
+    "restMedian": 550000.0,
+    "floor": 88025.0,
+    "ppg": 1.6,
+    "gd": 7
+   },
+   {
+    "club": "Minnesota United",
+    "payroll": 15552855.0,
+    "top3": 4041080.0,
+    "top3Share": 0.25982882242520744,
+    "restMedian": 240000.0,
+    "floor": 88025.0,
+    "ppg": 1.4666666666666666,
+    "gd": -4
+   },
+   {
+    "club": "Nashville SC",
+    "payroll": 22989086.0,
+    "top3": 13688234.0,
+    "top3Share": 0.5954231499242728,
+    "restMedian": 200500.0,
+    "floor": 88025.0,
+    "ppg": 2.357142857142857,
+    "gd": 20
+   },
+   {
+    "club": "New England Revolution",
+    "payroll": 19411614.32,
+    "top3": 8512294.32,
+    "top3Share": 0.43851552888260764,
+    "restMedian": 308800.0,
+    "floor": 88025.0,
+    "ppg": 1.7857142857142858,
+    "gd": 4
+   },
+   {
+    "club": "New York City FC",
+    "payroll": 21539612.0,
+    "top3": 7422000.0,
+    "top3Share": 0.34457445194463115,
+    "restMedian": 311542.0,
+    "floor": 88025.0,
+    "ppg": 1.2666666666666666,
+    "gd": 4
+   },
+   {
+    "club": "New York Red Bulls",
+    "payroll": 21651691.0,
+    "top3": 10876292.0,
+    "top3Share": 0.5023299103982225,
+    "restMedian": 231880.0,
+    "floor": 99925.0,
+    "ppg": 1.4666666666666666,
+    "gd": -7
+   },
+   {
+    "club": "Orlando City SC",
+    "payroll": 13732571.0,
+    "top3": 4349867.0,
+    "top3Share": 0.31675547135347054,
+    "restMedian": 420937.5,
+    "floor": 88025.0,
+    "ppg": 0.9333333333333333,
+    "gd": -21
+   },
+   {
+    "club": "Philadelphia Union",
+    "payroll": 11696829.0,
+    "top3": 2731350.0,
+    "top3Share": 0.2335120056897472,
+    "restMedian": 226800.0,
+    "floor": 88025.0,
+    "ppg": 0.4666666666666667,
+    "gd": -12
+   },
+   {
+    "club": "Portland Timbers",
+    "payroll": 18450879.0,
+    "top3": 7849750.0,
+    "top3Share": 0.4254404356562091,
+    "restMedian": 388044.0,
+    "floor": 88025.0,
+    "ppg": 1.0,
+    "gd": -6
+   },
+   {
+    "club": "Real Salt Lake",
+    "payroll": 15288195.0,
+    "top3": 4467000.0,
+    "top3Share": 0.29218622603911054,
+    "restMedian": 171100.0,
+    "floor": 88025.0,
+    "ppg": 1.8571428571428572,
+    "gd": 7
+   },
+   {
+    "club": "San Diego FC",
+    "payroll": 24391009.0,
+    "top3": 14763092.0,
+    "top3Share": 0.6052677853548412,
+    "restMedian": 211695.5,
+    "floor": 88025.0,
+    "ppg": 1.1333333333333333,
+    "gd": 3
+   },
+   {
+    "club": "San Jose Earthquakes",
+    "payroll": 15825282.0,
+    "top3": 6250414.0,
+    "top3Share": 0.39496383066033197,
+    "restMedian": 225000.0,
+    "floor": 88025.0,
+    "ppg": 2.1333333333333333,
+    "gd": 19
+   },
+   {
+    "club": "Seattle Sounders FC",
+    "payroll": 19092219.0,
+    "top3": 6940437.0,
+    "top3Share": 0.36352175721428714,
+    "restMedian": 315000.0,
+    "floor": 88025.0,
+    "ppg": 1.8461538461538463,
+    "gd": 6
+   },
+   {
+    "club": "Sporting Kansas City",
+    "payroll": 12359396.0,
+    "top3": 6922813.0,
+    "top3Share": 0.5601255109877538,
+    "restMedian": 117998.0,
+    "floor": 88025.0,
+    "ppg": 0.7857142857142857,
+    "gd": -22
+   },
+   {
+    "club": "St. Louis City SC",
+    "payroll": 18809928.0,
+    "top3": 6700313.0,
+    "top3Share": 0.3562115176623749,
+    "restMedian": 335527.0,
+    "floor": 88025.0,
+    "ppg": 1.1428571428571428,
+    "gd": -4
+   },
+   {
+    "club": "Toronto FC",
+    "payroll": 21391233.0,
+    "top3": 9801908.0,
+    "top3Share": 0.45822080475678983,
+    "restMedian": 292237.5,
+    "floor": 88025.0,
+    "ppg": 1.0,
+    "gd": -7
+   },
+   {
+    "club": "Vancouver Whitecaps",
+    "payroll": 24559629.0,
+    "top3": 10242231.0,
+    "top3Share": 0.41703524918882123,
+    "restMedian": 430150.0,
+    "floor": 88025.0,
+    "ppg": 2.2857142857142856,
+    "gd": 22
+   }
+  ],
+  "top3PpgR": 0.322,
+  "top3PpgP": 0.083,
+  "restMedianPpgR": 0.187,
+  "restMedianPpgP": 0.323,
+  "floorPpgR": -0.013,
+  "floorPpgP": 0.945,
+  "corr": {
+   "tiers": [
+    "Top-3 stars",
+    "Middle class",
+    "Roster floor"
+   ],
+   "metrics": [
+    {
+     "key": "ppg",
+     "label": "Points per game",
+     "values": [
+      0.322,
+      0.187,
+      -0.013
+     ]
+    },
+    {
+     "key": "gf",
+     "label": "Goals scored",
+     "values": [
+      0.398,
+      0.085,
+      0.013
+     ]
+    },
+    {
+     "key": "ga",
+     "label": "Goals Conceded (negative bar is better)",
+     "values": [
+      -0.125,
+      -0.112,
+      0.234
+     ]
+    }
+   ]
+  }
  }
 };

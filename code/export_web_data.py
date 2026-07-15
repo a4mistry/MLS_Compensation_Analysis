@@ -194,10 +194,106 @@ roster = {
     "spotlight": SPOTLIGHT,
 }
 
+# ---- deeper analyses: marketability gap, goal efficiency, stars vs middle ----
+BASE = "base_salary"
+
+
+def _pear(a, b):
+    r, pv = stats.pearsonr(a, b)
+    return round(float(r), 3), round(float(pv), 3)
+
+
+# 1) marketability gap: guaranteed comp above base salary
+pg = players.copy()
+pg["gap"] = pg[PAY] - pg[BASE]
+pg["name"] = (pg["first_name"].fillna("") + " " + pg["last_name"].fillna("")).str.strip()
+base_total, guar_total = float(pg[BASE].sum()), float(pg[PAY].sum())
+mkt_total = guar_total - base_total
+top_gap = pg.nlargest(15, "gap")
+club_mkt = pg.groupby("club").agg(marketing=("gap", "sum"), payroll=(PAY, "sum"))
+club_mkt["mpct"] = club_mkt["marketing"] / club_mkt["payroll"]
+club_mkt["ppg"] = club_mkt.index.map(ppg_by_club)
+mkt_r, mkt_p = _pear(club_mkt["mpct"].values, club_mkt["ppg"].values)
+gap = {
+    "baseTotal": base_total, "guarTotal": guar_total,
+    "marketingTotal": mkt_total, "marketingPct": mkt_total / guar_total,
+    "nWithGap": int((pg["gap"] > 1).sum()), "nPlayers": int(len(pg)),
+    "topGap": [{"name": r["name"], "club": r.club, "bucket": r.bucket,
+                "base": float(r[BASE]), "guar": float(r[PAY]), "gap": float(r.gap)}
+               for _, r in top_gap.iterrows()],
+    "byPosition": [{"bucket": b, "marketing": float(pg.loc[pg.bucket == b, "gap"].sum()),
+                    "shareWithGap": float((pg.loc[pg.bucket == b, "gap"] > 1).mean())}
+                   for b in POS_ORDER],
+    "marketingPpgR": mkt_r, "marketingPpgP": mkt_p,
+}
+
+# 2) goal difference / position-spending efficiency
+gcl = pd.DataFrame({
+    "attackPay": sums["Attack"],
+    "defPay": sums["Defense"] + sums["Goalkeeper"],
+    "payroll": sums.sum(axis=1),
+}).join(st[["gf", "ga", "gd", "conf"]])
+gcl["ppg"] = gcl.index.map(ppg_by_club)
+gcl["goalsPer10mAtk"] = gcl["gf"] / (gcl["attackPay"] / 1e7)
+gcl = gcl.reset_index()
+atk_gf = _pear(gcl["attackPay"].values, gcl["gf"].values)
+def_ga = _pear(gcl["defPay"].values, gcl["ga"].values)
+pay_gd = _pear(np.log10(gcl["payroll"].values), gcl["gd"].values)
+goals = {
+    "clubs": [{"club": r.club, "conf": r.conf, "attackPay": float(r.attackPay),
+               "defPay": float(r.defPay), "payroll": float(r.payroll),
+               "gf": int(r.gf), "ga": int(r.ga), "gd": int(r.gd),
+               "ppg": float(r.ppg), "goalsPer10mAtk": float(r.goalsPer10mAtk)}
+              for _, r in gcl.iterrows()],
+    "attackGfR": atk_gf[0], "attackGfP": atk_gf[1],
+    "defGaR": def_ga[0], "defGaP": def_ga[1],
+    "payrollGdR": pay_gd[0], "payrollGdP": pay_gd[1],
+}
+
+
+# 3) stars (top-3 pay) vs the roster's "middle class"
+def _club_stats(d):
+    d = d.sort_values(PAY, ascending=False)
+    rest = d[PAY].iloc[3:]
+    return pd.Series({"payroll": float(d[PAY].sum()), "top3": float(d[PAY].iloc[:3].sum()),
+                      "restMedian": float(rest.median()), "floor": float(d[PAY].min())})
+
+
+mc = players.groupby("club").apply(_club_stats, include_groups=False)
+mc["top3Share"] = mc["top3"] / mc["payroll"]
+mc = mc.join(st[["gf", "ga", "gd"]])
+mc["ppg"] = mc.index.map(ppg_by_club)
+_lt = {"Top-3 stars": np.log10(mc["top3"].values),
+       "Middle class": np.log10(mc["restMedian"].values),
+       "Roster floor": np.log10(mc["floor"].values)}
+_out = {"ppg": mc["ppg"].values, "gf": mc["gf"].values, "ga": mc["ga"].values}
+corrgrid = {name: {mk: _pear(x, col)[0] for mk, col in _out.items()} for name, x in _lt.items()}
+top3_ppg = _pear(_lt["Top-3 stars"], mc["ppg"].values)
+rest_ppg = _pear(_lt["Middle class"], mc["ppg"].values)
+floor_ppg = _pear(_lt["Roster floor"], mc["ppg"].values)
+middle = {
+    "clubs": [{"club": c, "payroll": float(r.payroll), "top3": float(r.top3),
+               "top3Share": float(r.top3Share), "restMedian": float(r.restMedian),
+               "floor": float(r.floor), "ppg": float(r.ppg), "gd": int(r.gd)}
+              for c, r in mc.iterrows()],
+    "top3PpgR": top3_ppg[0], "top3PpgP": top3_ppg[1],
+    "restMedianPpgR": rest_ppg[0], "restMedianPpgP": rest_ppg[1],
+    "floorPpgR": floor_ppg[0], "floorPpgP": floor_ppg[1],
+    "corr": {
+        "tiers": list(_lt.keys()),
+        "metrics": [
+            {"key": "ppg", "label": "Points per game", "values": [corrgrid[t]["ppg"] for t in _lt]},
+            {"key": "gf", "label": "Goals scored", "values": [corrgrid[t]["gf"] for t in _lt]},
+            {"key": "ga", "label": "Goals Conceded (negative bar is better)",
+             "values": [corrgrid[t]["ga"] for t in _lt]},
+        ],
+    },
+}
+
 data = {
     "league": league, "hist": hist, "topEarners": topEarners,
     "positions": positions, "clubs": clubs, "regression": regression,
-    "roster": roster,
+    "roster": roster, "gap": gap, "goals": goals, "middle": middle,
 }
 
 out = ROOT / "web" / "site_data.js"
