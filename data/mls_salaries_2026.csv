@@ -1,0 +1,917 @@
+﻿first_name,last_name,club,position,base_salary,guaranteed_comp
+Adrian,Gill,Atlanta United,Central Midfield,88025.0,88025.0
+Adyn,Torres,Atlanta United,Defensive Midfield,120000.0,120000.0
+Ajani,Fortune,Atlanta United,Central Midfield,120000.0,120000.0
+Aleksey,Miranchuk,Atlanta United,Attacking Midfield,3800000.0,5085441.0
+Ashton,Gordon,Atlanta United,Right Wing,88025.0,88025.0
+Cayman,Togashi,Atlanta United,Center Forward,113400.0,113400.0
+Cooper,Sanchez,Atlanta United,Central Midfield,88025.0,88025.0
+Dominik,Chong Qui,Atlanta United,Left-back,88025.0,88025.0
+Elías,Báez,Atlanta United,Left-back,264706.0,293706.0
+Emmanuel,Latte Lath,Atlanta United,Center Forward,3240000.0,3736000.0
+Enea,Mihaj,Atlanta United,Center-back,1215000.0,1557000.0
+Fafà,Picault,Atlanta United,Left Wing,113400.0,142250.0
+Jayden,Hibbert,Atlanta United,Goalkeeper,113400.0,113400.0
+Juan,Berrocal,Atlanta United,Center-back,1424666.64,1424666.64
+Lucas,Hoyos,Atlanta United,Goalkeeper,315000.0,342667.0
+Luke,Brennan,Atlanta United,Right Midfield,125000.0,125000.0
+Matías,Galarza,Atlanta United,Central Midfield,720000.0,945413.0
+Matthew,Edwards,Atlanta United,Center-back,113400.0,113400.0
+Miguel,Almirón,Atlanta United,Right Wing,6056000.0,7871000.0
+Pedro,Amador,Atlanta United,Left-back,256992.0,292604.0
+Ronald,Hernández,Atlanta United,Right-back,145000.0,159000.0
+Saba,Lobjanidze,Atlanta United,Left Wing,900000.0,998750.0
+Santiago,Pita,Atlanta United,Attacking Midfield,88025.0,88025.0
+Sergio,Santos,Atlanta United,Center Forward,113400.0,171000.0
+Steven,Alzate,Atlanta United,Central Midfield,1062186.0,1377087.0
+Stian,Gregersen,Atlanta United,Center-back,850000.0,970000.0
+Tomás,Jacob,Atlanta United,Center-back,525000.0,642500.0
+Tristan,Muyumba,Atlanta United,Defensive Midfield,600000.0,641600.0
+Will,Reilly,Atlanta United,Central Midfield,88025.0,88025.0
+Besard,Šabović,Austin FC,Central Midfield,650000.0,650000.0
+Brad,Stuver,Austin FC,Goalkeeper,600000.0,631667.0
+Brandon,Vazquez,Austin FC,Center Forward,3350000.0,3701778.0
+Brendan,Hines-Ike,Austin FC,Center-back,375000.0,375000.0
+Christian,Ramirez,Austin FC,Center Forward,525000.0,577500.0
+CJ,Fodrey,Austin FC,Left Wing,120000.0,120000.0
+Damian,Las,Austin FC,Goalkeeper,175000.0,175000.0
+Daniel,Pereira,Austin FC,Central Midfield,750000.0,793750.0
+Ervin,Torres,Austin FC,Central Midfield,88025.0,104525.0
+Facundo,Torres,Austin FC,Right Wing,3360000.0,4405000.0
+Guilherme,da Trindade Dubas,Austin FC,Left-back,325000.0,325000.0
+Ilie,Sánchez,Austin FC,Defensive Midfield,225000.0,225000.0
+Jayden,Nelson,Austin FC,Left Wing,499999.92,554000.0
+Jon,Gallagher,Austin FC,Right-back,400000.0,400000.0
+Jon,Bell,Austin FC,Center-back,225000.0,225000.0
+Joseph,Rosales,Austin FC,Left-back,500000.0,529875.0
+Mateja,Djordjević,Austin FC,Center-back,325000.0,335000.0
+Micah,Burton,Austin FC,Attacking Midfield,125000.0,136000.0
+Mikkel,Desler,Austin FC,Right-back,550000.0,550000.0
+Myrto,Uzuni,Austin FC,Left Wing,1600000.0,2305000.0
+Nicolás,Dubersarsky,Austin FC,Central Midfield,325000.0,347986.0
+Oleksandr,Svatok,Austin FC,Center-back,575000.0,580000.0
+Owen,Wolff,Austin FC,Central Midfield,750000.0,750000.0
+Riley,Thomas,Austin FC,Right-back,88025.0,88025.0
+Robert,Taylor,Austin FC,Left Wing,575000.0,633333.0
+Žan,Kolmanič,Austin FC,Left-back,375000.0,375000.0
+Aleksandr,Guboglo,CF Montreal,Right-back,88025.0,93714.0
+Bode,Hidalgo,CF Montreal,Right-back,290000.0,320800.0
+Brandan,Craig,CF Montreal,Center-back,88025.0,97830.0
+Brayan,Vera,CF Montreal,Center-back,650000.0,748000.0
+Dagur Dan,Thórhallsson,CF Montreal,Right-back,480000.0,530625.0
+Daniel,Ríos,CF Montreal,Center Forward,225000.0,237066.0
+Dawid,Bugaj,CF Montreal,Right-back,240000.0,267600.0
+Efraín,Morales,CF Montreal,Center-back,400000.0,451250.0
+Emil,Gazdov,CF Montreal,Goalkeeper,88025.0,96172.0
+Fabian,Herbers,CF Montreal,Right Wing,400000.0,440000.0
+Félix,Samson,CF Montreal,Center-back,88025.0,91740.0
+Gennadiy,Synchuk,CF Montreal,Right Wing,600000.0,606000.0
+Ivan,Losenko,CF Montreal,Central Midfield,210000.0,248000.0
+Iván,Jaime,CF Montreal,Attacking Midfield,1920000.0,2111200.0
+Jalen,Neal,CF Montreal,Center-back,675000.0,756250.0
+Josh,Nteziryayo,CF Montreal,Defensive Midfield,88025.0,91120.0
+Luca,Petrasso,CF Montreal,Left-back,119600.0,134736.0
+Mahala,Opoku,CF Montreal,Right Wing,583333.0,723560.0
+Matty,Longstaff,CF Montreal,Central Midfield,416000.0,435869.0
+Noah,Streit,CF Montreal,Right Wing,400000.0,451333.0
+Olger,Escobar,CF Montreal,Attacking Midfield,88025.0,93421.0
+Owen,Graham-Roache,CF Montreal,Center Forward,88025.0,93915.0
+Prince,Owusu,CF Montreal,Center Forward,1300000.0,1330000.0
+Samsy,Keita,CF Montreal,Goalkeeper,88025.0,102637.0
+Samuel,Piette,CF Montreal,Defensive Midfield,535250.0,621016.0
+Sébastian,Breza,CF Montreal,Goalkeeper,113400.0,123400.0
+Sunusi,Ibrahim,CF Montreal,Center Forward,350000.0,410000.0
+Thomas,Gillier,CF Montreal,Goalkeeper,445000.0,487000.0
+Tomás,Avilés,CF Montreal,Center-back,495000.0,522500.0
+Victor,Loturi,CF Montreal,Central Midfield,135000.0,146500.0
+Wikelman,Carmona,CF Montreal,Attacking Midfield,550000.0,555000.0
+Andrew,Johnson,Charlotte FC,Center-back,88025.0,89309.0
+Andrew,Privett,Charlotte FC,Center-back,250000.0,281400.0
+Archie,Goodwin,Charlotte FC,Center Forward,325000.0,366187.0
+Ashley,Westwood,Charlotte FC,Defensive Midfield,800000.0,833333.0
+Baye,Coulibaly,Charlotte FC,Central Midfield,300000.0,329500.0
+Brandt,Bronico,Charlotte FC,Central Midfield,500000.0,551667.0
+Brian,Romero,Charlotte FC,Right Wing,175000.0,185833.0
+Chituru,Odunze,Charlotte FC,Goalkeeper,125000.0,138508.0
+David,Schnegg,Charlotte FC,Left-back,650000.0,756250.0
+Djibril,Diani,Charlotte FC,Defensive Midfield,350000.0,387944.0
+Harry,Toffolo,Charlotte FC,Left-back,900000.0,1020000.0
+Henry,Kessler,Charlotte FC,Center-back,850000.0,965525.0
+Idan,Toklomati,Charlotte FC,Center Forward,700000.0,781500.0
+Isaac,Walker,Charlotte FC,Goalkeeper,113400.0,121376.0
+Jack,Neeley,Charlotte FC,Center-back,140000.0,142000.0
+Kerwin,Vargas,Charlotte FC,Right Wing,650000.0,733750.0
+Kristijan,Kahlina,Charlotte FC,Goalkeeper,775000.0,813750.0
+Liel,Abada,Charlotte FC,Right Wing,2500000.0,2648500.0
+Luca,de la Torre,Charlotte FC,Central Midfield,1457386.0,1611827.0
+Mikah,Thomas,Charlotte FC,Left-back,88025.0,88428.0
+Morrison,Agyemang,Charlotte FC,Center-back,240000.0,262080.0
+Nathan,Byrne,Charlotte FC,Right-back,475000.0,498750.0
+Nick,Holliday,Charlotte FC,Goalkeeper,88025.0,88025.0
+Nimfasha,Berchimas,Charlotte FC,Left Wing,150000.0,164934.0
+Pep,Biel,Charlotte FC,Attacking Midfield,2775000.0,3015563.0
+Tim,Ream,Charlotte FC,Center-back,1000000.0,1127750.0
+Tyger,Smalls,Charlotte FC,Right Wing,113400.0,113400.0
+Tyler,Miller,Charlotte FC,Goalkeeper,226800.0,250925.0
+Wilfried,Zaha,Charlotte FC,Left Wing,2666667.0,2751667.0
+Will,Cleary,Charlotte FC,Right-back,88025.0,89309.0
+Rodolfo,Aloko,Charlotte FC,Right Wing,220000.0,251667.0
+André,Franco,Chicago Fire,Attacking Midfield,1200000.0,1306771.0
+Andrew,Gutman,Chicago Fire,Left-back,625000.0,625000.0
+Anton,Salétros,Chicago Fire,Central Midfield,700000.0,750000.0
+Chris,Mueller,Chicago Fire,Right Wing,150000.0,186600.0
+Chris,Brady,Chicago Fire,Goalkeeper,250000.0,348333.0
+Christopher,Cupps,Chicago Fire,Center-back,113400.0,116186.0
+David,Poreba,Chicago Fire,Attacking Midfield,88025.0,98858.0
+Dean,Boltz,Chicago Fire,Center Forward,88025.0,90025.0
+Djé,D'Avilla,Chicago Fire,Defensive Midfield,573000.0,685486.0
+Dylan,Borso,Chicago Fire,Right Wing,113400.0,121400.0
+Hugo,Cuypers,Chicago Fire,Center Forward,3238000.0,3528044.0
+Jack,Elliott,Chicago Fire,Center-back,960511.0,1054275.0
+Jason,Shokalook,Chicago Fire,Center Forward,88025.0,88025.0
+Jeff,Gal,Chicago Fire,Goalkeeper,150000.0,165000.0
+Joel,Waterman,Chicago Fire,Center-back,517000.0,598150.0
+Jonathan,Dean,Chicago Fire,Right-back,175000.0,210700.0
+Jonathan,Bamba,Chicago Fire,Left Wing,5000000.0,5581806.0
+Josh,Cohen,Chicago Fire,Goalkeeper,165000.0,181250.0
+Leonardo,Barroso,Chicago Fire,Right-back,350000.0,395500.0
+Maren,Haile-Selassie,Chicago Fire,Right Midfield,444000.0,483500.0
+Mauricio,Pineda,Chicago Fire,Center-back,200000.0,320157.0
+Mbekezeli,Mbokazi,Chicago Fire,Center-back,593000.0,655620.0
+Omari,Glasgow,Chicago Fire,Right Midfield,113400.0,127085.0
+Philip,Zinckernagel,Chicago Fire,Right Wing,1455125.0,1635665.0
+Puso,Dithejane,Chicago Fire,Right Wing,250000.0,283252.0
+Robert,Turdean,Chicago Fire,Attacking Midfield,125000.0,157927.0
+Robin,Lod,Chicago Fire,Central Midfield,800000.0,866667.0
+Sam,Williams,Chicago Fire,Defensive Midfield,88025.0,99354.0
+Sam,Rogers,Chicago Fire,Center-back,200000.0,223000.0
+Sergio,Oregel,Chicago Fire,Central Midfield,350000.0,392500.0
+Viktor,Radojević,Chicago Fire,Left-back,350000.0,357000.0
+Adam,Beaudry,Colorado Rapids,Goalkeeper,113400.0,115900.0
+Alex,Harris,Colorado Rapids,Right Wing,88025.0,90025.0
+Alexis,Manyoma,Colorado Rapids,Left Wing,654000.0,711750.0
+Ali,Fadal,Colorado Rapids,Central Midfield,113400.0,113400.0
+Bryce,Jamison,Colorado Rapids,Right Wing,113400.0,125866.0
+Connor,Ronan,Colorado Rapids,Central Midfield,510000.0,562400.0
+Dante,Sealy,Colorado Rapids,Right Wing,150000.0,168022.0
+Darren,Yapi,Colorado Rapids,Center Forward,795000.0,820000.0
+Donavan,Phillip,Colorado Rapids,Center Forward,88025.0,88025.0
+Georgi,Minoungou,Colorado Rapids,Right Wing,113400.0,113400.0
+Hamzat,Ojediran,Colorado Rapids,Defensive Midfield,800000.0,881667.0
+Ian,Murphy,Colorado Rapids,Center-back,400000.0,447500.0
+Jackson,Travis,Colorado Rapids,Left-back,125000.0,127500.0
+Josh,Atencio,Colorado Rapids,Defensive Midfield,462500.0,462500.0
+Keegan,Rosenberry,Colorado Rapids,Right-back,300000.0,300000.0
+Kimani,Stewart-Baynes,Colorado Rapids,Left Wing,115000.0,116000.0
+Kosi,Thompson,Colorado Rapids,Right-back,140000.0,145260.0
+Lucas,Herrington,Colorado Rapids,Center-back,200004.0,235004.0
+Mamadou Billo,Diop,Colorado Rapids,Center Forward,88025.0,88025.0
+Miguel,Navarro,Colorado Rapids,Left-back,498000.0,548781.0
+Nicolas,Hansen,Colorado Rapids,Goalkeeper,160000.0,160000.0
+Noah,Cobb,Colorado Rapids,Center-back,130000.04,130000.04
+Paxten,Aaronson,Colorado Rapids,Attacking Midfield,2000000.0,2228063.0
+Rafael,Navarro Leal,Colorado Rapids,Center Forward,1392000.0,1449600.0
+Reggie,Cannon,Colorado Rapids,Right-back,750000.0,841500.0
+Rob,Holding,Colorado Rapids,Center-back,1200000.0,1200000.0
+Sydney,Wathuta,Colorado Rapids,Central Midfield,88025.0,88025.0
+Theodore,Ku-DiPietro,Colorado Rapids,Attacking Midfield,500000.0,556000.0
+Wayne,Frederick,Colorado Rapids,Central Midfield,113400.0,113400.0
+Zack,Steffen,Colorado Rapids,Goalkeeper,1100000.0,1100000.0
+Amar,Sejdić,Columbus Crew,Defensive Midfield,200000.0,214550.0
+André,Gomes,Columbus Crew,Central Midfield,875000.0,971944.0
+Andrés,Herrera,Columbus Crew,Right-back,650000.0,727632.0
+Cesar,Ruvalcaba,Columbus Crew,Center-back,113400.0,113400.0
+Chase,Adams,Columbus Crew,Center Forward,88025.0,114303.0
+Cole,Mrowka,Columbus Crew,Central Midfield,113400.0,133408.0
+Dániel,Gazdag,Columbus Crew,Attacking Midfield,2049996.0,2647635.0
+Diego,Rossi,Columbus Crew,Attacking Midfield,2775000.0,3476827.0
+Dylan,Chambost,Columbus Crew,Central Midfield,600000.0,695250.0
+Evan,Bush,Columbus Crew,Goalkeeper,113400.0,113400.0
+Hugo,Picard,Columbus Crew,Left Midfield,725000.0,781244.0
+Jamal,Thiaré,Columbus Crew,Center Forward,500000.0,530000.0
+Luke,Pruter,Columbus Crew,Goalkeeper,113400.0,113400.0
+Malte,Amundsen,Columbus Crew,Center-back,675000.0,747500.0
+Max,Arfsten,Columbus Crew,Left Wing,800000.0,895000.0
+Mohamed,Farsi,Columbus Crew,Right Midfield,500000.0,530000.0
+Nariman,Akhundzada,Columbus Crew,Center Forward,550000.0,633389.0
+Nicholas,Hagen,Columbus Crew,Goalkeeper,165000.0,183600.0
+Owen,Presthus,Columbus Crew,Right-back,88025.0,94216.0
+Patrick,Schulte,Columbus Crew,Goalkeeper,900000.0,1032083.0
+Quinton,Elliot,Columbus Crew,Right Midfield,88025.0,92668.0
+Rudy,Camacho,Columbus Crew,Center-back,350000.0,415000.0
+Sean,Zawadzki,Columbus Crew,Central Midfield,800000.0,900500.0
+Sekou,Bangoura,Columbus Crew,Central Midfield,450000.0,542167.0
+Stanislav,Lapkes,Columbus Crew,Goalkeeper,95400.0,114490.0
+Steven,Moreira,Columbus Crew,Right-back,840000.0,922000.0
+Taha,Habroune,Columbus Crew,Central Midfield,140000.0,152000.0
+Tristan,Brown,Columbus Crew,Left-back,88025.0,92389.0
+Wessam,Abou Ali,Columbus Crew,Center Forward,2775000.0,3611750.0
+Yevgen,Cheberko,Columbus Crew,Center-back,610000.0,658250.0
+Zach,Zengue,Columbus Crew,Midfielder,88025.0,88025.0
+Aarón,Herrera,DC United,Right-back,850000.0,945220.0
+Alex,Bono,DC United,Goalkeeper,250000.0,262500.0
+Brandon,Servania,DC United,Central Midfield,275000.0,303722.0
+Caden,Clark,DC United,Attacking Midfield,400000.0,432000.0
+Conner,Antley,DC United,Right-back,120000.0,121667.0
+Gabriel,Segal,DC United,Center Forward,113400.0,113400.0
+Gabriel,Cordeiro Pirani,DC United,Attacking Midfield,800000.0,866700.0
+Garrison,Tubbs,DC United,Center-back,113400.0,113400.0
+Gavin,Turner,DC United,Attacking Midfield,88025.0,110259.0
+Grant,Leveille,DC United,Goalkeeper,88025.0,96750.0
+Hakim,Karamoko,DC United,Right Wing,88025.0,88025.0
+Hosei,Kijima,DC United,Central Midfield,113400.0,113400.0
+Jackson,Hopkins,DC United,Attacking Midfield,157500.0,157833.0
+Jacob,Murrell,DC United,Center Forward,113400.0,113400.0
+Jared,Stroud,DC United,Left Wing,425000.0,467500.0
+João Gabriel,Martins Peglow,DC United,Left Wing,375000.0,626312.0
+Joon-hong,Kim,DC United,Goalkeeper,250000.0,349880.0
+Jordan,Farr,DC United,Goalkeeper,113400.0,118400.0
+Keisuke,Kurokawa,DC United,Left-back,550000.0,615500.0
+Kye,Rowles,DC United,Center-back,550000.0,751667.0
+Louis,Munteanu,DC United,Center Forward,1190000.0,1634100.0
+Lucas,Bartlett,DC United,Center-back,525000.0,585625.0
+Matti,Peltola,DC United,Defensive Midfield,800000.0,876000.0
+Nikola,Marković,DC United,Center-back,88025.0,93858.0
+Oscar,Avilez,DC United,Left Wing,88025.0,108966.0
+Richie,Aman,DC United,Midfielder,88025.0,89025.0
+Sean,Johnson,DC United,Goalkeeper,883475.0,883475.0
+Sean,Nealis,DC United,Center-back,650000.0,723750.0
+Silvan,Hefti,DC United,Right-back,370000.0,434833.0
+Tai,Baribo,DC United,Center Forward,2100000.0,2349000.0
+Ademar,Chávez,FC Cincinnati,Attacking Midfield,88025.0,113840.0
+Alvas,Powell,FC Cincinnati,Right-back,285000.0,325750.0
+Andrei,Chirilă,FC Cincinnati,Center-back,88025.0,98373.0
+Ayoub,Jabbari,FC Cincinnati,Center Forward,420000.0,474800.0
+Brian,Schaefer,FC Cincinnati,Center-back,113400.0,120067.0
+Bryan,Ramírez,FC Cincinnati,Right Wing,435000.0,684100.0
+Ender,Echenique,FC Cincinnati,Right Wing,356400.0,446580.0
+Evan,Louro,FC Cincinnati,Goalkeeper,237500.0,259635.0
+Evander,da Silva Ferreira,FC Cincinnati,Attacking Midfield,3200000.0,4736411.0
+Fabian,Mrozek,FC Cincinnati,Goalkeeper,113400.0,150900.0
+Gerardo,Valenzuela,FC Cincinnati,Attacking Midfield,125000.0,142542.0
+Gilberto,Flores,FC Cincinnati,Center-back,390000.0,436672.0
+Kenji,Mboma Dem,FC Cincinnati,Center Forward,88025.0,88025.0
+Kévin,Denkey,FC Cincinnati,Center Forward,3800000.0,3810000.0
+Kristian,Fletcher,FC Cincinnati,Center Forward,113400.0,126733.0
+Kyle,Smith,FC Cincinnati,Right-back,113400.0,118400.0
+Matt,Miazga,FC Cincinnati,Center-back,1639000.0,1639000.0
+Miles,Robinson,FC Cincinnati,Center-back,3500000.0,3950000.0
+Nick,Hagglund,FC Cincinnati,Center-back,113400.0,130067.0
+Obinna,Nwobodo,FC Cincinnati,Defensive Midfield,1500000.0,1849724.0
+Paul,Walters,FC Cincinnati,Goalkeeper,113400.0,121367.0
+Pavel,Bucha,FC Cincinnati,Central Midfield,499992.0,548774.0
+Roman,Celentano,FC Cincinnati,Goalkeeper,525000.0,574000.0
+Samuel,Gidi,FC Cincinnati,Central Midfield,600000.0,671050.0
+Ștefan,Chirilă,FC Cincinnati,Center Forward,113400.0,128180.0
+Stiven,Jimenez,FC Cincinnati,Central Midfield,113400.0,113400.0
+Tah,Anunga,FC Cincinnati,Central Midfield,250000.0,262500.0
+Teenage,Hadebe,FC Cincinnati,Center-back,1080000.0,1230000.0
+Tom,Barlow,FC Cincinnati,Center Forward,113400.0,121733.0
+Álvaro,Augusto,FC Dallas,Center-back,113400.0,125518.0
+Anderson,Julio,FC Dallas,Right Wing,750000.0,820000.0
+Bernard,Kamungo,FC Dallas,Right Wing,250000.0,281000.0
+Brooks,Thompson,FC Dallas,Goalkeeper,113400.0,113400.0
+Caleb,Swann,FC Dallas,Central Midfield,88025.0,88025.0
+Christian,Cappis,FC Dallas,Central Midfield,352000.0,352000.0
+Daniel,Baran,FC Dallas,Right Wing,88025.0,102241.0
+Diego,García,FC Dallas,Central Midfield,88025.0,101666.0
+Enes,Sali,FC Dallas,Left Wing,350000.0,395000.0
+Enzo,Newman,FC Dallas,Right-back,88025.0,88025.0
+Geovane,de Jesus Rocha,FC Dallas,Right-back,400000.0,447000.0
+Herman,Johansson,FC Dallas,Right Midfield,600000.0,740000.0
+Jaidyn,Contreras,FC Dallas,Left Wing,88025.0,88025.0
+Joaquín,Valiente,FC Dallas,Attacking Midfield,400000.0,442022.0
+Jonathan,Sirois,FC Dallas,Goalkeeper,250000.0,267625.0
+Joshua,Torquato,FC Dallas,Left-back,88025.0,96025.0
+Kaick,da Silva Ferreira,FC Dallas,Defensive Midfield,200000.0,251900.0
+Kaka,Scabin,FC Dallas,Center-back,88025.0,88025.0
+Lalas,Abubakar,FC Dallas,Center-back,460000.0,495000.0
+Logan,Farrington,FC Dallas,Center Forward,350000.0,417000.0
+Louicius,Deedson,FC Dallas,Right Wing,400000.0,450319.0
+Michael,Collodi,FC Dallas,Goalkeeper,113400.0,125825.0
+Nicholas,Simmonds,FC Dallas,Center Forward,88025.0,102704.0
+Nolan,Norris,FC Dallas,Left-back,200000.0,218642.0
+Osaze,Urhoghide,FC Dallas,Center-back,580000.0,643982.0
+Patrickson,Delgado,FC Dallas,Defensive Midfield,260000.0,286280.0
+Petar,Musa,FC Dallas,Center Forward,2450000.0,2880000.0
+Ramiro,Moschen Benetti,FC Dallas,Central Midfield,575000.0,575000.0
+Ran,Binyamin,FC Dallas,Central Midfield,275000.0,302083.0
+Ricky,Louis,FC Dallas,Center Forward,88025.0,88858.0
+Sam,Sarver,FC Dallas,Right Wing,113400.0,113400.0
+Santiago,Moreno,FC Dallas,Right Wing,803125.0,938387.0
+Sebastien,Ibeagha,FC Dallas,Center-back,730000.0,793625.0
+Shaq,Moore,FC Dallas,Right-back,800000.0,870000.0
+Slade,Starnes,FC Dallas,Center-back,88025.0,93472.0
+Tsiki,Ntsabeleng,FC Dallas,Attacking Midfield,230000.0,257000.0
+Agustin,Resch,Houston Dynamo,Center-back,88025.0,88025.0
+Agustín,Bouzat,Houston Dynamo,Defensive Midfield,624996.0,705746.0
+Antônio Carlos,Cunha Capocasali Junior,Houston Dynamo,Center-back,750000.0,832676.0
+Blake,Gillingham,Houston Dynamo,Goalkeeper,88025.0,88025.0
+Diadié,Samassékou,Houston Dynamo,Defensive Midfield,714996.0,771871.0
+Duane,Holmes,Houston Dynamo,Right Midfield,550000.0,628000.0
+Erik,Sviatchenko,Houston Dynamo,Center-back,850000.0,925000.0
+Exon,Arzú,Houston Dynamo,Right Wing,113400.0,117998.0
+Ezequiel,Ponce,Houston Dynamo,Center Forward,2738012.0,3000212.0
+Felipe,de Andrade Vieira,Houston Dynamo,Center-back,225000.0,252500.0
+Franco,Negri,Houston Dynamo,Left-back,113400.0,115605.0
+Guilherme Augusto,Vieira dos Santos,Houston Dynamo,Left Wing,1528572.0,1925230.0
+Héctor,Herrera,Houston Dynamo,Central Midfield,525000.0,568750.0
+Ibrahim,Aliyu,Houston Dynamo,Center Forward,525000.0,576379.0
+Jack,McGlynn,Houston Dynamo,Central Midfield,776000.0,910320.0
+Jimmy,Maurer,Houston Dynamo,Goalkeeper,225000.0,225000.0
+Jonathan,Bond,Houston Dynamo,Goalkeeper,750000.0,809704.0
+José Artur,de Lima Júnior,Houston Dynamo,Defensive Midfield,875004.0,958379.0
+Lawrence,Ennali,Houston Dynamo,Left Wing,500000.0,574250.0
+Logan,Erb,Houston Dynamo,Goalkeeper,88025.0,93373.0
+Lucas,Halter,Houston Dynamo,Center-back,1265004.0,1416921.0
+Mateusz,Bogusz,Houston Dynamo,Attacking Midfield,2349996.0,2521048.0
+Matthew,Arana,Houston Dynamo,Central Midfield,88025.0,101986.0
+Nick,Markanich,Houston Dynamo,Right Wing,184962.0,202778.0
+Ondrej,Lingr,Houston Dynamo,Attacking Midfield,849996.0,938074.0
+Reese,Miller,Houston Dynamo,Left-back,88025.0,92668.0
+Sam,Vines,Houston Dynamo,Left-back,900000.0,912500.0
+Sebastián,Rodríguez,Houston Dynamo,Central Midfield,88025.0,96675.0
+Toyosi,Olusanya,Houston Dynamo,Center Forward,418000.0,463219.0
+Alexander,Shaw,Inter Miami,Central Midfield,88025.0,88025.0
+Dániel,Pintér,Inter Miami,Left Wing,88025.0,88025.0
+David,Ruíz,Inter Miami,Defensive Midfield,200000.0,231887.0
+David,Ayala,Inter Miami,Defensive Midfield,650000.0,771000.0
+Dayne,St. Clair,Inter Miami,Goalkeeper,745313.0,808730.0
+Ezequiel,Abadia-Reda,Inter Miami,Left-back,88025.0,88025.0
+Facundo,Mura,Inter Miami,Right-back,850000.0,1026875.0
+Germán,Berterame,Inter Miami,Center Forward,2800000.0,3824200.0
+Gonzalo,Luján,Inter Miami,Center-back,630000.0,921750.0
+Ian,Fray,Inter Miami,Center-back,375000.0,429000.0
+Israel,Boatwright,Inter Miami,Right-back,113400.0,115400.0
+Lionel,Messi,Inter Miami,Right Wing,25000000.0,28333333.0
+Luis,Barraza,Inter Miami,Goalkeeper,113400.0,120900.0
+Luis,Suárez,Inter Miami,Center Forward,803125.0,803125.0
+Mateo,Silvetti,Inter Miami,Left Wing,550000.0,607078.0
+Maximiliano,Falcón,Inter Miami,Center-back,600000.0,674250.0
+Micael,dos Santos Silva,Inter Miami,Center-back,750000.0,892440.0
+Noah,Allen,Inter Miami,Left-back,375000.0,434653.0
+Rocco,Ríos Novo,Inter Miami,Goalkeeper,200000.0,224100.0
+Rodrigo,De Paul,Inter Miami,Central Midfield,7569000.0,9688320.0
+Santiago,Morales,Inter Miami,Central Midfield,130000.0,138333.0
+Sergio,Reguilón,Inter Miami,Left-back,1700000.0,1800000.0
+Tadeo,Allende,Inter Miami,Right Wing,625000.0,1000000.0
+Telasco,Segovia,Inter Miami,Central Midfield,325000.0,360000.0
+Tyler,Hall,Inter Miami,Center-back,113400.0,113400.0
+Yannick,Bright,Inter Miami,Defensive Midfield,385000.0,464192.0
+Benja,Cremaschi,Inter Miami,Central Midfield,425000.0,527500.0
+Ascel,Essengue,LA Galaxy,Center-back,88025.0,88025.0
+Brady,Scott,LA Galaxy,Goalkeeper,113400.0,113400.0
+Carlos,Garcés,LA Galaxy,Center-back,480000.0,518000.0
+Chris,Rindov,LA Galaxy,Center-back,113400.0,122150.0
+Edwin,Cerrillo,LA Galaxy,Defensive Midfield,650000.0,662500.0
+Elijah,Wynder,LA Galaxy,Central Midfield,325000.0,352208.0
+Erik,Thommy,LA Galaxy,Attacking Midfield,600000.0,706667.0
+Gabriel,Fortes Chaves,LA Galaxy,Right Wing,1680000.0,2459000.0
+Gino,Vivi,LA Galaxy,Left Wing,113400.0,113400.0
+Harbor,Miller,LA Galaxy,Right-back,88025.0,88025.0
+Isaiah,Parente,LA Galaxy,Central Midfield,113400.0,113400.0
+Jakob,Glesnes,LA Galaxy,Center-back,826087.0,1268503.0
+João,Klauss de Mello,LA Galaxy,Center Forward,2187500.0,2915000.0
+John,Nelson,LA Galaxy,Left-back,350000.0,350000.0
+Joseph,Paintsil,LA Galaxy,Left Wing,3456000.0,4502000.0
+JT,Marcinkowski,LA Galaxy,Goalkeeper,302000.0,302000.0
+Julián,Aude,LA Galaxy,Left-back,375000.0,385000.0
+Justin,Haak,LA Galaxy,Center-back,752841.0,810561.0
+Lucas,Sanabria,LA Galaxy,Defensive Midfield,640000.0,742800.0
+Marco,Reus,LA Galaxy,Attacking Midfield,604364.0,902364.0
+Matheus,Nascimento de Paula,LA Galaxy,Center Forward,650000.0,707000.0
+Mauricio,Cuevas,LA Galaxy,Right-back,250000.0,268500.0
+Maya,Yoshida,LA Galaxy,Center-back,640000.0,715781.0
+Miki,Yamane,LA Galaxy,Right-back,850000.0,916667.0
+Novak,Mićović,LA Galaxy,Goalkeeper,200000.0,200000.0
+Ricard,Puig Martí,LA Galaxy,Central Midfield,5125000.0,5792188.0
+Riley,Dalgado,LA Galaxy,Left-back,88025.0,88025.0
+Rubén,Ramos,LA Galaxy,Attacking Midfield,113400.0,113400.0
+Tucker,Lepley,LA Galaxy,Defensive Midfield,113400.0,115086.0
+Aaron,Long,LAFC,Center-back,445000.0,1050000.0
+Adrian,Wibowo,LAFC,Right Wing,113400.0,113400.0
+Amin,Boudri,LAFC,Attacking Midfield,650000.0,742000.0
+Artem,Smolyakov,LAFC,Left-back,550000.0,613297.0
+Cabral,Carter,LAFC,Goalkeeper,88025.0,91775.0
+Christian,Díaz,LAFC,Center-back,88025.0,88025.0
+David,Martínez,LAFC,Right Wing,550000.0,550000.0
+Denis,Bouanga,LAFC,Left Wing,4000000.0,4939217.0
+Eddie,Segura,LAFC,Center-back,722500.0,722500.0
+Heung-min,Son,LAFC,Left Wing,10368750.0,11152852.0
+Hugo,Lloris,LAFC,Goalkeeper,800000.0,800000.0
+Igor,Jesus Lima,LAFC,Defensive Midfield,625000.0,691684.0
+Jacob,Shaffelburg,LAFC,Left Wing,475000.0,520000.0
+Jeremy,Ebobisse,LAFC,Center Forward,722500.0,722500.0
+Jude,Terry,LAFC,Central Midfield,113400.0,149798.0
+Kenny,Nielsen,LAFC,Center-back,88025.0,88025.0
+Lorenzo,Dellavalle,LAFC,Center-back,113400.0,117150.0
+Mark,Delgado,LAFC,Central Midfield,1055000.0,1055000.0
+Mathieu,Choinière,LAFC,Central Midfield,725000.0,725000.0
+Matt,Evans,LAFC,Attacking Midfield,88025.0,88025.0
+Nathan,Ordaz,LAFC,Center Forward,500000.0,545000.0
+Nkosi,Tafari,LAFC,Center-back,481500.0,481500.0
+Ryan,Hollingshead,LAFC,Left-back,550000.0,550000.0
+Ryan,Raposo,LAFC,Left Midfield,220000.0,220000.0
+Ryan,Porteous,LAFC,Center-back,725000.0,760260.0
+Sergi,Palencia,LAFC,Right-back,725000.0,745000.0
+Stephen,Eustaquio,LAFC,Central Midfield,1800000.0,1800000.0
+Thomas,Hasal,LAFC,Goalkeeper,200000.0,210133.0
+Timothy,Tillman,LAFC,Central Midfield,825000.0,881400.0
+Tyler,Boyd,LAFC,Left Wing,1430000.0,1435000.0
+Alec,Smir,Minnesota United,Goalkeeper,113400.0,113400.0
+Anthony,Markanich Jr.,Minnesota United,Left-back,350000.0,395700.0
+Bongokuhle,Hlongwane,Minnesota United,Right Wing,1000000.0,1142500.0
+Carlos,Harvey,Minnesota United,Defensive Midfield,285000.0,317063.0
+D.J.,Taylor,Minnesota United,Right-back,210000.0,240117.0
+Darius,Randell,Minnesota United,Right Wing,88025.0,98419.0
+Devin,Padelford,Minnesota United,Left-back,160000.0,179500.0
+Dominik,Fitz,Minnesota United,Attacking Midfield,890000.0,893000.0
+Drake,Callender,Minnesota United,Goalkeeper,450000.0,505917.0
+James,Rodríguez,Minnesota United,Attacking Midfield,684000.0,684000.0
+Jefferson,Díaz,Minnesota United,Center-back,435000.0,435000.0
+Joaquín,Pereyra,Minnesota United,Central Midfield,900000.0,1089000.0
+Jordan,Adebayo-Smith,Minnesota United,Center Forward,113400.0,130620.0
+Julian,Gressel,Minnesota United,Right Midfield,1204005.0,1204005.0
+Kelvin,Yeboah,Minnesota United,Center Forward,1360000.0,1562700.0
+Kenyel,Michel,Minnesota United,Left Wing,113400.0,113400.0
+Kieran,Chandler,Minnesota United,Left-back,88025.0,88025.0
+Kyle,Duncan,Minnesota United,Right-back,400000.0,437889.0
+Mamadou,Dieng,Minnesota United,Center Forward,88025.0,91172.0
+Marcus,Caldeira,Minnesota United,Center Forward,88025.0,88025.0
+Mauricio,González,Minnesota United,Left Wing,240000.0,240000.0
+Michael,Boxall,Minnesota United,Center-back,800000.0,927500.0
+Morris,Duggan,Minnesota United,Center-back,113400.0,113400.0
+Nectarios,Triantis,Minnesota United,Central Midfield,670000.0,732665.0
+Nicolás,Romero,Minnesota United,Center-back,455000.0,492500.0
+Owen,Gene,Minnesota United,Central Midfield,420000.0,450100.0
+Peter,Stroud,Minnesota United,Central Midfield,185000.0,223083.0
+Tomás,Chancalay,Minnesota United,Left Wing,1150000.0,1274375.0
+Wil,Trapp,Minnesota United,Defensive Midfield,550000.0,602500.0
+Britton,Fischer,Minnesota United,Center-back,88025.0,88025.0
+Ho-yeon,Jung,Minnesota United,Central Midfield,131000.0,168039.0
+Kayne,Rizvanovich,Minnesota United,Goalkeeper,88025.0,90347.0
+Matus,Kmet,Minnesota United,Right-back,210000.0,227469.0
+Wessel,Speel,Minnesota United,Goalkeeper,113400.0,113400.0
+Dominique,Badji,MLS Pool,Center Forward,400000.0,435000.0
+Nelson,Quiñónes,MLS Pool,Left Wing,276996.0,297890.0
+Paxton,Pomykal,MLS Pool,Attacking Midfield,1200000.0,1308000.0
+Joakim,Nilsson,MLS Pool,Center-back,1221175.0,1289675.0
+Jonathan,Rodríguez,MLS Pool,Center Forward,2050000.0,2902500.0
+Adem,Sipic,Nashville SC,Center Forward,113400.0,142226.0
+Ahmed,Qasem,Nashville SC,Right Wing,650000.0,650000.0
+Alex,Muyl,Nashville SC,Right Wing,655000.0,655000.0
+Andy,Nájar,Nashville SC,Right-back,550000.0,603333.0
+Brian,Schwake,Nashville SC,Goalkeeper,150000.0,166800.0
+Bryan,Acosta,Nashville SC,Central Midfield,185000.0,200500.0
+Charles-Emile,Brunet,Nashville SC,Defensive Midfield,88025.0,88025.0
+Christopher,Applewhite,Nashville SC,Center-back,88025.0,97470.0
+Cristian,Espinoza,Nashville SC,Right Wing,1958333.0,2343567.0
+Daniel,Lovitz,Nashville SC,Left-back,410000.0,427500.0
+Edvard,Tagseth,Nashville SC,Central Midfield,720000.0,736667.0
+Hany,Mukhtar,Nashville SC,Attacking Midfield,4000000.0,5411667.0
+Isaiah,LeFlore,Nashville SC,Left-back,88025.0,88025.0
+Isaiah,Jones,Nashville SC,Central Midfield,113400.0,117400.0
+Jack,Maher,Nashville SC,Center-back,900000.0,995467.0
+Jeisson,Palacios,Nashville SC,Center-back,700000.0,1097500.0
+Joe,Willis,Nashville SC,Goalkeeper,200000.0,216000.0
+Jordan,Knight,Nashville SC,Left-back,88025.0,93858.0
+Josh,Bauer,Nashville SC,Center-back,230000.0,253667.0
+Malachi,Molina,Nashville SC,Right-back,88025.0,100741.0
+Matthew,Corcoran,Nashville SC,Defensive Midfield,113400.0,135668.0
+Maxwell,Woledzi,Nashville SC,Center-back,650000.0,667500.0
+Patrick,Yazbek,Nashville SC,Central Midfield,500000.0,616013.0
+Reed,Baker-Whiting,Nashville SC,Left-back,275000.0,283000.0
+Sam,Surridge,Nashville SC,Center Forward,5280000.0,5933000.0
+Shakur,Mohammed,Nashville SC,Right Wing,88025.0,89692.0
+Thomas,Williams,Nashville SC,Center-back,150000.0,163875.0
+Warren,Madrigal,Nashville SC,Left Wing,350000.0,403500.0
+Woobens,Pacius,Nashville SC,Center Forward,113400.0,113400.0
+Xavier,Valdez,Nashville SC,Goalkeeper,88025.0,98025.0
+Alhassan,Yusuf,New England Revolution,Central Midfield,900000.0,995311.0
+Allan,Oyirwoth,New England Revolution,Attacking Midfield,125000.0,141000.0
+Andrew,Farrell,New England Revolution,Center-back,113400.0,113400.0
+Brayan,Ceballos,New England Revolution,Center-back,775000.0,855625.0
+Brooklyn,Raines,New England Revolution,Central Midfield,400000.0,443250.0
+Carles,Gil,New England Revolution,Attacking Midfield,4500000.0,4952083.0
+Cristiano,Oliveira,New England Revolution,Attacking Midfield,88025.0,99025.0
+Damario,McIntosh,New England Revolution,Right-back,113400.0,122349.0
+Diego,Fagúndez,New England Revolution,Left Wing,300000.0,316250.0
+Donovan,Parisian,New England Revolution,Goalkeeper,88025.0,88025.0
+Dor,Turgeman,New England Revolution,Center Forward,800000.0,800000.0
+Eric,Klein,New England Revolution,Center-back,88025.0,94302.0
+Ethan,Kohler,New England Revolution,Center-back,280000.0,308800.0
+Griffin,Yow,New England Revolution,Right Wing,675000.0,810875.0
+Ilay,Feingold,New England Revolution,Right-back,575000.0,575000.0
+Jack,Panayotou,New England Revolution,Central Midfield,140000.0,142000.0
+Jackson,Yueill,New England Revolution,Central Midfield,1141087.0,1141087.0
+JD,Gunn,New England Revolution,Goalkeeper,113400.0,116181.0
+Keegan,Hughes,New England Revolution,Center-back,113400.0,113400.0
+Leonardo,Campana,New England Revolution,Center Forward,1494992.0,1617325.0
+Luca,Langoni,New England Revolution,Right Wing,715000.0,787283.0
+Malcolm,Fry,New England Revolution,Right Wing,113400.0,118960.0
+Mamadou,Fofana,New England Revolution,Center-back,800000.0,916250.0
+Marcos,Zambrano,New England Revolution,Center Forward,113400.0,135659.0
+Matt,Turner,New England Revolution,Goalkeeper,1776136.32,1942886.32
+Matt,Polster,New England Revolution,Defensive Midfield,675000.0,733333.0
+Peyton,Miller,New England Revolution,Left-back,113400.0,115400.0
+Santiago,Suárez,New England Revolution,Center-back,120000.0,133222.0
+Tanner,Beason,New England Revolution,Center-back,350000.0,350000.0
+Will,Sands,New England Revolution,Left-back,325000.0,333333.0
+Agustín,Ojeda,New York City FC,Left Wing,540000.0,607833.0
+Aiden,O'Neill,New York City FC,Defensive Midfield,600000.0,630938.0
+Alonso,Martínez,New York City FC,Center Forward,750000.0,850333.0
+Andrés,Perea,New York City FC,Defensive Midfield,695000.0,757000.0
+Cooper,Flax,New York City FC,Left Wing,88025.0,88025.0
+Drew,Baiera,New York City FC,Right-back,113400.0,119336.0
+Greg,Ranjitsingh,New York City FC,Goalkeeper,113400.0,113400.0
+Hannes,Wolf,New York City FC,Right Wing,1400000.0,1510000.0
+Jacob,Arroyave,New York City FC,Central Midfield,113400.0,126398.0
+James,Sands,New York City FC,Defensive Midfield,1250000.0,1318750.0
+Jonathan,Shore,New York City FC,Central Midfield,113400.0,125900.0
+Jovan,Mijatovic,New York City FC,Center Forward,700000.0,737500.0
+Julián,Fernández,New York City FC,Right Wing,720000.0,784300.0
+Kai,Trewin,New York City FC,Defensive Midfield,275000.0,311542.0
+Kamran,Acito,New York City FC,Center-back,88025.0,88025.0
+Keaton,Parks,New York City FC,Defensive Midfield,1000000.0,1130000.0
+Kevin,O'Toole,New York City FC,Left-back,300000.0,323333.0
+Kevin,Pierre Jr.,New York City FC,Central Midfield,88025.0,90226.0
+Mac,Learned,New York City FC,Goalkeeper,88025.0,88025.0
+Malachi,Jones,New York City FC,Left Wing,113400.0,113400.0
+Matt,Freese,New York City FC,Goalkeeper,675000.0,795833.0
+Max,Murray,New York City FC,Center-back,88025.0,89873.0
+Maxi,Moralez,New York City FC,Attacking Midfield,480000.0,500000.0
+Máximo,Carrizo,New York City FC,Central Midfield,150000.0,183523.0
+Mitja,Ilenic,New York City FC,Right Midfield,300000.0,391700.0
+Nico,Cavallo,New York City FC,Left-back,113400.0,115248.0
+Nicolás,Fernández Mercau,New York City FC,Center Forward,3650000.0,3650000.0
+Peter,Molinari,New York City FC,Defensive Midfield,88025.0,92654.0
+Raul Gustavo,Pereira Bicalho,New York City FC,Center-back,720000.0,812960.0
+Seymour,Reid,New York City FC,Center Forward,88025.0,102840.0
+Strahinja,Tanasijević,New York City FC,Center-back,300000.0,368750.0
+Talles Magno,Bacelar Martins,New York City FC,Left Wing,1250000.0,1365000.0
+Tayvon,Gray,New York City FC,Right-back,550000.0,664000.0
+Thiago,Martins,New York City FC,Center-back,1800000.0,2262000.0
+Tomás,Romero,New York City FC,Goalkeeper,113400.0,113400.0
+Zidane,Yáñez,New York City FC,Center Forward,113400.0,117567.0
+Adri,Mehmeti,New York Red Bulls,Central Midfield,113400.0,158980.0
+Aidan,Stokes,New York Red Bulls,Goalkeeper,113400.0,130168.0
+Aiden,Jarvis,New York Red Bulls,Central Midfield,88025.0,105110.0
+AJ,Marcucci,New York Red Bulls,Goalkeeper,205000.0,230060.0
+Andy,Rojas,New York Red Bulls,Left Wing,185000.0,213131.0
+Cade,Cowell,New York Red Bulls,Left Wing,900000.0,1182500.0
+Cameron,Harper,New York Red Bulls,Right Wing,390000.0,431750.0
+Dennis,Gjengaar,New York Red Bulls,Right Wing,380000.0,438769.0
+Dylan,Nealis,New York Red Bulls,Right-back,412500.0,412500.0
+Emil,Forsberg,New York Red Bulls,Left Wing,5405000.0,6035625.0
+Eric-Maxim,Choupo-Moting,New York Red Bulls,Center Forward,3200000.0,3530667.0
+Ethan,Horvath,New York Red Bulls,Goalkeeper,424992.0,524909.0
+Gustav,Berggren,New York Red Bulls,Defensive Midfield,1200000.0,1310000.0
+Jahkeele,Marshall-Rutty,New York Red Bulls,Right-back,425000.0,473750.0
+John,McCarthy,New York Red Bulls,Goalkeeper,525000.0,589167.0
+Jorge,Ruvalcaba,New York Red Bulls,Left Wing,720000.0,788528.0
+Juan,Mina,New York Red Bulls,Right-back,175000.0,190432.0
+Julian,Hall,New York Red Bulls,Center Forward,175000.0,257241.0
+Justin,Che,New York Red Bulls,Right-back,440000.0,501667.0
+Marcelo,Morales,New York Red Bulls,Left-back,325000.0,472375.0
+Matthew,Dos Santos,New York Red Bulls,Left-back,88025.0,104756.0
+Mohammed,Sofo,New York Red Bulls,Left Wing,150000.0,208000.0
+Nehuen,Benedetti,New York Red Bulls,Central Midfield,160000.0,194800.0
+Omar,Valencia,New York Red Bulls,Left-back,130000.0,142375.0
+Rafael,Mosquera,New York Red Bulls,Left Wing,88025.0,99925.0
+Roald,Mitchell,New York Red Bulls,Center Forward,125000.0,145408.0
+Robert,Voloder,New York Red Bulls,Center-back,575000.0,685250.0
+Ronald,Donkor,New York Red Bulls,Central Midfield,150000.0,175400.0
+Serge,Ngoma,New York Red Bulls,Right Wing,205000.0,233700.0
+Tanner,Rosborough,New York Red Bulls,Center Forward,88025.0,105043.0
+Tim,Parker,New York Red Bulls,Center-back,350000.0,387500.0
+Tobias,Szewczyk,New York Red Bulls,Goalkeeper,88025.0,110640.0
+Wiktor,Bogacz,New York Red Bulls,Center Forward,420000.0,546240.0
+Julián,Bazán,New York Red Bulls,Center-back,274992.0,312825.0
+Joyeux,Masanka Bungi,New York Red Bulls,Left Midfield,210000.0,222500.0
+Adrián,Marín,Orlando City SC,Left-back,525000.0,577972.0
+Braian,Ojeda,Orlando City SC,Defensive Midfield,725000.0,910500.0
+Colin,Guske,Orlando City SC,Defensive Midfield,88025.0,98830.0
+David,Brekalo,Orlando City SC,Center-back,600000.0,683000.0
+Duncan,McGuire,Orlando City SC,Center Forward,600000.0,921000.0
+Eduard,Atuesta,Orlando City SC,Central Midfield,687500.0,825250.0
+Griffin,Dorsey,Orlando City SC,Right-back,700000.0,767891.0
+Gustavo,Caraballo,Orlando City SC,Right Wing,88025.0,94400.0
+Harvey,Sarajian,Orlando City SC,Left Wing,88025.0,88025.0
+Iago Teodoro,da Silva Nogueira,Orlando City SC,Center-back,500000.0,551875.0
+Iván,Angulo,Orlando City SC,Left Wing,549996.0,582656.0
+Javier,Otero,Orlando City SC,Goalkeeper,160000.0,163750.0
+Joran,Gerbet,Orlando City SC,Defensive Midfield,113400.0,113400.0
+Justin,Ellis,Orlando City SC,Center Forward,88025.0,112424.0
+Luis Otávio,Costa de Aquino,Orlando City SC,Defensive Midfield,500000.0,569000.0
+Marco,Pašalić,Orlando City SC,Right Wing,1600000.0,1650667.0
+Martín,Ojeda,Orlando City SC,Attacking Midfield,1600000.0,1778200.0
+Maxime,Crépeau,Orlando City SC,Goalkeeper,600000.0,600000.0
+Nicolás,Rodríguez,Orlando City SC,Right Wing,210000.0,230500.0
+Nolan,Miller,Orlando City SC,Center-back,88025.0,88025.0
+Robin,Jansson,Orlando City SC,Center-back,500000.0,530000.0
+Tahir,Reid-Brown,Orlando City SC,Left-back,125000.0,139508.0
+Tiago,Souza de Jesus Carvalho,Orlando City SC,Left Wing,500000.0,600250.0
+Tyrese,Spicer,Orlando City SC,Left Wing,275000.0,311875.0
+Wilder,Cartagena,Orlando City SC,Defensive Midfield,480000.0,530250.0
+Yutaro,Tsukada,Orlando City SC,Left Wing,113400.0,113400.0
+Zakaria,Taifi,Orlando City SC,Right-back,88025.0,99923.0
+Agustín,Anello,Philadelphia Union,Left Wing,500000.0,539630.0
+Alejandro,Bedoya,Philadelphia Union,Central Midfield,113400.0,226800.0
+Andre,Blake,Philadelphia Union,Goalkeeper,1000000.0,1181250.0
+Andrew,Rick,Philadelphia Union,Goalkeeper,113400.0,123315.0
+Ben,Bender,Philadelphia Union,Central Midfield,140000.0,149667.0
+Bruno,Damiani,Philadelphia Union,Center Forward,720000.0,847600.0
+Cavan,Sullivan,Philadelphia Union,Attacking Midfield,450000.0,614000.0
+CJ,Olney Jr.,Philadelphia Union,Left Midfield,113400.0,127065.0
+Danley,Jean Jacques,Philadelphia Union,Defensive Midfield,650000.0,702500.0
+Eddy,Davis III,Philadelphia Union,Center Forward,113400.0,115400.0
+Ezekiel,Alladoh,Philadelphia Union,Center Forward,450000.0,540000.0
+Finn,Sundstrom,Philadelphia Union,Center-back,88025.0,102285.0
+Frankie,Westfield,Philadelphia Union,Right-back,113400.0,125285.0
+Geiner,Martínez,Philadelphia Union,Center-back,200000.0,360204.0
+George,Marks,Philadelphia Union,Goalkeeper,125000.0,132125.0
+Indiana,Vassilev,Philadelphia Union,Right Wing,600000.0,665000.0
+Japhet,Sery Larsen,Philadelphia Union,Center-back,600000.0,675300.0
+Jeremy,Rafanello,Philadelphia Union,Attacking Midfield,165000.0,186125.0
+Jesús,Bueno,Philadelphia Union,Defensive Midfield,325000.0,359125.0
+Jovan,Lukić,Philadelphia Union,Central Midfield,395000.0,441375.0
+Kaiden,Moore,Philadelphia Union,Center-back,88025.0,88025.0
+Malik,Jakupović,Philadelphia Union,Center Forward,88025.0,105956.0
+Markus,Anderson,Philadelphia Union,Center Forward,140000.0,142000.0
+Milan,Iloski,Philadelphia Union,Center Forward,575000.0,628194.0
+Nathan,Harriel,Philadelphia Union,Right-back,325000.0,421300.0
+Neil,Pierre,Philadelphia Union,Center-back,113400.0,129798.0
+Olivier,Mbaizo,Philadelphia Union,Right-back,460000.0,502875.0
+Olwethu,Makhanya,Philadelphia Union,Center-back,300000.0,338875.0
+Philippe,Ndinga,Philadelphia Union,Left-back,300000.0,332250.0
+Quinn,Sullivan,Philadelphia Union,Central Midfield,500000.0,568000.0
+Sal,Olivas,Philadelphia Union,Center Forward,113400.0,137480.0
+Stas,Korzeniowski,Philadelphia Union,Center Forward,88025.0,88025.0
+Alex,Bonetig,Portland Timbers,Center-back,240000.0,261000.0
+Alexander,Aravena,Portland Timbers,Left Wing,857143.0,1026310.0
+Antony,Alves Santos,Portland Timbers,Left Wing,560000.0,666042.0
+Ariel,Lassiter,Portland Timbers,Left Wing,325000.0,358000.0
+Brandon,Bye,Portland Timbers,Right-back,400000.0,442500.0
+Cole,Bassett,Portland Timbers,Attacking Midfield,850000.0,850000.0
+David,Da Costa,Portland Timbers,Attacking Midfield,2725000.0,3425000.0
+Diego,Chará,Portland Timbers,Central Midfield,388044.0,388044.0
+Eric,Miller,Portland Timbers,Right-back,113400.0,113400.0
+Felipe,Mora,Portland Timbers,Center Forward,1200000.0,1397750.0
+Finn,Surman,Portland Timbers,Center-back,275000.0,303233.0
+Gage,Guerra,Portland Timbers,Center Forward,88025.0,88025.0
+Hunter,Sulte,Portland Timbers,Goalkeeper,135000.0,149750.0
+Ian,Smith,Portland Timbers,Left-back,88025.0,88025.0
+James,Pantemis,Portland Timbers,Goalkeeper,300000.0,320833.0
+Jimer,Fory,Portland Timbers,Left-back,450000.0,470000.0
+Joao,Ortiz,Portland Timbers,Defensive Midfield,550000.0,600625.0
+José,Caicedo,Portland Timbers,Defensive Midfield,1000000.0,1075009.0
+Juan,Mosquera,Portland Timbers,Right-back,475000.0,541650.0
+Kamal,Miller,Portland Timbers,Center-back,797496.0,822496.0
+Kevin,Kelsy,Portland Timbers,Center Forward,662000.0,802804.0
+Kristoffer,Velde,Portland Timbers,Left Wing,2280000.0,3027000.0
+Omir,Fernandez,Portland Timbers,Right Wing,625000.0,686875.0
+Sawyer,Jura,Portland Timbers,Right-back,88025.0,91358.0
+Trey,Muse,Portland Timbers,Goalkeeper,113400.0,113400.0
+Zac,McGraw,Portland Timbers,Center-back,295000.0,341750.0
+Aiden,Hezarkhani,Real Salt Lake,Right Wing,88025.0,94383.0
+Alexandros,Katranis,Real Salt Lake,Left-back,450000.0,519875.0
+Antonio,Riquelme,Real Salt Lake,Attacking Midfield,88025.0,91740.0
+Ariath,Piol,Real Salt Lake,Center Forward,294000.0,348859.0
+Chance,Cowell,Real Salt Lake,Left Wing,88025.0,91740.0
+DeAndre,Yedlin,Real Salt Lake,Right-back,650000.0,726667.0
+Diego,Luna,Real Salt Lake,Left Midfield,450000.0,500833.0
+Dominik,Marczuk,Real Salt Lake,Right Wing,720000.0,795500.0
+Emeka,Eneli,Real Salt Lake,Defensive Midfield,400000.0,441000.0
+Gio,Villa,Real Salt Lake,Right-back,88025.0,91358.0
+Griffin,Dillon,Real Salt Lake,Central Midfield,88025.0,92668.0
+Jesús,Barea,Real Salt Lake,Center Forward,88025.0,89761.0
+Juan Jose,Arias,Real Salt Lake,Center-back,500000.0,565139.0
+Juan Manuel,Sanabria,Real Salt Lake,Left-back,500000.0,500000.0
+Justen,Glad,Real Salt Lake,Center-back,1150000.0,1330000.0
+Kobi,Henry,Real Salt Lake,Center-back,113400.0,121376.0
+Luca,Moisa,Real Salt Lake,Central Midfield,113400.0,113400.0
+Luis,Rivera,Real Salt Lake,Left-back,160000.0,171100.0
+Lukas,Engel,Real Salt Lake,Left-back,750000.0,832135.0
+Mason,Stajduhar,Real Salt Lake,Goalkeeper,200000.0,215650.0
+Max,Kerkvliet,Real Salt Lake,Goalkeeper,88025.0,88025.0
+Morgan,Guilavogui,Real Salt Lake,Right Wing,2200000.0,2225500.0
+Noel,Caliskan,Real Salt Lake,Central Midfield,113400.0,113400.0
+Omar,Marquez,Real Salt Lake,Right Wing,88025.0,103600.0
+Owen,Anderson,Real Salt Lake,Attacking Midfield,88025.0,93915.0
+Pablo,Ruiz,Real Salt Lake,Central Midfield,825000.0,911500.0
+Philip,Quinton,Real Salt Lake,Center-back,175000.0,175000.0
+Rafael,Cabral Barbosa,Real Salt Lake,Goalkeeper,470000.0,703750.0
+Sam,Junqua,Real Salt Lake,Left-back,450000.0,482813.0
+Sergi,Solans,Real Salt Lake,Center Forward,88025.0,88025.0
+Stijn,Spierings,Real Salt Lake,Central Midfield,750000.0,783333.0
+Tyler,Wolff,Real Salt Lake,Right Wing,160000.0,160000.0
+Van,Parker,Real Salt Lake,Right Wing,88025.0,90192.0
+Victor,Olatunji,Real Salt Lake,Center Forward,600000.0,626500.0
+Zach,Booth,Real Salt Lake,Left Wing,200000.0,217500.0
+Zavier,Gozo,Real Salt Lake,Right Wing,113400.0,126123.0
+Diego,Rocío,Real Salt Lake,Right Wing,88025.0,92668.0
+Nelson,Palacio,Real Salt Lake,Central Midfield,430000.0,473167.0
+Alejandro,Alvarado,San Diego FC,Central Midfield,88025.0,95547.0
+Alex,Mighten,San Diego FC,Left Wing,325000.0,332292.0
+Amahl,Pellegrino,San Diego FC,Left Wing,600000.0,645000.0
+Anders,Dreyer,San Diego FC,Right Wing,2979168.0,3561251.0
+Andrés,Reyes,San Diego FC,Center-back,804000.0,879000.0
+Aníbal,Godoy,San Diego FC,Defensive Midfield,325000.0,358333.0
+Anisse,Saidi,San Diego FC,Center Forward,88025.0,101915.0
+Bryan,Zamblé,San Diego FC,Left Wing,88025.0,88025.0
+Bryce,Duke,San Diego FC,Attacking Midfield,300000.0,336500.0
+Christopher,McVey,San Diego FC,Center-back,525000.0,576813.0
+CJ,dos Santos,San Diego FC,Goalkeeper,350000.0,390875.0
+David,Vazquez,San Diego FC,Right Midfield,140000.0,155880.0
+Duran,Ferree,San Diego FC,Goalkeeper,113400.0,113400.0
+Emmanuel,Boateng,San Diego FC,Left Midfield,185004.0,185004.0
+Hirving,Lozano,San Diego FC,Left Wing,6000000.0,9333333.0
+Ian,Pilcher,San Diego FC,Center-back,88025.0,88025.0
+Jeppe,Tverskov,San Diego FC,Defensive Midfield,1000000.0,1096667.0
+Kieran,Sargeant,San Diego FC,Left-back,113400.0,122180.0
+Lewis,Morgan,San Diego FC,Left Wing,1639150.0,1868508.0
+Luca,Bombino,San Diego FC,Left-back,150000.0,177200.0
+Manu,Duah,San Diego FC,Center-back,88025.0,92025.0
+Marcus,Ingvartsen,San Diego FC,Center Forward,1800000.0,1800000.0
+Onni,Valakari,San Diego FC,Attacking Midfield,705000.0,781800.0
+Oscar,Verhoeven,San Diego FC,Right-back,175000.0,188395.0
+Osvald,Søe,San Diego FC,Center-back,234996.0,234996.0
+Pablo,Sisniega,San Diego FC,Goalkeeper,215000.04,241467.0
+Pedro,Soma,San Diego FC,Defensive Midfield,275000.0,325453.0
+Willy,Kumado,San Diego FC,Right-back,113400.0,125835.0
+Wilson,Eisner,San Diego FC,Right-back,88025.0,95290.0
+Beau,Leroux,San Jose Earthquakes,Central Midfield,249996.0,249996.0
+Benji,Kikanović,San Jose Earthquakes,Left Wing,442000.0,478700.0
+Cristian,Arango,San Jose Earthquakes,Center Forward,800000.0,800000.0
+Cruz,Medina,San Jose Earthquakes,Central Midfield,180000.0,198394.0
+Daniel,de Sousa Britto,San Jose Earthquakes,Goalkeeper,750000.0,792500.0
+Daniel,Munie,San Jose Earthquakes,Center-back,500000.0,574000.0
+Dave,Romney,San Jose Earthquakes,Center-back,882875.0,962375.0
+DeJuan,Jones,San Jose Earthquakes,Left-back,891996.0,898246.0
+Earl,Edwards Jr.,San Jose Earthquakes,Goalkeeper,210000.0,220250.0
+Edwyn,Mendoza,San Jose Earthquakes,Defensive Midfield,120000.0,132440.0
+Francesco,Montali,San Jose Earthquakes,Goalkeeper,113400.0,116578.0
+Hernán,López Muñoz,San Jose Earthquakes,Attacking Midfield,850000.0,1020000.0
+Ian,Harkes,San Jose Earthquakes,Central Midfield,450000.0,450000.0
+Jack,Jasinski,San Jose Earthquakes,Right-back,88025.0,90287.0
+Jack,Skahan,San Jose Earthquakes,Central Midfield,225000.0,225000.0
+Jamar,Ricketts,San Jose Earthquakes,Left-back,113400.0,114987.0
+Jonathan,González,San Jose Earthquakes,Defensive Midfield,250000.0,275625.0
+Kaedren,Spivey,San Jose Earthquakes,Central Midfield,113400.0,116400.0
+Max,Floriani,San Jose Earthquakes,Center-back,88025.0,90525.0
+Nate,Crockford,San Jose Earthquakes,Goalkeeper,88025.0,88025.0
+Nick,Fernandez,San Jose Earthquakes,Defensive Midfield,113400.0,115304.0
+Niko,Tsakiris,San Jose Earthquakes,Central Midfield,685714.0,755214.0
+Noel,Buck,San Jose Earthquakes,Central Midfield,150000.0,150000.0
+Nonso,Adimabua,San Jose Earthquakes,Center Forward,113400.0,117285.0
+Ousseni,Bouda,San Jose Earthquakes,Center Forward,350000.0,350000.0
+Paul,Marie,San Jose Earthquakes,Right-back,350000.0,382500.0
+Preston,Judd,San Jose Earthquakes,Center Forward,250000.0,299375.0
+Reid,Roberts,San Jose Earthquakes,Center-back,88025.0,88025.0
+Rohan,Rajagopal,San Jose Earthquakes,Defensive Midfield,88025.0,88025.0
+Ronaldo,Vieira,San Jose Earthquakes,Central Midfield,800000.0,853854.0
+Timo,Werner,San Jose Earthquakes,Center Forward,3738872.0,4268039.0
+Vítor,Costa,San Jose Earthquakes,Left-back,425000.0,463333.0
+Albert,Rusnák,Seattle Sounders FC,Attacking Midfield,2685000.0,2685000.0
+Álex,Roldán,Seattle Sounders FC,Right-back,625000.0,658050.0
+Andrew,Thomas,Seattle Sounders FC,Goalkeeper,252500.0,252500.0
+Antino,Lopez,Seattle Sounders FC,Center-back,88025.0,88025.0
+Cody,Baker,Seattle Sounders FC,Right-back,113400.0,119104.0
+Cristian,Roldán,Seattle Sounders FC,Central Midfield,1645000.0,1766000.0
+Danny,Musovski,Seattle Sounders FC,Center Forward,650000.0,712924.0
+Hassani,Dotson,Seattle Sounders FC,Central Midfield,828125.0,828125.0
+Jackson,Ragen,Seattle Sounders FC,Center-back,625000.0,635000.0
+Jesús,Ferreira,Seattle Sounders FC,Center Forward,1639204.0,1882937.0
+Jordan,Morris,Seattle Sounders FC,Center Forward,2362500.0,2372500.0
+Kalani,Kossa-Rienzi,Seattle Sounders FC,Right-back,113400.0,113400.0
+Kee-hee,Kim,Seattle Sounders FC,Center-back,113400.0,113400.0
+Max,Anchor,Seattle Sounders FC,Goalkeeper,113400.0,120842.0
+Nikola,Petković,Seattle Sounders FC,Central Midfield,470000.0,516250.0
+Nouhou,Tolo,Seattle Sounders FC,Left-back,800000.0,835000.0
+Osaze,De Rosario,Seattle Sounders FC,Center Forward,250000.0,315000.0
+Paul,Arriola,Seattle Sounders FC,Right Wing,1000000.0,1142500.0
+Paul,Rothrock,Seattle Sounders FC,Left Wing,525000.0,525000.0
+Pedro,de la Vega,Seattle Sounders FC,Right Wing,1000000.0,1379000.0
+Peter,Kingston,Seattle Sounders FC,Defensive Midfield,113400.0,113400.0
+Ryan,Sailor,Seattle Sounders FC,Center-back,113400.0,113400.0
+Sebastian,Gomez,Seattle Sounders FC,Attacking Midfield,88025.0,94740.0
+Snyder,Brunell,Seattle Sounders FC,Defensive Midfield,88025.0,98051.0
+Stefan,Frei,Seattle Sounders FC,Goalkeeper,365000.0,390750.0
+Stuart,Hawkins,Seattle Sounders FC,Center-back,113400.0,125421.0
+Yeimar,Gómez Andrade,Seattle Sounders FC,Center-back,900000.0,982500.0
+Yu,Tsukanome,Seattle Sounders FC,Center Forward,113400.0,113400.0
+Calvin,Harris,Sporting Kansas City,Right Wing,375000.0,375000.0
+Cielo,Tschantret,Sporting Kansas City,Defensive Midfield,88025.0,88025.0
+Dejan,Joveljić,Sporting Kansas City,Center Forward,3000000.0,3306250.0
+Diego Henrique,Borges da Silva,Sporting Kansas City,Center-back,300000.0,330000.0
+Ethan,Bartlow,Sporting Kansas City,Center-back,113400.0,142637.0
+Ian,James,Sporting Kansas City,Center-back,113400.0,117998.0
+Jack,Kortkamp,Sporting Kansas City,Goalkeeper,88025.0,90025.0
+Jacob,Bartlett,Sporting Kansas City,Defensive Midfield,88025.0,91025.0
+Jake,Davis,Sporting Kansas City,Right-back,425000.0,437500.0
+Jansen,Miller,Sporting Kansas City,Center-back,88025.0,89705.0
+Jayden,Reid,Sporting Kansas City,Left-back,113400.0,116655.0
+John,Pulskamp,Sporting Kansas City,Goalkeeper,400000.0,425375.0
+Justin,Reynolds,Sporting Kansas City,Right-back,123400.0,123400.0
+Kwaku,Agyabeng,Sporting Kansas City,Central Midfield,88025.0,88858.0
+Lasse,Berg Johnsen,Sporting Kansas City,Central Midfield,1100000.0,1191250.0
+Manu,García,Sporting Kansas City,Attacking Midfield,2200000.0,2425313.0
+Osvaldo,Capemba,Sporting Kansas City,Left Wing,600000.0,658720.0
+Ryan,Schewe,Sporting Kansas City,Goalkeeper,88025.0,88025.0
+Shapi,Suleymanov,Sporting Kansas City,Right Wing,950000.0,1065028.0
+Stefan,Cleveland,Sporting Kansas City,Goalkeeper,215000.0,237000.0
+Stephen,Afrifa,Sporting Kansas City,Left Wing,113400.0,113400.0
+Taylor,Calheira,Sporting Kansas City,Center Forward,88025.0,100824.0
+Wyatt,Meyer,Sporting Kansas City,Center-back,113400.0,116550.0
+Zorhan,Bassong,Sporting Kansas City,Central Midfield,450000.0,540833.0
+Ben,Lundt,St. Louis City SC,Goalkeeper,225000.0,225000.0
+Brendan,McSorley,St. Louis City SC,Center Forward,88025.0,88025.0
+Caden,Glover,St. Louis City SC,Center Forward,150000.0,155000.0
+Cedric,Teuchert,St. Louis City SC,Center Forward,1400000.0,1542500.0
+Célio Antonio,Pompeu Pinheiro Martins,St. Louis City SC,Left Wing,272750.0,309006.0
+Chris,Durkin,St. Louis City SC,Defensive Midfield,600000.0,668500.0
+Christian,Olivares,St. Louis City SC,Goalkeeper,113400.0,113400.0
+Conrad,Wallem,St. Louis City SC,Right Midfield,600000.0,657188.0
+Daniel,Edelman,St. Louis City SC,Defensive Midfield,600000.0,676350.0
+Dante,Polvara,St. Louis City SC,Defensive Midfield,400000.0,436806.0
+Eduard,Löwen,St. Louis City SC,Central Midfield,1300000.0,1444250.0
+Fallou,Fall,St. Louis City SC,Center-back,645500.0,743919.0
+Jake,Girdwood-Reich,St. Louis City SC,Center-back,296750.0,335527.0
+Jaziel,Orozco,St. Louis City SC,Right-back,88025.0,88025.0
+Joshua,Yaro,St. Louis City SC,Center-back,206000.0,227725.0
+Kyle,Hiebert,St. Louis City SC,Center-back,260000.0,289000.0
+Lukas,MacNaughton,St. Louis City SC,Center-back,200000.0,219306.0
+Mamadou,Mbacke,St. Louis City SC,Center-back,435000.0,496350.0
+Marcel,Hartel,St. Louis City SC,Central Midfield,2022300.0,2407813.0
+Miguel,Perez,St. Louis City SC,Central Midfield,113400.0,113400.0
+MyKhi,Joyner,St. Louis City SC,Left Midfield,113400.0,130680.0
+Rafael,Santos,St. Louis City SC,Left-back,200000.0,226354.0
+Roman,Bürki,St. Louis City SC,Goalkeeper,2500000.0,2750000.0
+Sang-bin,Jeong,St. Louis City SC,Center Forward,685125.0,791833.0
+Sergio,Córdova,St. Louis City SC,Center Forward,1200000.0,1213500.0
+Simon,Becher,St. Louis City SC,Center Forward,400000.0,444375.0
+Timo,Baumgartl,St. Louis City SC,Center-back,600000.0,693333.0
+Tomas,Totland,St. Louis City SC,Right-back,350000.0,391763.0
+Tomas,Ostrák,St. Louis City SC,Attacking Midfield,700000.0,801000.0
+Tyson,Pearce,St. Louis City SC,Right-back,130000.0,130000.0
+Adam,Pearlman,Toronto FC,Center-back,130000.0,143300.0
+Adisa,De Rosario,Toronto FC,Goalkeeper,88025.0,104638.0
+Alonso,Coello,Toronto FC,Central Midfield,300000.0,335000.0
+Benjamín,Kuscevic,Toronto FC,Center-back,650004.0,804982.0
+Cassius,Mailula,Toronto FC,Center Forward,350000.0,366003.0
+Dániel,Sallói,Toronto FC,Left Wing,1300000.0,1343333.0
+Deandre,Kerr,Toronto FC,Center Forward,160000.0,165319.0
+Derrick,Etienne Jr.,Toronto FC,Left Wing,375000.0,375000.0
+Djordje,Mihailovic,Toronto FC,Attacking Midfield,2279170.0,2828204.0
+Emilio,Aristizábal,Toronto FC,Center Forward,324996.0,344788.0
+Henry,Wingo,Toronto FC,Right-back,725000.0,796031.0
+Jonathan,Osorio,Toronto FC,Central Midfield,800000.0,1083333.0
+José,Cifuentes,Toronto FC,Central Midfield,1374999.96,1570000.0
+Josh,Sargent,Toronto FC,Center Forward,3210000.0,5265667.0
+Jules-Anthony,Vilsaint,Toronto FC,Center Forward,150000.0,156875.0
+Kobe,Franklin,Toronto FC,Right-back,150000.0,160802.0
+Lazar,Stefanović,Toronto FC,Center-back,113400.0,125306.0
+Luka,Gavran,Toronto FC,Goalkeeper,225000.0,249475.0
+Malik,Henry,Toronto FC,Right Midfield,88025.0,88025.0
+Markus,Cimermancic,Toronto FC,Central Midfield,88025.0,101881.0
+Matheus,Pereira de Souza,Toronto FC,Left-back,477000.0,650800.0
+Nicksoen,Gomis,Toronto FC,Center-back,113400.0,113400.0
+Raheem,Edwards,Toronto FC,Left-back,375000.0,414340.0
+Richie,Laryea,Toronto FC,Right-back,875000.0,1214438.0
+Stefan,Kapor,Toronto FC,Center-back,88025.0,97740.0
+Theo,Corbeanu,Toronto FC,Right Wing,450000.0,496625.0
+Walker,Zimmerman,Toronto FC,Center-back,1140000.0,1708037.0
+William,Yarbrough,Toronto FC,Goalkeeper,135000.0,150000.0
+Zane,Monlouis,Toronto FC,Center-back,125000.0,137891.0
+Adrián,Zendejas,Vancouver Whitecaps,Goalkeeper,113400.0,113400.0
+Andrés,Cubas,Vancouver Whitecaps,Defensive Midfield,1000000.0,1153333.0
+AZ,Jackson,Vancouver Whitecaps,Attacking Midfield,240000.0,403680.0
+Belal,Halbouni,Vancouver Whitecaps,Center-back,204000.0,230233.0
+Brian,White,Vancouver Whitecaps,Center Forward,1065000.0,1065000.0
+Bruno,Caicedo,Vancouver Whitecaps,Left Wing,390000.0,430150.0
+Cheikh,Sabaly,Vancouver Whitecaps,Left Wing,1109091.0,1414727.0
+Édier,Ocampo,Vancouver Whitecaps,Right-back,400000.0,453799.0
+Emmanuel,Sabbi,Vancouver Whitecaps,Right Wing,1080000.0,1167750.0
+Giuseppe,Bovalina,Vancouver Whitecaps,Right-back,125000.0,137980.0
+Isaac,Boehmer,Vancouver Whitecaps,Goalkeeper,165000.0,173750.0
+J.C.,Ngando,Vancouver Whitecaps,Defensive Midfield,200000.0,200000.0
+Jeevan,Badwal,Vancouver Whitecaps,Central Midfield,113400.0,113400.0
+Joedrick,Pupe,Vancouver Whitecaps,Center-back,450000.0,490600.0
+Kenji,Cabrera,Vancouver Whitecaps,Left Wing,400000.0,440053.0
+Liam,MacKenzie,Vancouver Whitecaps,Attacking Midfield,88025.0,103450.0
+Mathías,Laborda,Vancouver Whitecaps,Center-back,1050000.0,1193625.0
+Mihail,Gherasimencov,Vancouver Whitecaps,Left-back,88025.0,97748.0
+Nelson,Pierre,Vancouver Whitecaps,Center Forward,125000.0,139116.0
+Nikola,Djordjevic,Vancouver Whitecaps,Right-back,88025.0,88025.0
+Oliver,Larraz,Vancouver Whitecaps,Central Midfield,450000.0,496667.0
+Ralph,Priso,Vancouver Whitecaps,Defensive Midfield,175000.0,189167.0
+Ranko,Veselinović,Vancouver Whitecaps,Center-back,715000.0,782125.0
+Rayan,Elloumi,Vancouver Whitecaps,Center Forward,88025.0,103671.0
+Ryan,Gauld,Vancouver Whitecaps,Attacking Midfield,3500000.0,3675000.0
+Sam,Adekugbe,Vancouver Whitecaps,Left-back,1300000.0,1388000.0
+Sebastian,Berhalter,Vancouver Whitecaps,Central Midfield,480000.0,480000.0
+Sebastian,Schonlau,Vancouver Whitecaps,Center-back,720000.0,776833.0
+Tate,Johnson,Vancouver Whitecaps,Left-back,88025.0,89025.0
+Thomas,Müller,Vancouver Whitecaps,Center Forward/Attacking Midfi,5000004.0,5152504.0
+Tristan,Blackmon,Vancouver Whitecaps,Center-back,975000.0,975000.0
+Yohei,Takaoka,Vancouver Whitecaps,Goalkeeper,772727.0,841818.0

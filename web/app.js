@@ -1,0 +1,214 @@
+/* MLS 2026 compensation narrative — chart + copy rendering */
+const D = window.MLS_DATA;
+const L = D.league;
+
+const COL = { accent: '#00d2a0', blue: '#4c8bf5', hot: '#ff5a6a', gold: '#f2c14e',
+              ink: '#eef2f9', muted: '#8a94a8', line: '#232b3d', panel: '#161b28' };
+
+const usd = (v, dp = 0) => '$' + Number(v).toLocaleString('en-US', { maximumFractionDigits: dp });
+const usdShort = v => v >= 1e6 ? '$' + (v / 1e6).toFixed(v >= 1e7 ? 0 : 1) + 'M'
+                    : '$' + Math.round(v / 1e3) + 'K';
+
+const AXIS = {
+  axisLine: { lineStyle: { color: COL.line } },
+  axisLabel: { color: COL.muted },
+  splitLine: { lineStyle: { color: 'rgba(35,43,61,.55)' } },
+  nameTextStyle: { color: COL.muted },
+};
+const baseGrid = { left: 8, right: 24, top: 24, bottom: 8, containLabel: true };
+const TT = {
+  backgroundColor: '#0d111a', borderColor: COL.line,
+  textStyle: { color: COL.ink, fontFamily: 'Inter' },
+};
+
+/* -------------------- hero + inline copy -------------------- */
+document.getElementById('h-payroll').textContent = '$' + (L.totalPayroll / 1e6).toFixed(0) + 'M';
+document.getElementById('h-players').textContent = L.players;
+document.getElementById('h-gini').textContent = L.gini.toFixed(2);
+document.getElementById('h-r2').textContent = (D.regression.r2 * 100).toFixed(0) + '%';
+document.getElementById('t-median').textContent = usd(L.median);
+document.getElementById('t-mean').textContent = usd(L.mean);
+document.getElementById('t-min').textContent = usd(L.leagueMin);
+document.getElementById('t-top10').textContent = (L.top10Share * 100).toFixed(0) + '%';
+document.getElementById('t-max').textContent = usd(L.max);
+document.getElementById('t-r2b').textContent = (D.regression.r2 * 100).toFixed(0) + '%';
+document.getElementById('f-asof').textContent = L.asOf;
+
+/* landscape stat cards */
+const cards = [
+  { n: '$' + (L.totalPayroll / 1e6).toFixed(0) + 'M', cls: 'accent', cap: 'Total league payroll (guaranteed comp)' },
+  { n: usd(L.median), cls: 'blue', cap: 'Median player pay' },
+  { n: usd(L.p90), cls: '', cap: '90th-percentile pay — the DP threshold' },
+  { n: usdShort(L.max), cls: 'gold', cap: "Top earner's compensation" },
+];
+document.getElementById('landscape-stats').innerHTML = cards.map(c =>
+  `<div class="stat"><div class="num ${c.cls}">${c.n}</div><div class="cap">${c.cap}</div></div>`).join('');
+
+/* -------------------- 1. distribution histogram -------------------- */
+(() => {
+  const cats = D.hist.map(h => Math.round((h.lo + h.hi) / 2));
+  echarts.init(document.getElementById('chart-dist')).setOption({
+    grid: { ...baseGrid, bottom: 30 }, tooltip: {
+      ...TT, trigger: 'axis',
+      formatter: p => { const h = D.hist[p[0].dataIndex];
+        return `${usdShort(h.lo)} – ${usdShort(h.hi)}<br/><b>${h.n}</b> players`; },
+    },
+    xAxis: { type: 'category', data: cats, ...AXIS,
+      axisLabel: { color: COL.muted, formatter: v => usdShort(v), interval: 4 } },
+    yAxis: { type: 'value', name: 'players', ...AXIS },
+    series: [{ type: 'bar', data: D.hist.map(h => h.n),
+      itemStyle: {
+        borderRadius: [3, 3, 0, 0],
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1,
+          [{ offset: 0, color: COL.blue }, { offset: 1, color: '#2b4a86' }]),
+      } }],
+  });
+})();
+
+/* -------------------- 2. top earners -------------------- */
+(() => {
+  const top = D.topEarners.slice(0, 15).slice().reverse();
+  echarts.init(document.getElementById('chart-top')).setOption({
+    grid: { ...baseGrid, left: 4, right: 70 }, tooltip: {
+      ...TT, trigger: 'item',
+      formatter: p => { const t = top[p.dataIndex];
+        return `<b>${t.name}</b><br/>${t.club} · ${t.position}<br/>${usd(t.comp)}`; },
+    },
+    xAxis: { type: 'value', ...AXIS, axisLabel: { color: COL.muted, formatter: usdShort } },
+    yAxis: { type: 'category', data: top.map(t => t.name), ...AXIS,
+      axisLabel: { color: COL.ink, fontSize: 12 } },
+    series: [{
+      type: 'bar', data: top.map(t => t.comp),
+      label: { show: true, position: 'right', color: COL.muted, formatter: p => usdShort(p.value) },
+      itemStyle: {
+        borderRadius: [0, 4, 4, 0],
+        color: new echarts.graphic.LinearGradient(0, 0, 1, 0,
+          [{ offset: 0, color: '#2b4a86' }, { offset: 1, color: COL.gold }]),
+      },
+    }],
+  });
+})();
+
+/* -------------------- 3. positions -------------------- */
+(() => {
+  const pos = D.positions.slice().reverse();
+  echarts.init(document.getElementById('chart-pos')).setOption({
+    grid: { ...baseGrid, left: 4, right: 80 }, tooltip: {
+      ...TT, trigger: 'item',
+      formatter: p => { const x = pos[p.dataIndex];
+        return `<b>${x.position}</b><br/>Median ${usd(x.median)}<br/>${x.n} players`; },
+    },
+    xAxis: { type: 'value', ...AXIS, axisLabel: { color: COL.muted, formatter: usdShort } },
+    yAxis: { type: 'category', data: pos.map(x => x.position), ...AXIS,
+      axisLabel: { color: COL.ink, fontSize: 12 } },
+    series: [{
+      type: 'bar', data: pos.map(x => x.median),
+      label: { show: true, position: 'right', color: COL.muted,
+        formatter: p => usdShort(p.value) + '  ·  n=' + pos[p.dataIndex].n },
+      itemStyle: { borderRadius: [0, 4, 4, 0], color: COL.accent },
+    }],
+  });
+})();
+
+/* -------------------- 4. payroll vs PPG scatter -------------------- */
+(() => {
+  const R = D.regression;
+  const line = [];
+  for (let i = 0; i <= 40; i++) {
+    const x = R.xmin * Math.pow(R.xmax / R.xmin, i / 40);
+    line.push([x / 1e6, R.intercept + R.slope * Math.log10(x)]);
+  }
+  const mk = conf => D.clubs.filter(c => c.conf === conf).map(c => ({
+    value: [c.payroll / 1e6, c.ppg], club: c,
+  }));
+  echarts.init(document.getElementById('chart-scatter')).setOption({
+    grid: { ...baseGrid, top: 40, right: 30 },
+    legend: { data: ['East', 'West'], textStyle: { color: COL.muted }, top: 0, right: 0 },
+    tooltip: {
+      ...TT, trigger: 'item',
+      formatter: p => { if (!p.data.club) return '';
+        const c = p.data.club;
+        const over = c.residual >= 0;
+        return `<b>${c.club}</b> <span style="color:${COL.muted}">(${c.conf})</span><br/>`
+          + `Payroll: ${usd(c.payroll)}<br/>`
+          + `Record: ${c.w}-${c.l}-${c.d} · ${c.pts} pts (${c.ppg.toFixed(2)} PPG)<br/>`
+          + `Cost/point: ${usd(c.costPerPoint)}<br/>`
+          + `<span style="color:${over ? COL.accent : COL.hot}">`
+          + `${over ? '▲ over' : '▼ under'}-performing spend by ${Math.abs(c.residual).toFixed(2)} PPG</span>`; },
+    },
+    xAxis: { type: 'log', name: 'Total payroll', nameLocation: 'middle', nameGap: 34, ...AXIS,
+      axisLabel: { color: COL.muted, formatter: v => '$' + v + 'M' } },
+    yAxis: { type: 'value', name: 'Points per game', ...AXIS },
+    series: [
+      { name: 'trend', type: 'line', data: line, showSymbol: false, silent: true,
+        lineStyle: { color: COL.hot, type: 'dashed', width: 2 }, z: 1,
+        tooltip: { show: false } },
+      { name: 'East', type: 'scatter', data: mk('East'), symbolSize: 15, z: 3,
+        itemStyle: { color: COL.accent, borderColor: '#0b0e14', borderWidth: 1.5, opacity: .92 },
+        emphasis: { scale: 1.5 },
+        label: { show: true, position: 'right', color: COL.muted, fontSize: 10,
+          formatter: p => p.data.club.club } },
+      { name: 'West', type: 'scatter', data: mk('West'), symbolSize: 15, z: 3,
+        itemStyle: { color: COL.blue, borderColor: '#0b0e14', borderWidth: 1.5, opacity: .92 },
+        emphasis: { scale: 1.5 },
+        label: { show: true, position: 'right', color: COL.muted, fontSize: 10,
+          formatter: p => p.data.club.club } },
+    ],
+  });
+})();
+
+/* -------------------- 5. efficiency lists + residual bar -------------------- */
+(() => {
+  const byCost = D.clubs.slice().sort((a, b) => a.costPerPoint - b.costPerPoint);
+  const best = byCost.slice(0, 6), worst = byCost.slice(-6).reverse();
+  const row = (c, cls) => `<div class="r"><span class="team">${c.club}
+      <span class="tag">${c.pts} pts · ${usdShort(c.payroll)}</span></span>
+      <span class="val ${cls}">${usd(c.costPerPoint)}<span class="tag">/pt</span></span></div>`;
+  document.getElementById('best-list').innerHTML = best.map(c => row(c, 'good')).join('');
+  document.getElementById('worst-list').innerHTML = worst.map(c => row(c, 'bad')).join('');
+
+  const atl = D.clubs.find(c => c.club === 'Atlanta United');
+  document.getElementById('pull-atl').innerHTML =
+    `Atlanta United is the league's cautionary tale: a top-five payroll of
+     <span style="color:var(--gold)">${usdShort(atl.payroll)}</span> buying
+     <span style="color:var(--hot)">just ${atl.pts} points</span> — the most expensive futility in MLS.`;
+
+  const res = D.clubs.slice().sort((a, b) => a.residual - b.residual);
+  echarts.init(document.getElementById('chart-residual')).setOption({
+    grid: { ...baseGrid, left: 4, right: 30 },
+    tooltip: { ...TT, trigger: 'item',
+      formatter: p => { const c = res[p.dataIndex];
+        return `<b>${c.club}</b><br/>Actual ${c.ppg.toFixed(2)} vs predicted ${c.ppgPred.toFixed(2)} PPG<br/>`
+          + `<span style="color:${c.residual >= 0 ? COL.accent : COL.hot}">`
+          + `${c.residual >= 0 ? '+' : ''}${c.residual.toFixed(2)} vs spend</span>`; } },
+    xAxis: { type: 'value', name: 'PPG vs what payroll predicts', nameLocation: 'middle', nameGap: 34, ...AXIS },
+    yAxis: { type: 'category', data: res.map(c => c.club), ...AXIS,
+      axisLabel: { color: COL.ink, fontSize: 11 } },
+    series: [{
+      type: 'bar', data: res.map(c => ({
+        value: +c.residual.toFixed(3),
+        itemStyle: { color: c.residual >= 0 ? COL.accent : COL.hot, borderRadius: 3 },
+      })),
+    }],
+  });
+})();
+
+/* -------------------- scroll polish -------------------- */
+const bar = document.getElementById('progress');
+const onScroll = () => {
+  const h = document.documentElement;
+  bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+};
+document.addEventListener('scroll', onScroll, { passive: true });
+
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* keep charts crisp on resize */
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.chart').forEach(el => {
+    const inst = echarts.getInstanceByDom(el); if (inst) inst.resize();
+  });
+});

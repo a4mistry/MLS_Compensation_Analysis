@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Price of a Point — MLS 2026 Compensation</title>
+<meta name="description" content="A data narrative on Major League Soccer 2026 player pay and how it translates into wins." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="progress"></div>
+
+<!-- ============ HERO ============ -->
+<section id="hero">
+  <div class="wrap">
+    <div class="kicker">MLS 2026 · A Compensation Story</div>
+    <h1>The Price<br>of a <span class="grad">Point</span></h1>
+    <p class="hero-sub">Major League Soccer paid its players more than half a billion dollars this year.
+      Here is where that money went — and how little of it the standings can explain.</p>
+    <div class="hero-meta">
+      <div><span class="big" id="h-payroll"></span><span class="lbl">Total guaranteed comp</span></div>
+      <div><span class="big" id="h-players"></span><span class="lbl">Players analyzed</span></div>
+      <div><span class="big" id="h-gini"></span><span class="lbl">Gini (pay inequality)</span></div>
+      <div><span class="big" id="h-r2"></span><span class="lbl">of results explained by pay</span></div>
+    </div>
+    <div class="scroll-cue">Scroll to begin ↓</div>
+  </div>
+</section>
+
+<!-- ============ 1. LANDSCAPE ============ -->
+<section id="landscape">
+  <div class="wrap reveal">
+    <div class="kicker">01 — The Landscape</div>
+    <h2>A league of minimum-wagers and millionaires</h2>
+    <div class="narrow">
+      <p class="lead">Strip out the headlines and the median MLS player earns <b id="t-median"></b> in
+        guaranteed compensation. The average earns <b id="t-mean"></b> — a gap that tells you everything
+        about how top-heavy this league is.</p>
+    </div>
+    <div class="stats" id="landscape-stats"></div>
+    <div class="panel">
+      <h3>Where every paycheck falls</h3>
+      <p class="hint">Each bar is a pay band (log scale). The pile-up on the left is the league minimum of
+        <span id="t-min"></span>; the long tail on the right is the Designated Players.</p>
+      <div id="chart-dist" class="chart"></div>
+    </div>
+    <p class="pull">Half the league earns less than a rookie MLB reliever. The other half includes a man paid
+      more than entire rival rosters combined.</p>
+  </div>
+</section>
+
+<!-- ============ 2. INEQUALITY ============ -->
+<section id="inequality" class="alt">
+  <div class="wrap reveal">
+    <div class="kicker">02 — The Superstars</div>
+    <h2>The 1% of the pitch</h2>
+    <div class="two-col">
+      <div>
+        <p class="lead">MLS runs a barbell economy. A small elite of Designated Players sits at the top,
+          a vast base earns near the minimum, and the middle is thin.</p>
+        <p>The top <b>10%</b> of earners take home <b id="t-top10"></b> of all the money in the league.
+          The single highest-paid player alone earns <b id="t-max"></b> — enough to fund a full roster of
+          league-minimum players several times over.</p>
+        <p class="muted small">Guaranteed compensation includes base salary plus marketing and bonus money —
+          the standard MLS pay yardstick.</p>
+      </div>
+      <div class="panel" style="margin-top:0">
+        <h3>The 15 highest-paid players</h3>
+        <p class="hint">Guaranteed compensation, 2026</p>
+        <div id="chart-top" class="chart tall"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. POSITIONS ============ -->
+<section id="positions">
+  <div class="wrap reveal">
+    <div class="kicker">03 — The Market by Role</div>
+    <h2>Attack pays. Goalkeeping doesn't.</h2>
+    <div class="narrow">
+      <p class="lead">The transfer market prices creativity and goals. Attacking midfielders and wingers
+        command the highest median pay; goalkeepers — however vital — are the cheapest specialists on the field.</p>
+    </div>
+    <div class="panel">
+      <h3>Median guaranteed compensation by position</h3>
+      <p class="hint">Positions with five or more players. Bar labels show the sample size.</p>
+      <div id="chart-pos" class="chart"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PAY vs PERFORMANCE ============ -->
+<section id="performance" class="alt">
+  <div class="wrap reveal">
+    <div class="kicker">04 — Money vs Results</div>
+    <h2>Does spending buy wins?</h2>
+    <div class="narrow">
+      <p class="lead">Here is the question every owner asks. We plot each club's total payroll against its
+        points-per-game this season. If money bought results, the dots would hug the trend line.</p>
+    </div>
+    <div class="panel">
+      <h3>Payroll vs points-per-game · 2026 season to date</h3>
+      <p class="hint">Log scale. Clubs <b style="color:var(--accent)">above</b> the trend line beat their budget;
+        clubs <b style="color:var(--hot)">below</b> underdeliver. Hover any club for detail.</p>
+      <div id="chart-scatter" class="chart tall"></div>
+    </div>
+    <p class="pull">Payroll explains just <span style="color:var(--gold)" id="t-r2b"></span> of the variance in
+      results. In MLS, money tilts the table — it does not set it.</p>
+  </div>
+</section>
+
+<!-- ============ 5. EFFICIENCY ============ -->
+<section id="efficiency">
+  <div class="wrap reveal">
+    <div class="kicker">05 — Value for Money</div>
+    <h2>Who spends smart — and who just spends</h2>
+    <div class="narrow">
+      <p class="lead">Cost per point turns payroll into an efficiency score: total dollars divided by points
+        earned. The cheapest points in the league cost a quarter of what the priciest ones do.</p>
+    </div>
+    <div class="vs-grid">
+      <div class="vs-card good">
+        <h3>💚 Best value</h3>
+        <p class="muted small">Lowest cost per point — winning on lean, well-spread payrolls.</p>
+        <div class="rowlist" id="best-list"></div>
+      </div>
+      <div class="vs-card bad">
+        <h3>🔻 Worst value</h3>
+        <p class="muted small">Highest cost per point — paying for results they aren't getting.</p>
+        <div class="rowlist" id="worst-list"></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Value vs spend: over- and under-performers</h3>
+      <p class="hint">How many points-per-game each club earns above (green) or below (red) what its payroll predicts.</p>
+      <div id="chart-residual" class="chart tall"></div>
+    </div>
+    <p class="pull" id="pull-atl"></p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div style="max-width:560px">
+      <h3 style="font-family:var(--serif);color:var(--ink)">Read the fine print</h3>
+      <div class="caveats">
+        <ul>
+          <li><b>Partial season.</b> Standings reflect ~13–15 of 34 games — roughly mid-season. Positions will move.</li>
+          <li><b>April snapshot.</b> Payroll is the MLSPA salary guide dated April 14, 2026; summer signings aren't included.</li>
+          <li><b>Not cap spending.</b> Guaranteed comp ≠ MLS roster-rules/cap figures (DP mechanics, allocation money).</li>
+          <li><b>Small samples.</b> Injuries, schedule strength and variance drive a lot of a half-season table.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="small">
+      <p><b>Data</b><br>
+        MLSPA Spring 2026 Salary Guide (PDF)<br>
+        Standings via <a href="https://plaintextsports.com/mls/2026/standings">plaintextsports</a>,
+        <a href="https://www.espn.com/soccer/standings/_/league/usa.1">ESPN</a>,
+        <a href="https://www.mlssoccer.com/standings/2026/conference">MLSsoccer</a></p>
+      <p class="muted">Built with Python (pandas · pdfplumber · scipy) and ECharts.<br>
+        Pay figure: guaranteed compensation. As of <span id="f-asof"></span>.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<script src="site_data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
