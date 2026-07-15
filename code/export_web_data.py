@@ -110,9 +110,94 @@ regression = {
     "xmin": float(df["payroll"].min()), "xmax": float(df["payroll"].max()),
 }
 
+# ---- roster construction: pay concentration + position of spend ----
+POS_ORDER = ["Attack", "Midfield", "Defense", "Goalkeeper"]
+
+
+def pos_bucket(pos):
+    p = str(pos).split("/")[0].strip().lower()
+    if "goalkeeper" in p:
+        return "Goalkeeper"
+    if "back" in p:
+        return "Defense"
+    if "wing" in p or "forward" in p or "attacking mid" in p:
+        return "Attack"
+    if "midfield" in p:
+        return "Midfield"
+    return "Midfield"
+
+
+players["bucket"] = players["position"].map(pos_bucket)
+ppg_by_club = (df.set_index("club")["ppg"]).to_dict()
+
+# per-club Gini + PPG (for the scatter)
+def gini(x):
+    x = np.sort(np.asarray(x, float))
+    n = len(x)
+    return (2 * np.sum(np.arange(1, n + 1) * x) / (n * x.sum())) - (n + 1) / n
+
+gini_by_club = []
+for club_name, s in players.groupby("club")[PAY]:
+    gini_by_club.append({
+        "club": club_name, "gini": float(gini(s.values)),
+        "ppg": float(ppg_by_club.get(club_name, float("nan"))),
+        "payroll": float(s.sum()),
+        "conf": "East" if club_name in EAST else "West",
+    })
+gvals = np.array([g["gini"] for g in gini_by_club])
+pvals = np.array([g["ppg"] for g in gini_by_club])
+gini_r, gini_p = stats.pearsonr(gvals, pvals)
+# partial correlation of gini vs ppg controlling for log payroll
+lp = np.log10([g["payroll"] for g in gini_by_club])
+rg = gvals - np.poly1d(np.polyfit(lp, gvals, 1))(lp)
+rp = pvals - np.poly1d(np.polyfit(lp, pvals, 1))(lp)
+gini_partial_r, gini_partial_p = stats.pearsonr(rg, rp)
+
+# position of each club's top earner + PPG by that bucket
+top_idx = players.groupby("club")[PAY].idxmax()
+top = players.loc[top_idx, ["club", "bucket", PAY]].copy()
+top["ppg"] = top["club"].map(ppg_by_club)
+top_bucket_counts = {b: int((top["bucket"] == b).sum()) for b in POS_ORDER}
+ppg_by_top_bucket = {b: (float(top.loc[top["bucket"] == b, "ppg"].mean())
+                         if (top["bucket"] == b).any() else None)
+                     for b in POS_ORDER}
+
+# payroll share by position bucket, per club + league average
+sums = (players.groupby(["club", "bucket"])[PAY].sum().unstack(fill_value=0)
+        .reindex(columns=POS_ORDER, fill_value=0))
+share = sums.div(sums.sum(axis=1), axis=0)
+league_share = {b: float(share[b].mean()) for b in POS_ORDER}
+share_by_club = {c: {b: float(share.loc[c, b]) for b in POS_ORDER} for c in share.index}
+
+# minimum-wage tier: position mix of bottom quartile vs whole league
+q25 = players[PAY].quantile(0.25)
+league_mix = players["bucket"].value_counts(normalize=True)
+botq_mix = players[players[PAY] <= q25]["bucket"].value_counts(normalize=True)
+league_mix = {b: float(league_mix.get(b, 0)) for b in POS_ORDER}
+botq_mix = {b: float(botq_mix.get(b, 0)) for b in POS_ORDER}
+
+SPOTLIGHT = "Atlanta United"
+roster = {
+    "posOrder": POS_ORDER,
+    "giniByClub": sorted(gini_by_club, key=lambda d: -d["gini"]),
+    "giniR": float(gini_r), "giniP": float(gini_p),
+    "giniPartialR": float(gini_partial_r), "giniPartialP": float(gini_partial_p),
+    "topBucketCounts": top_bucket_counts,
+    "ppgByTopBucket": ppg_by_top_bucket,
+    "leagueAvgTopPPG": float(top["ppg"].mean()),
+    "leagueShare": league_share,
+    "shareByClub": share_by_club,
+    "leagueMix": league_mix, "bottomQuartileMix": botq_mix,
+    "minWageShare": {
+        b: float((players[players["bucket"] == b][PAY] <= players[PAY].min() * 1.0001).mean())
+        for b in POS_ORDER},
+    "spotlight": SPOTLIGHT,
+}
+
 data = {
     "league": league, "hist": hist, "topEarners": topEarners,
     "positions": positions, "clubs": clubs, "regression": regression,
+    "roster": roster,
 }
 
 out = ROOT / "web" / "site_data.js"

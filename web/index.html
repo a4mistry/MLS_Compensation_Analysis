@@ -143,6 +143,74 @@
   </div>
 </section>
 
+<!-- ============ 6. ROSTER CONSTRUCTION ============ -->
+<section id="roster" class="alt">
+  <div class="wrap reveal">
+    <div class="kicker">06 — Roster Construction</div>
+    <h2>How to build a squad</h2>
+    <div class="narrow">
+      <p class="lead">If money only loosely buys wins, does the <em>shape</em> of the roster matter? Should you
+        spread pay evenly, or concentrate it on a few stars — and which positions deserve the big checks?</p>
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:26px;margin:44px 0 6px">1 · Balanced or top-heavy? It's a wash.</h3>
+    <p class="narrow" style="margin:0 auto 8px">Each club's pay inequality (Gini) plotted against results. Winners
+      sit in <em>both</em> the balanced and top-heavy halves — and once you control for total spend, concentration
+      explains nothing.</p>
+    <div class="panel">
+      <h3>Squad pay inequality vs performance</h3>
+      <p class="hint">Bubble size = payroll. Vertical/horizontal lines mark the league medians.</p>
+      <div id="chart-gini" class="chart tall"></div>
+    </div>
+    <p class="pull">Raw correlation of inequality and results: <span id="t-ginir"></span>. Hold payroll constant and
+      it collapses to <span id="t-ginipartial"></span> — spreading or stacking pay makes no difference at a given budget.</p>
+
+    <h3 style="font-family:var(--serif);font-size:26px;margin:56px 0 6px">2 · Everyone buys an attacker.</h3>
+    <div class="two-col">
+      <div>
+        <p class="lead"><span id="t-atkcount"></span> of 30 clubs make an attacker their highest-paid player.
+          It's the closest thing MLS has to a roster-building law.</p>
+        <p>The rare exceptions prove the point: the clubs whose most expensive player is a <b>goalkeeper</b> average
+          only <b id="t-gkppg"></b> points per game — not because keepers lose games, but because those teams never
+          landed a marquee attacker in the first place. <em>How much</em> of payroll you tilt toward attack, though,
+          barely moves results.</p>
+      </div>
+      <div class="stats" style="grid-template-columns:1fr 1fr;margin-top:0">
+        <div class="stat"><div class="num accent" id="s-atk"></div><div class="cap">clubs led by an attacker</div></div>
+        <div class="stat"><div class="num" id="s-atkppg"></div><div class="cap">their avg points per game</div></div>
+        <div class="stat"><div class="num blue" id="s-gk"></div><div class="cap">clubs led by a goalkeeper</div></div>
+        <div class="stat"><div class="num" style="color:var(--hot)" id="s-gkppg2"></div><div class="cap">their avg points per game</div></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:26px;margin:56px 0 6px">3 · Goalkeepers fill the minimum-wage tier.</h3>
+    <p class="narrow" style="margin:0 auto 8px">The bottom pay quartile mirrors the league in every position except
+      one: goalkeepers are over-represented among the lowest paid. It's the role MLS staffs cheapest.</p>
+    <div class="panel">
+      <h3>Position mix of the bottom pay quartile vs the whole league</h3>
+      <p class="hint">Taller means that position makes up more of the group.</p>
+      <div id="chart-minwage" class="chart"></div>
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:26px;margin:56px 0 6px">4 · The cautionary tale: Atlanta United</h3>
+    <div class="two-col">
+      <div>
+        <p class="lead">Atlanta shows the ceiling of the superstar model — and its risk.</p>
+        <p>With the league's <b>5th-largest payroll ($27.9M)</b>, Atlanta funneled <b>66%</b> of it into attack — 12
+          points above the league's 54% — behind a front three of Almirón, Miranchuk and Latte Lath that eats
+          <b>60% of the wage bill</b>. To pay for it, they went bargain-basement everywhere else: just <b>2%</b> on
+          goalkeeping (vs 6% league-wide) and thin at the back. The result: a <b>0.79 PPG</b> bottom-three side. Loading
+          up on attackers is no guarantee — balance is what Atlanta traded away.</p>
+      </div>
+      <div class="panel" style="margin-top:0">
+        <h3>Where the money goes: Atlanta vs the league</h3>
+        <p class="hint">Share of total payroll spent on each position group.</p>
+        <div id="chart-atlanta" class="chart"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">

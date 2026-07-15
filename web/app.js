@@ -51,14 +51,15 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
 (() => {
   const cats = D.hist.map(h => Math.round((h.lo + h.hi) / 2));
   echarts.init(document.getElementById('chart-dist')).setOption({
-    grid: { ...baseGrid, bottom: 30 }, tooltip: {
+    grid: { ...baseGrid, left: 48, bottom: 48 }, tooltip: {
       ...TT, trigger: 'axis',
       formatter: p => { const h = D.hist[p[0].dataIndex];
         return `${usdShort(h.lo)} – ${usdShort(h.hi)}<br/><b>${h.n}</b> players`; },
     },
-    xAxis: { type: 'category', data: cats, ...AXIS,
+    xAxis: { type: 'category', data: cats, name: 'Guaranteed compensation', nameLocation: 'middle',
+      nameGap: 32, ...AXIS,
       axisLabel: { color: COL.muted, formatter: v => usdShort(v), interval: 4 } },
-    yAxis: { type: 'value', name: 'players', ...AXIS },
+    yAxis: { type: 'value', name: 'Players', nameLocation: 'middle', nameGap: 36, nameRotate: 90, ...AXIS },
     series: [{ type: 'bar', data: D.hist.map(h => h.n),
       itemStyle: {
         borderRadius: [3, 3, 0, 0],
@@ -72,12 +73,13 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
 (() => {
   const top = D.topEarners.slice(0, 15).slice().reverse();
   echarts.init(document.getElementById('chart-top')).setOption({
-    grid: { ...baseGrid, left: 24, right: 70 }, tooltip: {
+    grid: { ...baseGrid, left: 24, right: 70, bottom: 40 }, tooltip: {
       ...TT, trigger: 'item',
       formatter: p => { const t = top[p.dataIndex];
         return `<b>${t.name}</b><br/>${t.club} · ${t.position}<br/>${usd(t.comp)}`; },
     },
-    xAxis: { type: 'value', ...AXIS, axisLabel: { color: COL.muted, formatter: usdShort } },
+    xAxis: { type: 'value', name: 'Guaranteed compensation', nameLocation: 'middle', nameGap: 28,
+      ...AXIS, axisLabel: { color: COL.muted, formatter: usdShort } },
     yAxis: { type: 'category', data: top.map(t => t.name), ...AXIS,
       axisLabel: { color: COL.ink, fontSize: 12 } },
     series: [{
@@ -96,12 +98,13 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
 (() => {
   const pos = D.positions.slice().reverse();
   echarts.init(document.getElementById('chart-pos')).setOption({
-    grid: { ...baseGrid, left: 24, right: 80 }, tooltip: {
+    grid: { ...baseGrid, left: 24, right: 80, bottom: 40 }, tooltip: {
       ...TT, trigger: 'item',
       formatter: p => { const x = pos[p.dataIndex];
         return `<b>${x.position}</b><br/>Median ${usd(x.median)}<br/>${x.n} players`; },
     },
-    xAxis: { type: 'value', ...AXIS, axisLabel: { color: COL.muted, formatter: usdShort } },
+    xAxis: { type: 'value', name: 'Median guaranteed compensation', nameLocation: 'middle', nameGap: 28,
+      ...AXIS, axisLabel: { color: COL.muted, formatter: usdShort } },
     yAxis: { type: 'category', data: pos.map(x => x.position), ...AXIS,
       axisLabel: { color: COL.ink, fontSize: 12 } },
     series: [{
@@ -125,7 +128,7 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
     value: [c.payroll / 1e6, c.ppg], club: c,
   }));
   echarts.init(document.getElementById('chart-scatter')).setOption({
-    grid: { ...baseGrid, top: 40, right: 30 },
+    grid: { ...baseGrid, top: 40, right: 30, left: 56, bottom: 44 },
     legend: { data: ['East', 'West'], textStyle: { color: COL.muted }, top: 0, right: 0 },
     tooltip: {
       ...TT, trigger: 'item',
@@ -141,7 +144,8 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
     },
     xAxis: { type: 'log', name: 'Total payroll', nameLocation: 'middle', nameGap: 34, ...AXIS,
       axisLabel: { color: COL.muted, formatter: v => '$' + v + 'M' } },
-    yAxis: { type: 'value', name: 'Points per game', ...AXIS },
+    yAxis: { type: 'value', name: 'Points per game', nameLocation: 'middle', nameGap: 40,
+      nameRotate: 90, ...AXIS },
     series: [
       { name: 'trend', type: 'line', data: line, showSymbol: false, silent: true,
         lineStyle: { color: COL.hot, type: 'dashed', width: 2 }, z: 1,
@@ -178,7 +182,7 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
 
   const res = D.clubs.slice().sort((a, b) => a.residual - b.residual);
   echarts.init(document.getElementById('chart-residual')).setOption({
-    grid: { ...baseGrid, left: 24, right: 30 },
+    grid: { ...baseGrid, left: 24, right: 30, bottom: 44 },
     tooltip: { ...TT, trigger: 'item',
       formatter: p => { const c = res[p.dataIndex];
         return `<b>${c.club}</b><br/>Actual ${c.ppg.toFixed(2)} vs predicted ${c.ppgPred.toFixed(2)} PPG<br/>`
@@ -193,6 +197,94 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
         itemStyle: { color: c.residual >= 0 ? COL.accent : COL.hot, borderRadius: 3 },
       })),
     }],
+  });
+})();
+
+/* -------------------- 6. roster construction -------------------- */
+(() => {
+  const R = D.roster;
+  const BUCKET = { Attack: COL.hot, Midfield: COL.gold, Defense: COL.blue, Goalkeeper: COL.accent };
+  const pct = v => (v * 100).toFixed(0) + '%';
+
+  // inline copy
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+  set('t-ginir', `r = ${R.giniR >= 0 ? '+' : ''}${R.giniR.toFixed(2)}`);
+  set('t-ginipartial', `r = ${R.giniPartialR >= 0 ? '+' : ''}${R.giniPartialR.toFixed(2)}`);
+  set('t-atkcount', R.topBucketCounts.Attack);
+  set('t-gkppg', R.ppgByTopBucket.Goalkeeper ? R.ppgByTopBucket.Goalkeeper.toFixed(2) : '—');
+  set('s-atk', `${R.topBucketCounts.Attack}/30`);
+  set('s-atkppg', R.ppgByTopBucket.Attack ? R.ppgByTopBucket.Attack.toFixed(2) : '—');
+  set('s-gk', `${R.topBucketCounts.Goalkeeper}/30`);
+  set('s-gkppg2', R.ppgByTopBucket.Goalkeeper ? R.ppgByTopBucket.Goalkeeper.toFixed(2) : '—');
+
+  // 6a. Gini vs PPG scatter (quadrant, bubble = payroll)
+  const gmax = Math.max(...R.giniByClub.map(d => d.payroll));
+  const mk = conf => R.giniByClub.filter(d => d.conf === conf).map(d => ({
+    value: [d.gini, d.ppg], club: d,
+    symbolSize: 12 + (d.payroll / gmax) * 34,
+  }));
+  const med = arr => { const a = [...arr].sort((x, y) => x - y), n = a.length;
+    return n % 2 ? a[(n - 1) / 2] : (a[n / 2 - 1] + a[n / 2]) / 2; };
+  const gMed = med(R.giniByClub.map(d => d.gini));
+  const pMed = med(R.giniByClub.map(d => d.ppg));
+  echarts.init(document.getElementById('chart-gini')).setOption({
+    grid: { ...baseGrid, top: 40, right: 30, left: 56, bottom: 44 },
+    legend: { data: ['East', 'West'], textStyle: { color: COL.muted }, top: 0, right: 0 },
+    tooltip: { ...TT, trigger: 'item', formatter: p => { const c = p.data.club; if (!c) return '';
+      return `<b>${c.club}</b><br/>Gini ${c.gini.toFixed(2)} · ${c.ppg.toFixed(2)} PPG<br/>`
+        + `Payroll ${usd(c.payroll)}`; } },
+    xAxis: { type: 'value', name: 'Pay inequality (Gini)', nameLocation: 'middle', nameGap: 32, ...AXIS,
+      min: 0.35, max: 0.8 },
+    yAxis: { type: 'value', name: 'Points per game', nameLocation: 'middle', nameGap: 40,
+      nameRotate: 90, ...AXIS },
+    series: [
+      { type: 'scatter', name: 'East', data: mk('East'),
+        itemStyle: { color: COL.accent, borderColor: '#fff', borderWidth: 1.4, opacity: .9 },
+        markLine: { silent: true, symbol: 'none', lineStyle: { color: '#bbb', type: 'dashed' },
+          data: [{ xAxis: gMed }, { yAxis: pMed }], label: { show: false } } },
+      { type: 'scatter', name: 'West', data: mk('West'),
+        itemStyle: { color: COL.blue, borderColor: '#fff', borderWidth: 1.4, opacity: .9 } },
+    ],
+  });
+
+  // 6b. minimum-wage tier: league vs bottom quartile
+  const cats = R.posOrder;
+  echarts.init(document.getElementById('chart-minwage')).setOption({
+    grid: { ...baseGrid, top: 40, left: 58, bottom: 40 },
+    legend: { data: ['Whole league', 'Bottom pay quartile'], textStyle: { color: COL.muted }, top: 0 },
+    tooltip: { ...TT, trigger: 'axis', axisPointer: { type: 'shadow' },
+      formatter: ps => ps[0].axisValue + '<br/>' + ps.map(p => `${p.seriesName}: ${p.value}%`).join('<br/>') },
+    xAxis: { type: 'category', data: cats, name: 'Position', nameLocation: 'middle', nameGap: 30,
+      ...AXIS, axisLabel: { color: COL.ink } },
+    yAxis: { type: 'value', name: 'Share of players', nameLocation: 'middle', nameGap: 46, nameRotate: 90,
+      ...AXIS, axisLabel: { color: COL.muted, formatter: '{value}%' } },
+    series: [
+      { name: 'Whole league', type: 'bar', data: cats.map(b => +(R.leagueMix[b] * 100).toFixed(0)),
+        itemStyle: { color: '#c9d6cc', borderRadius: [3, 3, 0, 0] } },
+      { name: 'Bottom pay quartile', type: 'bar',
+        data: cats.map(b => ({ value: +(R.bottomQuartileMix[b] * 100).toFixed(0),
+          itemStyle: { color: BUCKET[b], borderRadius: [3, 3, 0, 0] } })) },
+    ],
+  });
+
+  // 6c. Atlanta spotlight: position payroll share vs league
+  const atl = R.shareByClub[R.spotlight];
+  echarts.init(document.getElementById('chart-atlanta')).setOption({
+    grid: { ...baseGrid, top: 40, left: 58, bottom: 40 },
+    legend: { data: ['League avg', R.spotlight], textStyle: { color: COL.muted }, top: 0 },
+    tooltip: { ...TT, trigger: 'axis', axisPointer: { type: 'shadow' },
+      formatter: ps => ps[0].axisValue + '<br/>' + ps.map(p => `${p.seriesName}: ${p.value}%`).join('<br/>') },
+    xAxis: { type: 'category', data: cats, name: 'Position', nameLocation: 'middle', nameGap: 30,
+      ...AXIS, axisLabel: { color: COL.ink } },
+    yAxis: { type: 'value', name: 'Share of payroll', nameLocation: 'middle', nameGap: 46, nameRotate: 90,
+      ...AXIS, axisLabel: { color: COL.muted, formatter: '{value}%' } },
+    series: [
+      { name: 'League avg', type: 'bar', data: cats.map(b => +(R.leagueShare[b] * 100).toFixed(0)),
+        itemStyle: { color: '#c9d6cc', borderRadius: [3, 3, 0, 0] } },
+      { name: R.spotlight, type: 'bar',
+        data: cats.map(b => ({ value: +(atl[b] * 100).toFixed(0),
+          itemStyle: { color: BUCKET[b], borderRadius: [3, 3, 0, 0] } })) },
+    ],
   });
 })();
 

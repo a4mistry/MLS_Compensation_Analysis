@@ -1009,5 +1009,449 @@ window.MLS_DATA = {
   "p": 0.03443851230903578,
   "xmin": 11696829.0,
   "xmax": 54574541.0
+ },
+ "roster": {
+  "posOrder": [
+   "Attack",
+   "Midfield",
+   "Defense",
+   "Goalkeeper"
+  ],
+  "giniByClub": [
+   {
+    "club": "Inter Miami",
+    "gini": 0.7755499278195181,
+    "ppg": 2.066666666666667,
+    "payroll": 54574541.0,
+    "conf": "East"
+   },
+   {
+    "club": "Atlanta United",
+    "gini": 0.6991763938723501,
+    "ppg": 0.7857142857142857,
+    "payroll": 27884034.64,
+    "conf": "East"
+   },
+   {
+    "club": "San Diego FC",
+    "gini": 0.6958637490362634,
+    "ppg": 1.1333333333333333,
+    "payroll": 24391009.0,
+    "conf": "West"
+   },
+   {
+    "club": "Nashville SC",
+    "gini": 0.6685721621700547,
+    "ppg": 2.357142857142857,
+    "payroll": 22989086.0,
+    "conf": "East"
+   },
+   {
+    "club": "FC Cincinnati",
+    "gini": 0.6459770131591906,
+    "ppg": 1.3333333333333333,
+    "payroll": 23472623.0,
+    "conf": "East"
+   },
+   {
+    "club": "Sporting Kansas City",
+    "gini": 0.6229046980397208,
+    "ppg": 0.7857142857142857,
+    "payroll": 12359396.0,
+    "conf": "West"
+   },
+   {
+    "club": "LA Galaxy",
+    "gini": 0.6183478310387682,
+    "ppg": 1.3333333333333333,
+    "payroll": 26431650.0,
+    "conf": "West"
+   },
+   {
+    "club": "LAFC",
+    "gini": 0.6115403166101663,
+    "ppg": 1.6,
+    "payroll": 32648541.0,
+    "conf": "West"
+   },
+   {
+    "club": "Chicago Fire",
+    "gini": 0.6015000023392256,
+    "ppg": 1.8571428571428572,
+    "payroll": 21733136.0,
+    "conf": "East"
+   },
+   {
+    "club": "Toronto FC",
+    "gini": 0.600925915577754,
+    "ppg": 1.0,
+    "payroll": 21391233.0,
+    "conf": "East"
+   },
+   {
+    "club": "New York Red Bulls",
+    "gini": 0.595982087496076,
+    "ppg": 1.4666666666666666,
+    "payroll": 21651691.0,
+    "conf": "East"
+   },
+   {
+    "club": "New England Revolution",
+    "gini": 0.5758020964705284,
+    "ppg": 1.7857142857142858,
+    "payroll": 19411614.32,
+    "conf": "East"
+   },
+   {
+    "club": "Vancouver Whitecaps",
+    "gini": 0.5685051001279375,
+    "ppg": 2.2857142857142856,
+    "payroll": 24559629.0,
+    "conf": "West"
+   },
+   {
+    "club": "Columbus Crew",
+    "gini": 0.5505529600321812,
+    "ppg": 1.0666666666666667,
+    "payroll": 22338020.0,
+    "conf": "East"
+   },
+   {
+    "club": "New York City FC",
+    "gini": 0.5497481260727137,
+    "ppg": 1.2666666666666666,
+    "payroll": 21539612.0,
+    "conf": "East"
+   },
+   {
+    "club": "San Jose Earthquakes",
+    "gini": 0.5453463838748656,
+    "ppg": 2.1333333333333333,
+    "payroll": 15825282.0,
+    "conf": "West"
+   },
+   {
+    "club": "Charlotte FC",
+    "gini": 0.5404897150677528,
+    "ppg": 1.4,
+    "payroll": 21460657.0,
+    "conf": "East"
+   },
+   {
+    "club": "Austin FC",
+    "gini": 0.5398698825740023,
+    "ppg": 0.9333333333333333,
+    "payroll": 19893439.0,
+    "conf": "West"
+   },
+   {
+    "club": "Seattle Sounders FC",
+    "gini": 0.535562372668303,
+    "ppg": 1.8461538461538463,
+    "payroll": 19092219.0,
+    "conf": "West"
+   },
+   {
+    "club": "Colorado Rapids",
+    "gini": 0.51771370978415,
+    "ppg": 1.0666666666666667,
+    "payroll": 14127613.04,
+    "conf": "West"
+   },
+   {
+    "club": "Portland Timbers",
+    "gini": 0.5061451939915291,
+    "ppg": 1.0,
+    "payroll": 18450879.0,
+    "conf": "West"
+   },
+   {
+    "club": "Real Salt Lake",
+    "gini": 0.500272205209038,
+    "ppg": 1.8571428571428572,
+    "payroll": 15288195.0,
+    "conf": "West"
+   },
+   {
+    "club": "DC United",
+    "gini": 0.49934432211592217,
+    "ppg": 1.2,
+    "payroll": 14546167.0,
+    "conf": "East"
+   },
+   {
+    "club": "St. Louis City SC",
+    "gini": 0.49485289541423727,
+    "ppg": 1.1428571428571428,
+    "payroll": 18809928.0,
+    "conf": "West"
+   },
+   {
+    "club": "FC Dallas",
+    "gini": 0.4939695991337245,
+    "ppg": 1.6666666666666667,
+    "payroll": 14539074.0,
+    "conf": "West"
+   },
+   {
+    "club": "Houston Dynamo",
+    "gini": 0.48771829213157547,
+    "ppg": 1.5714285714285714,
+    "payroll": 20912912.0,
+    "conf": "West"
+   },
+   {
+    "club": "Minnesota United",
+    "gini": 0.4715802396560178,
+    "ppg": 1.4666666666666666,
+    "payroll": 15552855.0,
+    "conf": "West"
+   },
+   {
+    "club": "CF Montreal",
+    "gini": 0.448490464388432,
+    "ppg": 1.0,
+    "payroll": 13418254.0,
+    "conf": "East"
+   },
+   {
+    "club": "Orlando City SC",
+    "gini": 0.4432278558763687,
+    "ppg": 0.9333333333333333,
+    "payroll": 13732571.0,
+    "conf": "East"
+   },
+   {
+    "club": "Philadelphia Union",
+    "gini": 0.3946623455596385,
+    "ppg": 0.4666666666666667,
+    "payroll": 11696829.0,
+    "conf": "East"
+   }
+  ],
+  "giniR": 0.30310581597225217,
+  "giniP": 0.10348268647477821,
+  "giniPartialR": -0.004885925140508687,
+  "giniPartialP": 0.9795570223001462,
+  "topBucketCounts": {
+   "Attack": 27,
+   "Midfield": 1,
+   "Defense": 0,
+   "Goalkeeper": 2
+  },
+  "ppgByTopBucket": {
+   "Attack": 1.4394519061185729,
+   "Midfield": 1.3333333333333333,
+   "Defense": null,
+   "Goalkeeper": 0.8047619047619048
+  },
+  "leagueAvgTopPPG": 1.3936019536019537,
+  "leagueShare": {
+   "Attack": 0.5364192444933334,
+   "Midfield": 0.17965607888784835,
+   "Defense": 0.22550954004311455,
+   "Goalkeeper": 0.05841513657570357
+  },
+  "shareByClub": {
+   "Atlanta United": {
+    "Attack": 0.6560704444742435,
+    "Midfield": 0.12886137341278242,
+    "Defense": 0.1987123352677057,
+    "Goalkeeper": 0.016355846845268442
+   },
+   "Austin FC": {
+    "Attack": 0.6249603700999108,
+    "Midfield": 0.14433205842388538,
+    "Defense": 0.19015817224965478,
+    "Goalkeeper": 0.040549399226549016
+   },
+   "CF Montreal": {
+    "Attack": 0.525515093096315,
+    "Midfield": 0.1149557162951305,
+    "Defense": 0.29922261122795857,
+    "Goalkeeper": 0.06030657938059601
+   },
+   "Charlotte FC": {
+    "Attack": 0.5131716610539929,
+    "Midfield": 0.17307349910116918,
+    "Defense": 0.24793281025832528,
+    "Goalkeeper": 0.06582202958651266
+   },
+   "Chicago Fire": {
+    "Attack": 0.6017710927682043,
+    "Midfield": 0.15665442851873748,
+    "Defense": 0.20961484803665703,
+    "Goalkeeper": 0.031959630676401236
+   },
+   "Colorado Rapids": {
+    "Attack": 0.4639691065604102,
+    "Midfield": 0.15723760225527808,
+    "Defense": 0.28140245834479627,
+    "Goalkeeper": 0.09739083283951555
+   },
+   "Columbus Crew": {
+    "Attack": 0.5331226312806596,
+    "Midfield": 0.2283889082380623,
+    "Defense": 0.16878787824525182,
+    "Goalkeeper": 0.06970058223602629
+   },
+   "DC United": {
+    "Attack": 0.48586648290233436,
+    "Midfield": 0.09501795215193116,
+    "Defense": 0.30148973265603235,
+    "Goalkeeper": 0.11762583228970216
+   },
+   "FC Cincinnati": {
+    "Attack": 0.4632181073244349,
+    "Midfield": 0.14678581085718456,
+    "Defense": 0.3428815347990721,
+    "Goalkeeper": 0.04711454701930841
+   },
+   "FC Dallas": {
+    "Attack": 0.5073195170476469,
+    "Midfield": 0.18549695805936472,
+    "Defense": 0.272322295078765,
+    "Goalkeeper": 0.034861229814223384
+   },
+   "Houston Dynamo": {
+    "Attack": 0.4934362082143319,
+    "Midfield": 0.22673681216656963,
+    "Defense": 0.22167620654646278,
+    "Goalkeeper": 0.0581507730726357
+   },
+   "Inter Miami": {
+    "Attack": 0.6350169944626745,
+    "Midfield": 0.2248164945629135,
+    "Defense": 0.11902606748447046,
+    "Goalkeeper": 0.021140443489941582
+   },
+   "LA Galaxy": {
+    "Attack": 0.46984698268931374,
+    "Midfield": 0.2942753100922568,
+    "Defense": 0.21259501393216088,
+    "Goalkeeper": 0.023282693286268547
+   },
+   "LAFC": {
+    "Attack": 0.6373330434582054,
+    "Midfield": 0.1691616786183493,
+    "Defense": 0.15975467326395995,
+    "Goalkeeper": 0.03375060465948539
+   },
+   "Minnesota United": {
+    "Attack": 0.4062412335227198,
+    "Midfield": 0.307754106882627,
+    "Defense": 0.23308421508462593,
+    "Goalkeeper": 0.05292044451002726
+   },
+   "Nashville SC": {
+    "Attack": 0.6847619779229153,
+    "Midfield": 0.08239879567199844,
+    "Defense": 0.21192386682967734,
+    "Goalkeeper": 0.020915359575408958
+   },
+   "New England Revolution": {
+    "Attack": 0.5037427510562655,
+    "Midfield": 0.17798524857565787,
+    "Defense": 0.20766335728434152,
+    "Goalkeeper": 0.11060864308373505
+   },
+   "New York City FC": {
+    "Attack": 0.48407547916833416,
+    "Midfield": 0.23949507539875833,
+    "Defense": 0.22486593537525187,
+    "Goalkeeper": 0.05156351005765564
+   },
+   "New York Red Bulls": {
+    "Attack": 0.6566012326704644,
+    "Midfield": 0.10007486251304806,
+    "Defense": 0.1701220472802794,
+    "Goalkeeper": 0.07320185753620814
+   },
+   "Orlando City SC": {
+    "Attack": 0.47211822170808365,
+    "Midfield": 0.2218979971048393,
+    "Defense": 0.25036782988414913,
+    "Goalkeeper": 0.05561595130292791
+   },
+   "Philadelphia Union": {
+    "Attack": 0.39407347068166937,
+    "Midfield": 0.22010512421785425,
+    "Defense": 0.26299409865699497,
+    "Goalkeeper": 0.12282730644348139
+   },
+   "Portland Timbers": {
+    "Attack": 0.668141935134906,
+    "Midfield": 0.11184713747242069,
+    "Defense": 0.18836024018151112,
+    "Goalkeeper": 0.03165068721116213
+   },
+   "Real Salt Lake": {
+    "Attack": 0.3490278610391874,
+    "Midfield": 0.22431039112203893,
+    "Defense": 0.3607661336083167,
+    "Goalkeeper": 0.0658956142304569
+   },
+   "San Diego FC": {
+    "Attack": 0.7727693429984794,
+    "Midfield": 0.09088939289063441,
+    "Defense": 0.10576680120121312,
+    "Goalkeeper": 0.030574462909672986
+   },
+   "San Jose Earthquakes": {
+    "Attack": 0.4633976822656304,
+    "Midfield": 0.2281319220725419,
+    "Defense": 0.23154582648195463,
+    "Goalkeeper": 0.07692456917987307
+   },
+   "Seattle Sounders FC": {
+    "Attack": 0.5878311473380857,
+    "Midfield": 0.17398847142911988,
+    "Defense": 0.1981592605867343,
+    "Goalkeeper": 0.04002112064606005
+   },
+   "Sporting Kansas City": {
+    "Attack": 0.6508841532385563,
+    "Midfield": 0.1618194772624811,
+    "Defense": 0.11929749641487335,
+    "Goalkeeper": 0.06799887308408922
+   },
+   "St. Louis City SC": {
+    "Attack": 0.2841711568486599,
+    "Midfield": 0.34742222298777536,
+    "Defense": 0.2042167306541524,
+    "Goalkeeper": 0.16418988950941227
+   },
+   "Toronto FC": {
+    "Attack": 0.5302085204719148,
+    "Midfield": 0.1485767089723159,
+    "Defense": 0.2976484338233331,
+    "Goalkeeper": 0.023566336732436133
+   },
+   "Vancouver Whitecaps": {
+    "Attack": 0.5739134333014558,
+    "Midfield": 0.10719082930772285,
+    "Defense": 0.2729272905547555,
+    "Goalkeeper": 0.0459684468360658
+   }
+  },
+  "leagueMix": {
+   "Attack": 0.33479692645444564,
+   "Midfield": 0.2217343578485181,
+   "Defense": 0.33150384193194293,
+   "Goalkeeper": 0.1119648737650933
+  },
+  "bottomQuartileMix": {
+   "Attack": 0.31877729257641924,
+   "Midfield": 0.19213973799126638,
+   "Defense": 0.33624454148471616,
+   "Goalkeeper": 0.15283842794759825
+  },
+  "minWageShare": {
+   "Attack": 0.05901639344262295,
+   "Midfield": 0.054455445544554455,
+   "Defense": 0.076158940397351,
+   "Goalkeeper": 0.06862745098039216
+  },
+  "spotlight": "Atlanta United"
  }
 };
