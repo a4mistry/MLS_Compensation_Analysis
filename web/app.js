@@ -2,8 +2,10 @@
 const D = window.MLS_DATA;
 const L = D.league;
 
-const COL = { accent: '#00d2a0', blue: '#4c8bf5', hot: '#ff5a6a', gold: '#f2c14e',
-              ink: '#eef2f9', muted: '#8a94a8', line: '#232b3d', panel: '#161b28' };
+/* soccer / pitch palette (light theme) */
+const COL = { accent: '#0f8a3c', grassDk: '#0a6b2f', blue: '#1f7ac4', hot: '#e23b3b',
+              gold: '#e0a800', ink: '#12241a', muted: '#566659', line: '#d5e3d1',
+              panel: '#ffffff' };
 
 const usd = (v, dp = 0) => '$' + Number(v).toLocaleString('en-US', { maximumFractionDigits: dp });
 const usdShort = v => v >= 1e6 ? '$' + (v / 1e6).toFixed(v >= 1e7 ? 0 : 1) + 'M'
@@ -12,13 +14,14 @@ const usdShort = v => v >= 1e6 ? '$' + (v / 1e6).toFixed(v >= 1e7 ? 0 : 1) + 'M'
 const AXIS = {
   axisLine: { lineStyle: { color: COL.line } },
   axisLabel: { color: COL.muted },
-  splitLine: { lineStyle: { color: 'rgba(35,43,61,.55)' } },
+  splitLine: { lineStyle: { color: 'rgba(18,36,26,.08)' } },
   nameTextStyle: { color: COL.muted },
 };
 const baseGrid = { left: 8, right: 24, top: 24, bottom: 8, containLabel: true };
 const TT = {
-  backgroundColor: '#0d111a', borderColor: COL.line,
+  backgroundColor: '#ffffff', borderColor: COL.line, borderWidth: 1,
   textStyle: { color: COL.ink, fontFamily: 'Inter' },
+  extraCssText: 'box-shadow:0 6px 22px rgba(10,60,30,.16);border-radius:8px;',
 };
 
 /* -------------------- hero + inline copy -------------------- */
@@ -60,7 +63,7 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
       itemStyle: {
         borderRadius: [3, 3, 0, 0],
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1,
-          [{ offset: 0, color: COL.blue }, { offset: 1, color: '#2b4a86' }]),
+          [{ offset: 0, color: '#2faa5a' }, { offset: 1, color: COL.grassDk }]),
       } }],
   });
 })();
@@ -83,7 +86,7 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
       itemStyle: {
         borderRadius: [0, 4, 4, 0],
         color: new echarts.graphic.LinearGradient(0, 0, 1, 0,
-          [{ offset: 0, color: '#2b4a86' }, { offset: 1, color: COL.gold }]),
+          [{ offset: 0, color: COL.grassDk }, { offset: 1, color: COL.gold }]),
       },
     }],
   });
@@ -144,12 +147,12 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
         lineStyle: { color: COL.hot, type: 'dashed', width: 2 }, z: 1,
         tooltip: { show: false } },
       { name: 'East', type: 'scatter', data: mk('East'), symbolSize: 15, z: 3,
-        itemStyle: { color: COL.accent, borderColor: '#0b0e14', borderWidth: 1.5, opacity: .92 },
+        itemStyle: { color: COL.accent, borderColor: '#ffffff', borderWidth: 1.5, opacity: .95 },
         emphasis: { scale: 1.5 },
         label: { show: true, position: 'right', color: COL.muted, fontSize: 10,
           formatter: p => p.data.club.club } },
       { name: 'West', type: 'scatter', data: mk('West'), symbolSize: 15, z: 3,
-        itemStyle: { color: COL.blue, borderColor: '#0b0e14', borderWidth: 1.5, opacity: .92 },
+        itemStyle: { color: COL.blue, borderColor: '#ffffff', borderWidth: 1.5, opacity: .95 },
         emphasis: { scale: 1.5 },
         label: { show: true, position: 'right', color: COL.muted, fontSize: 10,
           formatter: p => p.data.club.club } },
