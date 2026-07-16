@@ -14,7 +14,8 @@ window.MLS_DATA = {
   "gini": 0.6044913728315935,
   "top1Share": 0.14361805395606808,
   "top10Share": 0.4869403398170155,
-  "leagueMin": 88025.0
+  "leagueMin": 88025.0,
+  "costPerPointSpreadX": 5.1
  },
  "hist": [
   {
@@ -1974,9 +1975,7 @@ window.MLS_DATA = {
   "attackGfR": 0.431,
   "attackGfP": 0.017,
   "defGaR": -0.187,
-  "defGaP": 0.322,
-  "payrollGdR": 0.416,
-  "payrollGdP": 0.022
+  "defGaP": 0.322
  },
  "middle": {
   "clubs": [
@@ -2285,13 +2284,10 @@ window.MLS_DATA = {
   "top3PpgP": 0.083,
   "restMedianPpgR": 0.187,
   "restMedianPpgP": 0.323,
-  "floorPpgR": -0.013,
-  "floorPpgP": 0.945,
   "corr": {
    "tiers": [
     "Top-3 stars",
-    "Middle class",
-    "Roster floor"
+    "Middle class"
    ],
    "metrics": [
     {
@@ -2299,8 +2295,7 @@ window.MLS_DATA = {
      "label": "Points per game",
      "values": [
       0.322,
-      0.187,
-      -0.013
+      0.187
      ]
     },
     {
@@ -2308,8 +2303,7 @@ window.MLS_DATA = {
      "label": "Goals scored",
      "values": [
       0.398,
-      0.085,
-      0.013
+      0.085
      ]
     },
     {
@@ -2317,11 +2311,16 @@ window.MLS_DATA = {
      "label": "Goals Conceded (negative bar is better)",
      "values": [
       -0.125,
-      -0.112,
-      0.234
+      -0.112
      ]
     }
    ]
   }
+ },
+ "meta": {
+  "gamesTotal": 34,
+  "standingsMinGp": 13,
+  "standingsMaxGp": 15,
+  "standingsAsOf": "July 16, 2026"
  }
 };

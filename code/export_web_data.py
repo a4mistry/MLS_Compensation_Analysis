@@ -5,14 +5,26 @@ window.MLS_DATA = {...} so the site works when opened directly from disk
 (file://) with no server / fetch / CORS issues.
 """
 import json
+from datetime import datetime
 from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy import stats
 
+from positions import pos_bucket, POS_ORDER   # shared, alerts on unknown positions
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 PAY = "guaranteed_comp"
+GAMES_TOTAL = 34   # MLS regular-season length
+
+
+def _num(v):
+    """JSON-safe float: non-finite (inf/nan) -> None so we never emit Infinity."""
+    if v is None:
+        return None
+    v = float(v)
+    return v if np.isfinite(v) else None
 
 # Fallback conference map, only used if the standings file lacks a 'conf'
 # column (older data). The live fetcher writes conf directly.
@@ -78,14 +90,22 @@ pay = players.groupby("club")[PAY].agg(payroll="sum", roster="count",
 st = pd.read_csv(DATA / "standings_2026.csv").set_index("club")
 df = st.join(pay).reset_index()
 
-df["ppg"] = df["pts"] / df["gp"]
-df["cost_per_point"] = df["payroll"] / df["pts"]
+# Guard early-season divisions: a 0-point (or 0-game) club must not produce
+# Infinity/NaN, which would corrupt site_data.js and the efficiency lists.
+df["ppg"] = np.where(df["gp"] > 0, df["pts"] / df["gp"], np.nan)
+df["cost_per_point"] = np.where(df["pts"] > 0, df["payroll"] / df["pts"], np.nan)
 df["pts_per_10m"] = df["pts"] / (df["payroll"] / 1e7)
 
-x = np.log10(df["payroll"]); y = df["ppg"]
+# Regression on clubs that have actually played, so NaN PPG can't break it.
+_valid = df[df["gp"] > 0]
+x = np.log10(_valid["payroll"]); y = _valid["ppg"]
 slope, intercept, r, p, se = stats.linregress(x, y)
-df["ppg_pred"] = intercept + slope * x
+df["ppg_pred"] = intercept + slope * np.log10(df["payroll"])
 df["residual"] = df["ppg"] - df["ppg_pred"]
+
+# cost-per-point spread (priciest / cheapest) for data-bound copy in the site
+_cpp = df.loc[df["pts"] > 0, "cost_per_point"]
+league["costPerPointSpreadX"] = round(float(_cpp.max() / _cpp.min()), 1) if len(_cpp) else None
 
 has_conf = "conf" in df.columns
 clubs = [{
@@ -97,11 +117,11 @@ clubs = [{
     "topPay": float(row.topPay),
     "gp": int(row.gp), "w": int(row.w), "l": int(row.l), "d": int(row.d),
     "pts": int(row.pts), "gf": int(row.gf), "ga": int(row.ga), "gd": int(row.gd),
-    "ppg": float(row.ppg),
-    "costPerPoint": float(row.cost_per_point),
-    "ptsPer10m": float(row.pts_per_10m),
-    "residual": float(row.residual),
-    "ppgPred": float(row.ppg_pred),
+    "ppg": _num(row.ppg),
+    "costPerPoint": _num(row.cost_per_point),
+    "ptsPer10m": _num(row.pts_per_10m),
+    "residual": _num(row.residual),
+    "ppgPred": _num(row.ppg_pred),
 } for _, row in df.iterrows()]
 
 regression = {
@@ -111,30 +131,8 @@ regression = {
 }
 
 # ---- roster construction: pay concentration + position of spend ----
-POS_ORDER = ["Attack", "Midfield", "Defense", "Goalkeeper"]
-
-
-def pos_bucket(pos):
-    p = str(pos).split("/")[0].strip().lower()
-    if "goalkeeper" in p:
-        return "Goalkeeper"
-    if "back" in p:
-        return "Defense"
-    if "wing" in p or "forward" in p or "attacking mid" in p:
-        return "Attack"
-    if "midfield" in p:
-        return "Midfield"
-    return "Midfield"
-
-
-players["bucket"] = players["position"].map(pos_bucket)
+players["bucket"] = players["position"].map(pos_bucket)   # shared bucketer (alerts on unknowns)
 ppg_by_club = (df.set_index("club")["ppg"]).to_dict()
-
-# per-club Gini + PPG (for the scatter)
-def gini(x):
-    x = np.sort(np.asarray(x, float))
-    n = len(x)
-    return (2 * np.sum(np.arange(1, n + 1) * x) / (n * x.sum())) - (n + 1) / n
 
 gini_by_club = []
 for club_name, s in players.groupby("club")[PAY]:
@@ -238,7 +236,6 @@ gcl["goalsPer10mAtk"] = gcl["gf"] / (gcl["attackPay"] / 1e7)
 gcl = gcl.reset_index()
 atk_gf = _pear(gcl["attackPay"].values, gcl["gf"].values)
 def_ga = _pear(gcl["defPay"].values, gcl["ga"].values)
-pay_gd = _pear(np.log10(gcl["payroll"].values), gcl["gd"].values)
 goals = {
     "clubs": [{"club": r.club, "conf": r.conf, "attackPay": float(r.attackPay),
                "defPay": float(r.defPay), "payroll": float(r.payroll),
@@ -247,7 +244,6 @@ goals = {
               for _, r in gcl.iterrows()],
     "attackGfR": atk_gf[0], "attackGfP": atk_gf[1],
     "defGaR": def_ga[0], "defGaP": def_ga[1],
-    "payrollGdR": pay_gd[0], "payrollGdP": pay_gd[1],
 }
 
 
@@ -263,14 +259,15 @@ mc = players.groupby("club").apply(_club_stats, include_groups=False)
 mc["top3Share"] = mc["top3"] / mc["payroll"]
 mc = mc.join(st[["gf", "ga", "gd"]])
 mc["ppg"] = mc.index.map(ppg_by_club)
+# Only two tiers compared. The "roster floor" tier was dropped: 28 of 30 clubs
+# share the identical league minimum, so any floor correlation is driven by the
+# two exceptions and is statistically meaningless.
 _lt = {"Top-3 stars": np.log10(mc["top3"].values),
-       "Middle class": np.log10(mc["restMedian"].values),
-       "Roster floor": np.log10(mc["floor"].values)}
+       "Middle class": np.log10(mc["restMedian"].values)}
 _out = {"ppg": mc["ppg"].values, "gf": mc["gf"].values, "ga": mc["ga"].values}
 corrgrid = {name: {mk: _pear(x, col)[0] for mk, col in _out.items()} for name, x in _lt.items()}
 top3_ppg = _pear(_lt["Top-3 stars"], mc["ppg"].values)
 rest_ppg = _pear(_lt["Middle class"], mc["ppg"].values)
-floor_ppg = _pear(_lt["Roster floor"], mc["ppg"].values)
 middle = {
     "clubs": [{"club": c, "payroll": float(r.payroll), "top3": float(r.top3),
                "top3Share": float(r.top3Share), "restMedian": float(r.restMedian),
@@ -278,7 +275,6 @@ middle = {
               for c, r in mc.iterrows()],
     "top3PpgR": top3_ppg[0], "top3PpgP": top3_ppg[1],
     "restMedianPpgR": rest_ppg[0], "restMedianPpgP": rest_ppg[1],
-    "floorPpgR": floor_ppg[0], "floorPpgP": floor_ppg[1],
     "corr": {
         "tiers": list(_lt.keys()),
         "metrics": [
@@ -290,10 +286,20 @@ middle = {
     },
 }
 
+# ---- standings freshness (for data-bound season-progress copy) ----
+meta = {"gamesTotal": GAMES_TOTAL,
+        "standingsMinGp": int(st["gp"].min()), "standingsMaxGp": int(st["gp"].max())}
+_sm = DATA / "standings_meta.json"
+if _sm.exists():
+    meta["standingsAsOf"] = json.loads(_sm.read_text(encoding="utf-8")).get("fetched")
+else:  # fall back to the standings file's modification time (cross-platform format)
+    _dt = datetime.fromtimestamp((DATA / "standings_2026.csv").stat().st_mtime)
+    meta["standingsAsOf"] = f"{_dt.strftime('%B')} {_dt.day}, {_dt.year}"
+
 data = {
     "league": league, "hist": hist, "topEarners": topEarners,
     "positions": positions, "clubs": clubs, "regression": regression,
-    "roster": roster, "gap": gap, "goals": goals, "middle": middle,
+    "roster": roster, "gap": gap, "goals": goals, "middle": middle, "meta": meta,
 }
 
 out = ROOT / "web" / "site_data.js"

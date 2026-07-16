@@ -31,19 +31,23 @@ pay = sal.groupby("club")["guaranteed_comp"].agg(payroll="sum", roster="count")
 
 st = pd.read_csv(DATA / "standings_2026.csv").set_index("club")
 df = st.join(pay).reset_index()
-assert df["payroll"].notna().all(), df.loc[df.payroll.isna(), "club"].tolist()
+missing = df.loc[df["payroll"].isna(), "club"].tolist()
+if missing:
+    raise SystemExit(f"No salary data for clubs in standings: {missing}")
 
 # --- rate + efficiency metrics ------------------------------------------
-df["ppg"] = df["pts"] / df["gp"]
+# Guard early-season divisions (0 games / 0 points -> NaN, never Infinity).
+df["ppg"] = np.where(df["gp"] > 0, df["pts"] / df["gp"], np.nan)
 df["payroll_m"] = df["payroll"] / 1e6
-df["cost_per_point"] = df["payroll"] / df["pts"]
+df["cost_per_point"] = np.where(df["pts"] > 0, df["payroll"] / df["pts"], np.nan)
 df["pts_per_10m"] = df["pts"] / (df["payroll"] / 1e7)
 
-# Regression: does spending predict results?  Log payroll vs PPG.
-x = np.log10(df["payroll"])
-y = df["ppg"]
+# Regression: does spending predict results?  Log payroll vs PPG (played clubs).
+_played = df[df["gp"] > 0]
+x = np.log10(_played["payroll"])
+y = _played["ppg"]
 slope, intercept, r, p, se = stats.linregress(x, y)
-df["ppg_pred"] = intercept + slope * x
+df["ppg_pred"] = intercept + slope * np.log10(df["payroll"])
 df["residual"] = df["ppg"] - df["ppg_pred"]          # over/under vs spend
 r2 = r ** 2
 

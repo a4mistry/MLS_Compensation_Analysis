@@ -120,7 +120,8 @@
     <h2>Who spends smart — and who just spends</h2>
     <div class="narrow">
       <p class="lead">Cost per point turns payroll into an efficiency score: total dollars divided by points
-        earned. The cheapest points in the league cost a quarter of what the priciest ones do.</p>
+        earned. The priciest points in the league cost about <b><span id="t-cppspread"></span>×</b> what the
+        cheapest ones do.</p>
     </div>
     <div class="vs-grid">
       <div class="vs-card good">
@@ -170,10 +171,10 @@
       <div>
         <p class="lead"><span id="t-atkcount"></span> of 30 clubs make an attacker their highest-paid player.
           It's the closest thing MLS has to a roster-building law.</p>
-        <p>The rare exceptions prove the point: the clubs whose most expensive player is a <b>goalkeeper</b> average
-          only <b id="t-gkppg"></b> points per game — not because keepers lose games, but because those teams never
-          landed a marquee attacker in the first place. <em>How much</em> of payroll you tilt toward attack, though,
-          barely moves results.</p>
+        <p>The rare exceptions are suggestive: the <b id="t-gkcount"></b> clubs whose most expensive player is a
+          <b>goalkeeper</b> average just <b id="t-gkppg"></b> points per game — too small a sample to prove anything,
+          but the reading is less that keepers lose games and more that those teams never landed a marquee attacker.
+          <em>How much</em> of payroll you tilt toward attack, though, barely moves results.</p>
       </div>
       <div class="stats" style="grid-template-columns:1fr 1fr;margin-top:0">
         <div class="stat"><div class="num accent" id="s-atk"></div><div class="cap">clubs led by an attacker</div></div>
@@ -196,11 +197,13 @@
     <div class="two-col">
       <div>
         <p class="lead">Atlanta shows the ceiling of the superstar model — and its risk.</p>
-        <p>With the league's <b>5th-largest payroll ($27.9M)</b>, Atlanta funneled <b>66%</b> of it into attack — 12
-          points above the league's 54% — behind a front three of Almirón, Miranchuk and Latte Lath that eats
-          <b>60% of the wage bill</b>. To pay for it, they went bargain-basement everywhere else: just <b>2%</b> on
-          goalkeeping (vs 6% league-wide) and thin at the back. The result: a <b>0.79 PPG</b> bottom-three side. Loading
-          up on attackers is no guarantee — balance is what Atlanta traded away.</p>
+        <p>With the league's <b><span id="atl-rank"></span>-largest payroll (<span id="atl-pay"></span>)</b>, Atlanta
+          funneled <b><span id="atl-atk"></span></b> of it into attack — <span id="atl-atkdiff"></span> above the
+          league's <span id="atl-lgatk"></span> — behind a front three of Almirón, Miranchuk and Latte Lath that eats
+          <b><span id="atl-top3"></span> of the wage bill</b>. To pay for it, they went bargain-basement everywhere
+          else: just <b><span id="atl-gk"></span></b> on goalkeeping (vs <span id="atl-lggk"></span> league-wide) and
+          thin at the back. The result: a <b><span id="atl-ppg"></span> PPG</b> <span id="atl-standing"></span> side.
+          Loading up on attackers is no guarantee — balance is what Atlanta traded away.</p>
       </div>
       <div class="panel" style="margin-top:0">
         <h3>Where the money goes: Atlanta vs the league</h3>
@@ -234,8 +237,9 @@
         <div id="ch-gappos" class="chart tall"></div>
       </div>
     </div>
-    <p class="verdict"><b>The twist:</b> a club's marketing-money share is <em>negatively</em> related to results
-      (<span id="g-mktr"></span>) — paying big for star commercial value doesn't buy points.</p>
+    <p class="verdict"><b>The twist:</b> if anything, a club's marketing-money share leans <em>negative</em> against
+      results (<span id="g-mktr"></span>) — a weak signal from only 30 clubs, short of significance, but there's
+      certainly no sign that paying up for star commercial value buys points.</p>
   </div>
 </section>
 
@@ -245,8 +249,8 @@
     <div class="kicker">08 — Does Spending Buy Goals?</div>
     <h2>Money for goals, at both ends</h2>
     <div class="narrow">
-      <p class="lead">Points are noisy mid-season; goals are the cleaner signal. Does spending on attack produce
-        goals — and does spending on defence and goalkeeping prevent them?</p>
+      <p class="lead">Points are noisy in a partial season; goals are the cleaner signal. Does spending on attack
+        produce goals — and does spending on defence and goalkeeping prevent them?</p>
     </div>
     <div class="stack">
       <div class="panel">
@@ -292,9 +296,10 @@
         <div id="ch-midbar" class="chart tall"></div>
       </div>
     </div>
-    <p class="verdict"><b>Verdict:</b> the stars edge it — top-3 pay tracks results (and especially goals scored) a
-      bit better than middle-class pay, and the roster floor tracks nothing. Real Salt Lake and Nashville win with a
-      bargain supporting cast, so depth spending is <em>not</em> the deciding factor.</p>
+    <p class="verdict"><b>The read:</b> if anything the stars edge it — top-3 pay shows the stronger link, especially
+      with goals scored — but with only 30 clubs none of these correlations is statistically robust, so treat it as a
+      lean, not a law. What's clear is the other side: Real Salt Lake and Nashville win with a bargain supporting cast,
+      so spending on the middle class is <em>not</em> the deciding factor.</p>
   </div>
 </section>
 
@@ -305,10 +310,12 @@
       <h3 style="font-family:var(--serif);color:var(--ink)">Read the fine print</h3>
       <div class="caveats">
         <ul>
-          <li><b>Partial season.</b> Standings reflect ~13–15 of 34 games — roughly mid-season. Positions will move.</li>
+          <li><b>Partial season.</b> Standings reflect <span id="fp-gprange"></span> of <span id="fp-gametotal"></span>
+            games — <span id="fp-stage"></span> — as of <span id="fp-asof"></span>. Positions will move.</li>
           <li><b>April snapshot.</b> Payroll is the MLSPA salary guide dated April 14, 2026; summer signings aren't included.</li>
           <li><b>Not cap spending.</b> Guaranteed comp ≠ MLS roster-rules/cap figures (DP mechanics, allocation money).</li>
-          <li><b>Small samples.</b> Injuries, schedule strength and variance drive a lot of a half-season table.</li>
+          <li><b>Small samples.</b> With 30 clubs, the reported correlations are directional — none survives a
+            multiple-comparisons correction. Injuries, schedule strength and variance drive a lot of a partial-season table.</li>
         </ul>
       </div>
     </div>

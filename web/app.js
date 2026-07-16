@@ -291,8 +291,10 @@ document.getElementById('landscape-stats').innerHTML = cards.map(c =>
 /* ==================== deeper analyses (7-9) ==================== */
 const BUCKET_COL = { Attack: COL.hot, Midfield: COL.gold, Defense: COL.blue, Goalkeeper: COL.accent };
 const putText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+// No auto "significant" label: with ~15 correlations on the same 30 clubs,
+// none survives a multiple-comparisons correction (see footer caveat).
 const corrTxt = (r, p) => `r = ${r >= 0 ? '+' : ''}${r.toFixed(2)}` +
-  (p != null ? ` (p = ${p}${p < 0.05 ? ', significant' : ''})` : '');
+  (p != null ? ` (p = ${p})` : '');
 const mkGrid = e => ({ left: 56, right: 24, top: 40, bottom: 46, containLabel: true, ...e });
 function linfit(xs, ys) {
   const n = xs.length, mx = xs.reduce((a, b) => a + b) / n, my = ys.reduce((a, b) => a + b) / n;
@@ -431,6 +433,47 @@ function scatterChart(elId, pts, xLabel, yLabel, xf, labelTopN) {
       label: { show: true, position: 'top', color: COL.muted, fontSize: 9,
         formatter: p => (p.value >= 0 ? '+' : '') + p.value } })),
   });
+})();
+
+/* ==================== data-bound narrative numbers ==================== */
+(() => {
+  const pctf = v => Math.round(v * 100) + '%';
+  const ordinal = n => { const s = ['th', 'st', 'nd', 'rd'], v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]); };
+
+  // --- Atlanta cautionary-tale paragraph (C1 + M4: all from data) ---
+  const R = D.roster, share = R.shareByClub[R.spotlight], lg = R.leagueShare;
+  const byPay = D.clubs.slice().sort((a, b) => b.payroll - a.payroll);
+  const atl = D.clubs.find(c => c.club === R.spotlight);
+  const rank = byPay.findIndex(c => c.club === R.spotlight) + 1;
+  const atlTop3 = (D.middle.clubs.find(c => c.club === R.spotlight) || {}).top3Share;
+  const byPts = D.clubs.slice().sort((a, b) => b.pts - a.pts);
+  const ptsRank = byPts.findIndex(c => c.club === R.spotlight) + 1;
+  const standing = ptsRank > D.clubs.length - 3 ? 'bottom-three'
+                 : ptsRank > D.clubs.length - 6 ? 'bottom-five' : 'struggling';
+  putText('atl-rank', ordinal(rank));
+  putText('atl-pay', '$' + (atl.payroll / 1e6).toFixed(1) + 'M');
+  putText('atl-atk', pctf(share.Attack));
+  putText('atl-lgatk', pctf(lg.Attack));
+  putText('atl-atkdiff', Math.round((share.Attack - lg.Attack) * 100) + ' points');
+  putText('atl-top3', pctf(atlTop3));
+  putText('atl-gk', pctf(share.Goalkeeper));
+  putText('atl-lggk', pctf(lg.Goalkeeper));
+  putText('atl-ppg', atl.ppg == null ? '—' : atl.ppg.toFixed(2));
+  putText('atl-standing', standing);
+  putText('t-gkcount', R.topBucketCounts.Goalkeeper);
+
+  // --- cost-per-point spread (M5) ---
+  putText('t-cppspread', D.league.costPerPointSpreadX);
+
+  // --- footer season-progress (M4: from standings meta) ---
+  const m = D.meta || {};
+  putText('fp-gprange', (m.standingsMinGp === m.standingsMaxGp)
+    ? m.standingsMaxGp : `${m.standingsMinGp}–${m.standingsMaxGp}`);
+  putText('fp-gametotal', m.gamesTotal);
+  putText('fp-asof', m.standingsAsOf || '—');
+  const prog = (m.standingsMaxGp || 0) / (m.gamesTotal || 34);
+  putText('fp-stage', prog < 0.4 ? 'early season' : prog < 0.72 ? 'roughly mid-season' : 'late season');
 })();
 
 /* -------------------- scroll polish -------------------- */

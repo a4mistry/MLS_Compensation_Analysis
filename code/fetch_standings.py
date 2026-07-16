@@ -101,10 +101,16 @@ def main():
         w.writeheader()
         w.writerows(rows)
 
-    stamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+    now = datetime.now()
     gp = max(r["gp"] for r in rows) if rows else 0
+    mn = min(r["gp"] for r in rows) if rows else 0
+    # sidecar meta so the site can show an accurate standings "as of" date
+    (DATA / "standings_meta.json").write_text(json.dumps({
+        "season": SEASON, "minGp": mn, "maxGp": gp,
+        "fetched": f"{now.strftime('%B')} {now.day}, {now.year}",
+    }, indent=1), encoding="utf-8")
     print(f"Wrote {len(rows)} teams to {OUT.name}  "
-          f"(season {SEASON}, up to {gp} games played, fetched {stamp})")
+          f"(season {SEASON}, up to {gp} games played, fetched {now:%Y-%m-%d %H:%M})")
 
 
 if __name__ == "__main__":

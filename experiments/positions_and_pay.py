@@ -12,6 +12,7 @@ Writes: experiments/outputs/top_earner_positions.csv
         experiments/outputs/position_pay_impact.png
 """
 import os
+import sys
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -22,27 +23,14 @@ from scipy import stats
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
+sys.path.insert(0, str(ROOT / "code"))       # use the one shared bucketer
+from positions import pos_bucket as bucket, POS_ORDER as ORDER  # noqa: E402
 OUT = Path(__file__).resolve().parent / "outputs"
 os.makedirs(OUT, exist_ok=True)
 PAY = "guaranteed_comp"
 
 BUCKET_COLOR = {"Attack": "#e23b3b", "Midfield": "#f2b705",
                 "Defense": "#1f7ac4", "Goalkeeper": "#0f8a3c"}
-ORDER = ["Attack", "Midfield", "Defense", "Goalkeeper"]
-
-
-def bucket(pos):
-    """Map a granular position to Attack / Midfield / Defense / Goalkeeper."""
-    p = str(pos).split("/")[0].strip().lower()
-    if "goalkeeper" in p:
-        return "Goalkeeper"
-    if "back" in p:                                  # center/left/right-back
-        return "Defense"
-    if "wing" in p or "forward" in p or "attacking mid" in p:
-        return "Attack"
-    if "midfield" in p:                              # central/defensive/L/R mid
-        return "Midfield"
-    return "Other"
 
 
 sal = pd.read_csv(DATA / "mls_salaries_2026.csv")
